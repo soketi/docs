@@ -1,0 +1,2 @@
+# 💲 Available environment variables
+
