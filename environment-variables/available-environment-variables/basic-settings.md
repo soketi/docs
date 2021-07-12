@@ -7,7 +7,7 @@ The configuration needed to specify the protocol, port, and host for the server.
 | Name | Default | Possible values | Description |
 | :--- | :--- | :--- | :--- |
 | `PORT` | `6001` | Any number | The host which will be used for both the REST API and the WebSocket server. |
-| `DEBUG` | `false` | `true`, `false` | Wheteher the app should be in debug mode, being very verbose with what happens behind the scenes. |
+| `DEBUG` | `false` | `true`, `false` | Whether the app should be in debug mode, being very verbose with what happens behind the scenes. |
 
 ### Node Metadata
 
@@ -15,7 +15,7 @@ Node settings include assigning identifiers for the running node.
 
 | Name | Default | Available values | Description |
 | :--- | :--- | :--- | :--- |
-| `NODE_ID` | random UUIDv4 string | Any string | An unique ID given to the node in which the process runs. Used by other features to label data. |
+| `NODE_ID` | random UUIDv4 string | Any string | A unique ID given to the node in which the process runs. Used by other features to label data. |
 | `POD_ID` | `null` | Any string | The Pod name if the app runs in Kubernetes. Used by other features to label data. |
 
 ### SSL Settings
