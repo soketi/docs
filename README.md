@@ -1,3 +1,9 @@
+---
+description: >-
+  pWS is an open-source Pusher protocol-ready, WebSockets-based server, that is
+  container-ready and scalable to fit your needs to test Pusher locally.
+---
+
 # 📡 Meet pWS
 
 ![](.gitbook/assets/carbon-20-.png)
