@@ -1,6 +1,6 @@
 # ⛑ Support
 
-Renoki Co. aims on bringing a lot of open source \(and helpful\) projects on Github for any developers to have an easier job at building products. 📦 Developing and maintaining projects is a harsh job and tho, we love it.
+Renoki Co. loves building open source \(and helpful\) projects on Github for any developer to have an easier job at building products. 📦 Developing and maintaining projects is a harsh job and tho, we love it.
 
 If you are using your application in your day-to-day job, on presentation demos, hobby projects, or even school projects, spread some kind words about our work or sponsor our work.
 
