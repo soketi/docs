@@ -1,7 +1,7 @@
 # Table of contents
 
 * [📡 Meet pWS](README.md)
-* [⛑ Support](support.md)
+* [🎉 Support](support.md)
 
 ## Getting started
 

@@ -1,4 +1,4 @@
-# ⛑ Support
+# 🎉 Support
 
 Renoki Co. loves building open source \(and helpful\) projects on Github for any developer to have an easier job at building products. 📦 Developing and maintaining projects is a harsh job and tho, we love it.
 
