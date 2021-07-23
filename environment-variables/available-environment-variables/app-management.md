@@ -15,9 +15,9 @@ For the rate limits and max connections options, setting limits to `-1` will dis
 | `DEFAULT_APP_SECRET` | `app-secret` | Any string | The default app secret for the array driver. |
 | `DEFAULT_APP_MAX_CONNS` | `-1` | Any integer | The default app's limit of concurrent connections. |
 | `DEFAULT_APP_ENABLE_CLIENT_MESSAGES` | `false` | `true`, `false` | Wether client messages should be enabled for the app. |
-| `DEFAULT_APP_MAX_BACKEND_EVENTS_PER_SEC` | `-1` | Any integer | The default app's limit of `/events` endpoint events broadcasted per second. You can [configure rate limiting database store](https://github.com/soketi/pws/blob/master/docs/ENV.md#rate-limiting) |
-| `DEFAULT_APP_MAX_CLIENT_EVENTS_PER_SEC` | `-1` | Any interger | The default app's limit of client events broadcasted per second, by a single socket. You can [configure rate limiting database store](https://github.com/soketi/pws/blob/master/docs/ENV.md#rate-limiting) |
-| `DEFAULT_APP_MAX_READ_REQ_PER_SEC` | `-1` | Any integer | The default app's limit of read endpoint calls per second. You can [configure rate limiting database store](https://github.com/soketi/pws/blob/master/docs/ENV.md#rate-limiting) |
+| `DEFAULT_APP_MAX_BACKEND_EVENTS_PER_SEC` | `-1` | Any integer | The default app's limit of `/events` endpoint events broadcasted per second. You can [configure rate limiting database store](rate-limiting.md) |
+| `DEFAULT_APP_MAX_CLIENT_EVENTS_PER_SEC` | `-1` | Any interger | The default app's limit of client events broadcasted per second, by a single socket. You can [configure rate limiting database store](rate-limiting.md) |
+| `DEFAULT_APP_MAX_READ_REQ_PER_SEC` | `-1` | Any integer | The default app's limit of read endpoint calls per second. You can [configure rate limiting database store](rate-limiting.md) |
 | `DEFAULT_APP_WEBHOOKS` | `[]` | `[{"url": "string", "event_types": ["string", ...]}, ...]` | The webhooks list for the app. Please look below |
 
 For Webhooks, the available `event_types` values that can be set are listed below. Consider reading more about webhooks in [App Webhooks](../../advanced-usage/app-webhooks.md).
