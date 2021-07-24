@@ -4,3 +4,9 @@ Apps can be defined at the configuration level or can be pulled from a third-par
 
 In this document, you will have a small insight about how you can configure your own apps, as well as leveraging the official ecosystem apps to get started easily.
 
+The current implemented ways of App Management are pretty rigid, but in the near future we will be making them be much more flexible, such as letting the schema be customized.
+
+| Name | Default | Possible values | Description |
+| :--- | :--- | :--- | :--- |
+| `APP_MANAGER_DRIVER` | `array` | `array`, `dynamodb`, `mysql`, `postgres` | The driver used to retrieve the app. |
+

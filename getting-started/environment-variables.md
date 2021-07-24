@@ -1,4 +1,4 @@
-# 💿 Introduction
+# 💿 Environment Variables
 
 You may declare the parameters using environment variables directly passed in the CLI or at the OS level, or as key-value attributes in an `.env` file that is placed at the location from where the command is being run.
 

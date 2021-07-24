@@ -6,6 +6,8 @@
 ## Getting started
 
 * [🚀 Installation](getting-started/installation.md)
+* [🔐 SSL Configuration](getting-started/ssl-configuration.md)
+* [💿 Environment Variables](getting-started/environment-variables.md)
 * [🎨 Client Configuration](getting-started/client-configuration.md)
 * [🤝 Contributing](getting-started/contributing.md)
 
@@ -18,17 +20,17 @@
   * [🐬 MySQL](app-management/sql-drivers/mysql.md)
 * [👾 DynamoDB](app-management/dynamodb.md)
 
-## Environment Variables
+## Rate Limiting & Limits
 
-* [💿 Introduction](environment-variables/introduction.md)
-* [💲 Available environment variables](environment-variables/available-environment-variables/README.md)
-  * [Basic Settings](environment-variables/available-environment-variables/basic-settings.md)
-  * [App Management](environment-variables/available-environment-variables/app-management.md)
-  * [Prometheus Metrics](environment-variables/available-environment-variables/prometheus-metrics.md)
-  * [Rate Limiting](environment-variables/available-environment-variables/rate-limiting.md)
-  * [Queues](environment-variables/available-environment-variables/queues.md)
-  * [Channel Limits](environment-variables/available-environment-variables/channel-limits.md)
-  * [Databases](environment-variables/available-environment-variables/databases.md)
+* [⛔ Broadcast Rate Limiting](rate-limiting-and-limits/broadcast-rate-limiting.md)
+* [👥 Events & Channels Limits](rate-limiting-and-limits/events-and-channels-limits.md)
+
+## Databases
+
+* [🐬 MySQL Configuration](databases/mysql-configuration.md)
+* [🐘 PostgreSQL Configuration](databases/postgresql-configuration.md)
+* [🧠 Redis Configuration](databases/redis-configuration.md)
+* [⛲ Database Pooling](databases/database-pooling.md)
 
 ## Advanced Usage
 
@@ -36,6 +38,8 @@
 * [🛑 Graceful Shutdowns & Traffic Monitoring](advanced-usage/graceful-shutdowns.md)
 * [📈 Scraping Prometheus Metrics](advanced-usage/scraping-prometheus-metrics.md)
 * [🔗 App Webhooks](advanced-usage/app-webhooks.md)
+* [🕛 Queues](advanced-usage/queues/README.md)
+  * [🧠 Horizontal Scaling with Redis](advanced-usage/queues/redis-configuration.md)
 
 ## Network Watcher
 
