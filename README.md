@@ -1,5 +1,5 @@
 ---
-description: "pWS is an open-source alternative for the Pusher service. \U0001F4E1"
+description: "pWS is a free, open-source alternative for the Pusher service. \U0001F4E1"
 ---
 
 # 📡 Meet pWS
