@@ -1,16 +1,8 @@
----
-description: >-
-  Kind words will touch our chakras and vibe, while the sponsorships will keep
-  the open-source projects alive.
----
-
 # 🎉 Support
 
-Renoki Co. loves building open source \(and helpful\) projects on Github for any developer to have an easier job at building products. 📦 Developing and maintaining projects is a harsh job and tho, we love it.
+If you are using one or more Renoki Co. open-source packages in your production apps, in presentation demos, hobby projects, school projects or so, spread some kind words about our work or sponsor our work via Patreon. 📦
 
-If you are using your application in your day-to-day job, on presentation demos, hobby projects, or even school projects, spread some kind words about our work or sponsor our work.
+You will sometimes get exclusive content on tips about Laravel, AWS or Kubernetes on Patreon and some early-access to projects or packages.
 
-_Kind words will touch our chakras and vibe, while the sponsorships will keep the open-source projects alive._
-
-[![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/R6R42U8CL)
+[![](https://c5.patreon.com/external/logo/become_a_patron_button.png)](https://www.patreon.com/bePatron?u=10965171)
 
