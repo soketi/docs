@@ -56,7 +56,7 @@ spec:
           ports:
             - containerPort: 6001
         - name: network-watcher
-          image: soketi/network-watcher:4.0
+          image: quay.io/soketi/network-watcher:4.2
           env:
             - name: KUBE_CONNECTION
               value: cluster
