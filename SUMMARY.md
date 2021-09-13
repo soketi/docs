@@ -9,6 +9,7 @@
   * [CLI Installation](getting-started/installation/cli-installation.md)
   * [Docker](getting-started/installation/docker.md)
   * [Helm Charts](getting-started/installation/helm-charts.md)
+  * [Laravel Sail \(Docker\)](getting-started/installation/laravel-sail-docker.md)
 * [🔐 SSL Configuration](getting-started/ssl-configuration.md)
 * [💿 Environment Variables](getting-started/environment-variables.md)
 * [🎨 Client Configuration](getting-started/client-configuration.md)
