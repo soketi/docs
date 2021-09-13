@@ -9,7 +9,7 @@ services:
     # ...
 
     pws:
-        image: 'quay.io/soketi/pws:0.5.1-14-alpine'
+        image: 'quay.io/soketi/pws:latest-16-alpine'
         environment:
             DEBUG: '1'
         ports:
