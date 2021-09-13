@@ -5,10 +5,15 @@
 
 ## Getting started
 
-* [🚀 Installation](getting-started/installation.md)
+* [🚀 Installation](getting-started/installation/README.md)
+  * [CLI Installation](getting-started/installation/cli-installation.md)
+  * [Docker](getting-started/installation/docker.md)
+  * [Helm Charts](getting-started/installation/helm-charts.md)
 * [🔐 SSL Configuration](getting-started/ssl-configuration.md)
 * [💿 Environment Variables](getting-started/environment-variables.md)
 * [🎨 Client Configuration](getting-started/client-configuration.md)
+* [💻 Backend Configuration](getting-started/backend-configuration/README.md)
+  * [Laravel Broadcasting](getting-started/backend-configuration/laravel-broadcasting.md)
 * [🤝 Contributing](getting-started/contributing.md)
 
 ## App Management
