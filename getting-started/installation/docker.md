@@ -10,7 +10,7 @@ Whenever a release, commit, or master merge is done, the image containing the re
 
 The image tags are matching the following rule:
 
-```text
+```
 quay.io/soketi/pws:[git_version]-[node_version]
 ```
 
@@ -20,8 +20,7 @@ quay.io/soketi/pws:[git_version]-[node_version]
 
 The following example versions are correct:
 
-* `1.0.0-14-alpine` \(points to `1.0.0`\)
-* `1.0-14-alpine` \(points to the latest `1.0.x`\)
-* `1-14-alpine` \(points to the latest `1.x`\)
-* `latest-14-alpine` \(points to the latest `master` branch\)
-
+* `1.0.0-14-alpine` (points to `1.0.0`)
+* `1.0-14-alpine` (points to the latest `1.0.x`)
+* `1-14-alpine` (points to the latest `1.x`)
+* `latest-14-alpine` (points to the latest `master` branch)

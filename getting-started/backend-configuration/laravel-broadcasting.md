@@ -23,5 +23,3 @@ For [Laravel Broadcasting](https://laravel.com/docs/8.x/broadcasting) it's even 
 ],
 ```
 
-
-

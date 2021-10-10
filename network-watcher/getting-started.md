@@ -22,4 +22,3 @@ spec:
     app: my-app
     pws.soketi.app/accepts-new-connections: "yes"
 ```
-

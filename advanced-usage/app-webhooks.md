@@ -22,5 +22,3 @@ The value for `event_types` can be one of the following:
 * `member_added`
 * `member_removed`
 
-
-

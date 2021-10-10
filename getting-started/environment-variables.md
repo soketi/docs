@@ -12,14 +12,12 @@ DEBUG=1 pws-server start
 
 Having a separate .env file:
 
-```text
+```
 # Within your .env file
 PWS_DEBUG=1
 ```
 
-```text
+```
 pws-server start
 ```
-
-
 

@@ -12,7 +12,6 @@ yarn global add @soketi/pws
 
 To start the sample server, run:
 
-```text
+```
 pws-server start
 ```
-

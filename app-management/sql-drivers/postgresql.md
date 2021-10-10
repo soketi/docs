@@ -4,7 +4,7 @@ For the PostgreSQL driver, you need to configure the [PostgreSQL Database](../..
 
 The table format with the mandatory fields is the following:
 
-```text
+```
 CREATE TABLE IF NOT EXISTS apps (
     id varchar(255) PRIMARY KEY,
     "key" varchar(255) NOT NULL,
@@ -21,8 +21,7 @@ CREATE TABLE IF NOT EXISTS apps (
 
 The following environment variables are available for the PostgreSQL driver:
 
-| Name | Default | Possible values | Description |
-| :--- | :--- | :--- | :--- |
-| `APP_MANAGER_POSTGRES_TABLE` | `apps` | Any string | The table name to pull the data from. |
-| `APP_MANAGER_POSTGRES_VERSION` | `13.3` | Any string | The PostgreSQL version so that the Knex connector knows how to connect. |
-
+| Name                           | Default | Possible values | Description                                                             |
+| ------------------------------ | ------- | --------------- | ----------------------------------------------------------------------- |
+| `APP_MANAGER_POSTGRES_TABLE`   | `apps`  | Any string      | The table name to pull the data from.                                   |
+| `APP_MANAGER_POSTGRES_VERSION` | `13.3`  | Any string      | The PostgreSQL version so that the Knex connector knows how to connect. |

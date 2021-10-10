@@ -15,4 +15,3 @@ $pusher = new Pusher('app-key', 'app-secret', 'app-id', [
 ```
 
 For [SSL configurations](../ssl-configuration.md), set the `scheme` to `http` and `useTLS` to `true`
-

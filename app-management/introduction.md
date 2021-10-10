@@ -6,7 +6,6 @@ In this document, you will have a small insight about how you can configure your
 
 The current implemented ways of App Management are pretty rigid, but in the near future we will be making them be much more flexible, such as letting the schema be customized.
 
-| Name | Default | Possible values | Description |
-| :--- | :--- | :--- | :--- |
+| Name                 | Default | Possible values                          | Description                          |
+| -------------------- | ------- | ---------------------------------------- | ------------------------------------ |
 | `APP_MANAGER_DRIVER` | `array` | `array`, `dynamodb`, `mysql`, `postgres` | The driver used to retrieve the app. |
-

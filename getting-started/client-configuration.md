@@ -34,4 +34,3 @@ let client = new PusherJS('app-key', {
     ...
 });
 ```
-

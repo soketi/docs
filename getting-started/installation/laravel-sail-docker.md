@@ -1,4 +1,4 @@
-# Laravel Sail \(Docker\)
+# Laravel Sail (Docker)
 
 For Laravel Sail, you might use the [Docker](docker.md) containers and add a new service in your `docker-compose.yaml` file:
 
@@ -24,10 +24,9 @@ networks:
 
 All left to do is to configure the environment variables and to [configure the broadcasting driver](../backend-configuration/laravel-broadcasting.md):
 
-```text
+```
 PUSHER_HOST=pws
 PUSHER_APP_ID=app-id
 PUSHER_APP_KEY=app-key
 PUSHER_APP_SECRET=app-secret
 ```
-

@@ -4,7 +4,7 @@ For the MySQL driver, you need to configure the [MySQL Database](../../databases
 
 The table format with the mandatory fields is the following:
 
-```text
+```
 CREATE TABLE IF NOT EXISTS `apps` (
     `id` varchar(255) NOT NULL,
     `key` varchar(255) NOT NULL,
@@ -22,8 +22,7 @@ CREATE TABLE IF NOT EXISTS `apps` (
 
 The following environment variables are available for the MySQL driver:
 
-| Name | Default | Possible values | Description |
-| :--- | :--- | :--- | :--- |
-| `APP_MANAGER_MYSQL_TABLE` | `apps` | Any string | The table name to pull the data from. |
-| `APP_MANAGER_MYSQL_VERSION` | `8.0` | Any string | The MySQL version so that the Knex connector knows how to connect. |
-
+| Name                        | Default | Possible values | Description                                                        |
+| --------------------------- | ------- | --------------- | ------------------------------------------------------------------ |
+| `APP_MANAGER_MYSQL_TABLE`   | `apps`  | Any string      | The table name to pull the data from.                              |
+| `APP_MANAGER_MYSQL_VERSION` | `8.0`   | Any string      | The MySQL version so that the Knex connector knows how to connect. |

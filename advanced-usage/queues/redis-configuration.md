@@ -8,9 +8,7 @@ Each webhook message is being processed by a Worker. Each Worker can spawn multi
 
 You may manually define the concurrency for each Worker, which means "how many messages can be processed at once for each message".
 
-| Name | Default | Possible values | Description |
-| :--- | :--- | :--- | :--- |
-| `QUEUE_REDIS_CONCURRENCY` | `1` | Any integer | The number of parallel processed messages for each event. |
-
-
+| Name                      | Default | Possible values | Description                                               |
+| ------------------------- | ------- | --------------- | --------------------------------------------------------- |
+| `QUEUE_REDIS_CONCURRENCY` | `1`     | Any integer     | The number of parallel processed messages for each event. |
 

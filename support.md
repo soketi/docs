@@ -5,4 +5,3 @@ If you are using one or more Renoki Co. open-source packages in your production 
 You will sometimes get exclusive content on tips about Laravel, AWS or Kubernetes on Patreon and some early-access to projects or packages.
 
 [![](https://c5.patreon.com/external/logo/become_a_patron_button.png)](https://www.patreon.com/bePatron?u=10965171)
-
