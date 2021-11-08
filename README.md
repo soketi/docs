@@ -1,9 +1,10 @@
 ---
 description: pWS is a free, open-source alternative for the Pusher service. 📡
 ---
+
 # 📡 Meet pWS
 
-![](<.gitbook/assets/carbon (20).png>)
+![](.gitbook/assets/carbon-20-.png)
 
 pWS is a free, open-source Pusher drop-in alternative. 📡
 
@@ -11,4 +12,4 @@ The server is built on top of [uWebSockets.js](https://github.com/uNetworking/uW
 
 The difference between pWS and Socket.IO is in terms of speed. pWS is supported by Pusher-maintained clients, bringing portability and plug-and-play functionality with already frontend apps that already use Pusher clients.
 
-The server is entirely compatible with the [Pusher Protocol v7](https://pusher.com/docs/channels/library_auth_reference/pusher-websockets-protocol#version-7-2017-11) and tries to keep up with the [HTTP REST API reference](https://pusher.com/docs/channels/library_auth_reference/rest-api/) as fast as possible.
+The server is entirely compatible with the [Pusher Protocol v7](https://pusher.com/docs/channels/library\_auth\_reference/pusher-websockets-protocol#version-7-2017-11) and tries to keep up with the [HTTP REST API reference](https://pusher.com/docs/channels/library\_auth\_reference/rest-api/) as fast as possible.
