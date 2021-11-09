@@ -1,13 +1,9 @@
 # CLI Installation
 
-Install is done via NPM or Yarn CLI:
+Install is done via the NPM CLI:
 
 ```bash
 npm install -g @soketi/pws
-```
-
-```bash
-yarn global add @soketi/pws
 ```
 
 To start the sample server, run:
