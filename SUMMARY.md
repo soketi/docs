@@ -9,10 +9,11 @@
   * [CLI Installation](getting-started/installation/cli-installation.md)
   * [Docker](getting-started/installation/docker.md)
   * [Helm Charts](getting-started/installation/helm-charts.md)
-  * [Laravel Sail \(Docker\)](getting-started/installation/laravel-sail-docker.md)
+  * [Laravel Sail (Docker)](getting-started/installation/laravel-sail-docker.md)
 * [🔐 SSL Configuration](getting-started/ssl-configuration.md)
 * [💿 Environment Variables](getting-started/environment-variables.md)
-* [🎨 Client Configuration](getting-started/client-configuration.md)
+* [🎨 Client Configuration](getting-started/client-configuration/README.md)
+  * [Laravel Echo](getting-started/client-configuration/laravel-echo.md)
 * [💻 Backend Configuration](getting-started/backend-configuration/README.md)
   * [Laravel Broadcasting](getting-started/backend-configuration/laravel-broadcasting.md)
 * [🤝 Contributing](getting-started/contributing.md)
@@ -52,4 +53,3 @@
 * [✨ Getting Started](network-watcher/getting-started.md)
 * [🚀 Installation](network-watcher/installation.md)
 * [💿 Environment Variables](network-watcher/environment-variables.md)
-
