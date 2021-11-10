@@ -1,6 +1,7 @@
 # Table of contents
 
 * [📡 Meet pWS](README.md)
+* [🏆 Benchmarks](benchmarks.md)
 * [🎉 Support](support.md)
 
 ## Getting started
