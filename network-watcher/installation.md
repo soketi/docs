@@ -6,7 +6,7 @@ Whenever a new Github version is released, a Docker image with the same tag is b
 
 ### Helm Chart
 
-To deploy using Helm, consider reading the documentation on [the soketi chart repository](https://github.com/soketi/charts/tree/master/charts/pws).
+To deploy using Helm, consider reading the documentation on [the soketi chart repository](https://github.com/soketi/charts/tree/master/charts/soketi).
 
 ### Kubernetes YAML
 
