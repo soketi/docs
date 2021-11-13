@@ -1,6 +1,6 @@
 # 👾 DynamoDB
 
-pWS supports connecting to a DynamoDB table (either global or regional one) to pull data from it.
+soketi supports connecting to a DynamoDB table (either global or regional one) to pull data from it.
 
 This driver has proven to be highly efficient for the `apps` table since no strong consistency is needed and there are two indexes with which the app will be pulled. For this, a defined schema should be used, just like the SQL drivers.
 

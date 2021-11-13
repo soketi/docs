@@ -9,7 +9,7 @@ The configuration is heavily based on [`ioredis`](https://github.com/luin/ioredi
 | `DB_REDIS_DB`       | `0`         | Any integer     | The Redis database used for `redis` driver.                    |
 | `DB_REDIS_USERNAME` | `null`      | Any string      | The Redis username used for authentication for `redis` driver. |
 | `DB_REDIS_PASSWORD` | `null`      | Any string      | The Redis password used for authentication for `redis` driver. |
-| `DB_REDIS_PREFIX`   | `pws`       | Any string      | The key prefix for Redis. Only for the`redis` driver.          |
+| `DB_REDIS_PREFIX`   | `soketi`    | Any string      | The key prefix for Redis. Only for the`redis` driver.          |
 
 The following options are available when connecting to Redis through one or more Sentinels:
 

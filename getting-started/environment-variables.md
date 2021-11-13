@@ -7,17 +7,17 @@ For example, either by running the command with injected variables at the CLI le
 Injecting at the CLI level:
 
 ```bash
-DEBUG=1 pws-server start
+DEBUG=1 soketi start
 ```
 
 Having a separate .env file:
 
 ```
 # Within your .env file
-PWS_DEBUG=1
+SOKETI_DEBUG=1
 ```
 
 ```
-pws-server start
+soketi start
 ```
 

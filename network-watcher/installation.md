@@ -1,16 +1,16 @@
 # 🚀 Installation
 
-Network Watcher is available as a Docker container. It can be either installed manually by adding a container in your pods that also run pWS, or you can use the [soketi/pws Helm Chart](https://github.com/soketi/charts/tree/master/charts/pws) which comes out of the box with an already-set Network Watcher container you can easily turn on or off.
+Network Watcher is available as a Docker container. It can be either installed manually by adding a container in your pods that also run soketi, or you can use the [soketi/soketi Helm Chart](https://github.com/soketi/charts/tree/master/charts/pws) which comes out of the box with an already-set Network Watcher container you can easily turn on or off.
 
 Whenever a new Github version is released, a Docker image with the same tag is being pushed to the [soketi/network-watcher](https://hub.docker.com/r/soketi/network-watcher) registry. You may check there the available tags.
 
 ### Helm Chart
 
-To deploy using Helm, consider reading the documentation on [the pWS chart repository](https://github.com/soketi/charts/tree/master/charts/pws).
+To deploy using Helm, consider reading the documentation on [the soketi chart repository](https://github.com/soketi/charts/tree/master/charts/pws).
 
 ### Kubernetes YAML
 
-The following example states how you should basically set the Network Watcher container in your pods that run pWS.
+The following example states how you should basically set the Network Watcher container in your pods that run soketi.
 
 {% tabs %}
 {% tab title="Service" %}
@@ -18,16 +18,16 @@ The following example states how you should basically set the Network Watcher co
 apiVersion: v1
 kind: Service
 metadata:
-  name: pws-service
+  name: soketi-service
 spec:
   selector:
-    app: pws
-    pws.soketi.app/accepts-new-connections: "yes" # required
+    app: soketi
+    ws.soketi.app/accepts-new-connections: "yes" # required
   ports:
     - protocol: TCP
       port: 6001
       targetPort: 6001
-      name: pws
+      name: ws
 ```
 {% endtab %}
 
@@ -36,23 +36,23 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: pws
+  name: soketi
   labels:
-    app: pws
+    app: soketi
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: pws
+      app: soketi
   template:
     metadata:
       labels:
-        app: pws
-        pws.soketi.app/accepts-new-connections: "yes" # optional
+        app: soketi
+        ws.soketi.app/accepts-new-connections: "yes" # optional
     spec:
       containers:
-        - name: pws
-          image: soketi/pws:latest-14-alpine
+        - name: soketi
+          image: soketi/soketi:latest-14-alpine
           ports:
             - containerPort: 6001
         - name: network-watcher

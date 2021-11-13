@@ -1,6 +1,6 @@
 # Table of contents
 
-* [📡 Meet pWS](README.md)
+* [📡 soketi](README.md)
 * [🏆 Benchmarks](benchmarks.md)
 * [🎉 Support](support.md)
 

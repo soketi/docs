@@ -2,7 +2,7 @@
 
 ![](.gitbook/assets/medium\_90ms\_1536.png)
 
-pWS is really fast!
+soketi is really fast!
 
 In the scenario, there are 250 users that sit idle and receive 1 msg/s while 250 are actively connecting and disconnecting after 5 seconds.
 
@@ -16,17 +16,17 @@ To calculate the internal time the server needs to process and distribute the re
 INTERNAL_TIME = CALCULATED_DELAY - (NETWORK_PING * 2)
 ```
 
-In this scenario, the processing time (excluding networking overhead) it takes for pWS to process a message in this scenario is:
+In this scenario, the processing time (excluding networking overhead) it takes for soketi to process a message in this scenario is:
 
 ```
 INTERNAL_TIME = 119 - (40 * 2) = 119 - 80 = 39 ms
 ```
 
-So for a  2 vCPU 2 GB instance, it takes the server `39ms` to distribute the messages for 250 concurrent users, in addition to a connecting-disconnecting ramp-up amount of between 100 and 250 users, and pWS really handles all of that.
+So for a  2 vCPU 2 GB instance, it takes the server `39ms` to distribute the messages for 250 concurrent users, in addition to a connecting-disconnecting ramp-up amount of between 100 and 250 users, and soketi really handles all of that.
 
 ### Performance Caveats
 
-You may also want to consider additional overhead when deploying pWS:
+You may also want to consider additional overhead when deploying soketi:
 
 * networking overhead, like in this benchmark or when horizontally scaling with Redis
 * SSL/TLS overhead, that is caused by SSL natively
@@ -35,11 +35,11 @@ You may also want to consider additional overhead when deploying pWS:
 
 When going to deploy in production for critical workload, consider the following:
 
-#### Horizontally Scale pWS
+#### Horizontally Scale soketi
 
-pWS natively [scales horizontally with Redis Pub/Sub](advanced-usage/horizontal-scaling.md). This can add overhead for the internal Redis round-trips, but since you can horizontally scale, you are free to allocate resources dynamically.
+soketi natively [scales horizontally with Redis Pub/Sub](advanced-usage/horizontal-scaling.md). This can add overhead for the internal Redis round-trips, but since you can horizontally scale, you are free to allocate resources dynamically.
 
-By deploying pWS instances closer to Redis Read Replicas within a global Redis mesh, you can ensure low latency.
+By deploying soketi instances closer to Redis Read Replicas within a global Redis mesh, you can ensure low latency.
 
 #### Deploy closer to your users
 

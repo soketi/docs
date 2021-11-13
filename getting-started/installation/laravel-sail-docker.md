@@ -8,12 +8,12 @@ version: '3'
 services:
     # ...
 
-    pws:
-        image: 'quay.io/soketi/pws:latest-16-alpine'
+    soketi:
+        image: 'quay.io/soketi/soketi:latest-16-alpine'
         environment:
             DEBUG: '1'
         ports:
-            - '${PWS_PORT:-6001}:6001'
+            - '${SOKETI_PORT:-6001}:6001'
         networks:
             - sail
 
@@ -25,7 +25,7 @@ networks:
 All left to do is to configure the environment variables and to [configure the broadcasting driver](../backend-configuration/laravel-broadcasting.md):
 
 ```
-PUSHER_HOST=pws
+PUSHER_HOST=soketi
 PUSHER_APP_ID=app-id
 PUSHER_APP_KEY=app-key
 PUSHER_APP_SECRET=app-secret
