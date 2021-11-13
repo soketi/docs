@@ -1,6 +1,6 @@
 # 🚀 Installation
 
-Network Watcher is available as a Docker container. It can be either installed manually by adding a container in your pods that also run soketi, or you can use the [soketi/soketi Helm Chart](https://github.com/soketi/charts/tree/master/charts/pws) which comes out of the box with an already-set Network Watcher container you can easily turn on or off.
+Network Watcher is available as a Docker container. It can be either installed manually by adding a container in your pods that also run soketi, or you can use the [soketi/soketi Helm Chart](https://github.com/soketi/charts/tree/master/charts/soketi) which comes out of the box with an already-set Network Watcher container you can easily turn on or off.
 
 Whenever a new Github version is released, a Docker image with the same tag is being pushed to the [soketi/network-watcher](https://hub.docker.com/r/soketi/network-watcher) registry. You may check there the available tags.
 
