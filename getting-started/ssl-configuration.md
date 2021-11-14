@@ -4,7 +4,7 @@ SSL support comes out-of-the-box with both the HTTP API and the WS Server. If on
 
 [Learn more about how to set environment variables to your server.](environment-variables.md)
 
-### SSL Settings
+### Environment Variables
 
 Setting one of the following variables will create an SSL version of the app.
 

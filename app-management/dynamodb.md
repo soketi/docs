@@ -63,7 +63,11 @@ const params = {
 ddb.putItem(params);
 ```
 
-**It's worth noting that the Webhooks field is stored as a JSON-encoded string.**
+{% hint style="info" %}
+Please take care when formatting the Webhooks field: it is stored as a JSON-encoded string.
+{% endhint %}
+
+### Environment Variables
 
 The following environment variables are available for the DynamoDB driver:
 

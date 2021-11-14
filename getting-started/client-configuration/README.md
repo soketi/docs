@@ -1,7 +1,5 @@
 # 🎨 Client Configuration
 
-## Getting Started
-
 Pusher clients are fully compatible with the WebSocket protocol implemented in this project. You just have to point the client to the server address:
 
 ```javascript

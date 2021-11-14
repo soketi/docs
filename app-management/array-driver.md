@@ -8,6 +8,8 @@ In case you opt-in for another `APP_MANAGER_DRIVER`, these are the variables you
 
 For the rate limits and max connections options, setting limits to `-1` will disable the rate limits and/or max allowed connections.
 
+### Environment Variables
+
 | Name                                     | Default      | Possible values                                            | Description                                                                                                                                                                                   |
 | ---------------------------------------- | ------------ | ---------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `DEFAULT_APP_ID`                         | `app-id`     | Any string                                                 | The default app id for the array driver.                                                                                                                                                      |
@@ -20,6 +22,8 @@ For the rate limits and max connections options, setting limits to `-1` will dis
 | `DEFAULT_APP_MAX_CLIENT_EVENTS_PER_SEC`  | `-1`         | Any integer                                                | The default app's limit of client events broadcasted per second, by a single socket. You can [configure rate limiting database store](../rate-limiting-and-limits/broadcast-rate-limiting.md) |
 | `DEFAULT_APP_MAX_READ_REQ_PER_SEC`       | `-1`         | Any integer                                                | The default app's limit of read endpoint calls per second. You can [configure rate limiting database store](../rate-limiting-and-limits/broadcast-rate-limiting.md)                           |
 | `DEFAULT_APP_WEBHOOKS`                   | `[]`         | `[{"url": "string", "event_types": ["string", ...]}, ...]` | The webhooks list for the app. Please look below                                                                                                                                              |
+
+### Webhooks formatting
 
 For Webhooks, the available `event_types` values that can be set are explained in the webhooks section: [App Webhooks](../advanced-usage/app-webhooks.md).
 

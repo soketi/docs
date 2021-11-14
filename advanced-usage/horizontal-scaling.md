@@ -10,6 +10,8 @@ You can configure soketi to run with Redis as a primary adapter for the local-pe
 $ ADAPTER_DRIVER=redis soketi start
 ```
 
+### Environment Variables
+
 | Name                   | Default | Possible values  | Description                                                                              |
 | ---------------------- | ------- | ---------------- | ---------------------------------------------------------------------------------------- |
 | `ADAPTER_DRIVER`       | `local` | `redis`, `local` | The adapter driver to use to store and retrieve each app with channels' persistent data. |

@@ -2,11 +2,15 @@
 
 The metrics feature allows you to store metrics at the node level. This can easily be done under the hood with Prometheus. All you need to do is to set up your own Prometheus server and make it scrap the HTTP REST API of each node that soketi runs on, on the `/metrics` endpoint.
 
+### Environment Variables
+
 | Name                        | Default      | Possible values | Description                                                                                                         |
 | --------------------------- | ------------ | --------------- | ------------------------------------------------------------------------------------------------------------------- |
 | `METRICS_ENABLED`           | `false`      | `true`, `false` | Whether to enable the metrics or not. For Prometheus, enabling it will expose a `/metrics` endpoint.                |
 | `METRICS_DRIVER`            | `prometheus` | `prometheus`    | The driver used to scrap the metrics. For now, only `prometheus` is available. Soon, Pushgateway will be available. |
 | `METRICS_PROMETHEUS_PREFIX` | `soketi_`    | Any string      | The prefix to add to the metrics in Prometheus to differentiate from other metrics in Prometheus.                   |
+
+### Enabling Metrics
 
 You can enable the server to expose a `/metrics` endpoint at the given `6001` port by using the `METRICS_ENABLED` environment variable.
 

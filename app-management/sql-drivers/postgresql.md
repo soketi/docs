@@ -19,6 +19,8 @@ CREATE TABLE IF NOT EXISTS apps (
 );
 ```
 
+### Environment Variables
+
 The following environment variables are available for the PostgreSQL driver:
 
 | Name                           | Default | Possible values | Description                                                             |
