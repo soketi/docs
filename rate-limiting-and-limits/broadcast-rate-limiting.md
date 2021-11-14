@@ -2,7 +2,9 @@
 
 Rate limiting helps you throttle the number of requests for client events, backend events or HTTP REST API calls for the read endpoints (like `/channels`) at the app level. This will help you have enough control over bad-intentioned users.
 
+{% hint style="warning" %}
 Setting the rate limiter driver depends on the architecture the server is deployed in. For local, single-instance servers, the default local driver is alright, but for multi-node, a third-party database is needed.
+{% endhint %}
 
 Settings for the limits are available at the app level. [Read the documentation about App Management](../app-management/introduction.md).
 

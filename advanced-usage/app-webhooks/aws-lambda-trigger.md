@@ -1,5 +1,9 @@
 # 📐 AWS Lambda trigger
 
+{% hint style="info" %}
+This feature is available starting from version 0.15
+{% endhint %}
+
 soketi allows you to configure Lambda triggers instead of setting up your own HTTP server. This comes in handy when you want to process the backend, but you want to reduce the complexity of creating and maintaining a backend to catch webhooks.
 
 ### Configure Lambda triggers

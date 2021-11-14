@@ -1,6 +1,6 @@
-# 🔗 HTTP Webhooks
+# 🔗 App Webhooks
 
-Before diving into the webhooks documentation, consider reading [Pusher's documentation about webhooks](https://pusher.com/docs/channels/server\_api/webhooks) to understand how this process works.
+Before diving into the webhooks documentation, consider reading [Pusher's documentation about webhooks](https://pusher.com/docs/channels/server_api/webhooks) to understand how this process works.
 
 Each retrieved app contains a `webhooks` array which will contain elements formatted like this:
 

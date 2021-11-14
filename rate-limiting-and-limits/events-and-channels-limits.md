@@ -6,7 +6,7 @@
 | ----------------------- | ------- | ------------------ | -------------------------------------------------------------------------------------------------- |
 | `HTTP_MAX_REQUEST_SIZE` | `100`   | Any number (in MB) |  The maximum size, in MB, for the total size of the request before throwing `413 Entity Too Large` |
 
-###
+
 
 ### Events Soft Limits
 
