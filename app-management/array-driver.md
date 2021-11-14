@@ -25,7 +25,7 @@ For the rate limits and max connections options, setting limits to `-1` will dis
 
 ### Webhooks formatting
 
-For Webhooks, the available `event_types` values that can be set are explained in the webhooks section: [App Webhooks](../advanced-usage/app-webhooks/).
+For Webhooks, the available `event_types` values that can be set are explained in the webhooks section: [App Webhooks](../advanced-usage/app-webhooks.md).
 
 * `client_event`
 * `channel_occupied`
