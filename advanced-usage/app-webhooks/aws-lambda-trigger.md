@@ -86,4 +86,6 @@ As you can see, it's really easy to implement Lambda and catch webhooks.
 Please note that you should always check if the HMAC of the payload matches the one received via `headers`. If it does not match, it's possible that the data has been tampered with and you should never process the message.
 {% endhint %}
 
+{% hint style="info" %}
 The secret can be injected in the [Environment Variables](https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html) section from your Lambda function.
+{% endhint %}
