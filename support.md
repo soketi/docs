@@ -2,4 +2,6 @@
 
 ![](.gitbook/assets/mona\_heart\_featured.0.jpg)****
 
-**If you are using one of our open-source packages in your production apps, in presentation demos, hobby projects, school projects or so, sponsor our work with **[**Github Sponsors**](https://github.com/sponsors/rennokki)**. 📦**
+**soketi is meant to be free, forever. Having a good companion for developing real-time apps locally should not involve any third-party and having a reliable option to deploy behind a firewall makes soketi a good option.**
+
+**Development is done by investing time, so any help coming is appreciated. You can sponsor the development  via **[**Github Sponsors**](https://github.com/sponsors/rennokki)**.**

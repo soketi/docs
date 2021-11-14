@@ -1,6 +1,6 @@
 # Table of contents
 
-* [📡 soketi](README.md)
+* [📡 About soketi](README.md)
 * [🏆 Benchmarks](benchmarks.md)
 * [🎉 Support](support.md)
 
