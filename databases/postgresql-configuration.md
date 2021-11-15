@@ -1,6 +1,8 @@
 # 🐘 PostgreSQL Configuration
 
-The configuration that is needed to connect to a PostgreSQL server.
+{% hint style="success" %}
+This database supports [Database Pooling](database-pooling.md).
+{% endhint %}
 
 | Name                   | Default     | Possible values | Description                                         |
 | ---------------------- | ----------- | --------------- | --------------------------------------------------- |
@@ -9,5 +11,3 @@ The configuration that is needed to connect to a PostgreSQL server.
 | `DB_POSTGRES_USERNAME` | `root`      | Any string      | The PostgreSQL username used for `postgres` driver. |
 | `DB_POSTGRES_PASSWORD` | `password`  | Any string      | The PostgreSQL password used for `postgres` driver. |
 | `DB_POSTGRES_DATABASE` | `main`      | Any string      | The PostgreSQL database used for `postgres` driver. |
-
-This database supports [Database Pooling](database-pooling.md).

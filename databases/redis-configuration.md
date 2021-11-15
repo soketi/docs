@@ -1,6 +1,10 @@
 # 🧠 Redis Configuration
 
-The configuration is heavily based on [`ioredis`](https://github.com/luin/ioredis). It is therefore recommended to check out [their documentation regarding the options](https://github.com/luin/ioredis/blob/master/API.md#new-redisport-host-options). However, keep in mind that not all options offered by `ioredis` have been implemented.
+The configuration is heavily based on [`ioredis`](https://github.com/luin/ioredis). It is therefore recommended to check out [their documentation regarding the options](https://github.com/luin/ioredis/blob/master/API.md#new-redisport-host-options).
+
+{% hint style="warning" %}
+Keep in mind that not all options offered by `ioredis` have been implemented.
+{% endhint %}
 
 ### Environment Variables
 

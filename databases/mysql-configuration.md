@@ -1,6 +1,8 @@
 # 🐬 MySQL Configuration
 
-The configuration that is needed to connect to a MySQL server.
+{% hint style="success" %}
+This database supports [Database Pooling](database-pooling.md).
+{% endhint %}
 
 | Name                | Default     | Possible values | Description                                 |
 | ------------------- | ----------- | --------------- | ------------------------------------------- |
@@ -9,5 +11,3 @@ The configuration that is needed to connect to a MySQL server.
 | `DB_MYSQL_USERNAME` | `root`      | Any string      | The MySQL username used for `mysql` driver. |
 | `DB_MYSQL_PASSWORD` | `password`  | Any string      | The MySQL password used for `mysql` driver. |
 | `DB_MYSQL_DATABASE` | `main`      | Any string      | The MySQL database used for `mysql` driver. |
-
-This database supports [Database Pooling](database-pooling.md).

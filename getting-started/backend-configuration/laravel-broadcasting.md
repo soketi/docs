@@ -1,6 +1,8 @@
 # Laravel Broadcasting
 
-For [Laravel Broadcasting](https://laravel.com/docs/8.x/broadcasting) it's even easier, just replace the `pusher` configuration from `config/broadcasting.php` with the following code:
+For [Laravel Broadcasting](https://laravel.com/docs/8.x/broadcasting) it's even easier, just replace the `pusher` configuration from `config/broadcasting.php` with the following code.
+
+The variables will be injected from the [frontend configuration](../client-configuration/laravel-echo.md).
 
 ```php
 'connections' => [
@@ -22,4 +24,3 @@ For [Laravel Broadcasting](https://laravel.com/docs/8.x/broadcasting) it's even 
     ],
 ],
 ```
-

@@ -2,7 +2,7 @@
 
 soketi supports connecting to a DynamoDB table (either global or regional one) to pull data from it.
 
-This driver has proven to be highly efficient for the `apps` table since no strong consistency is needed and there are two indexes with which the app will be pulled. For this, a defined schema should be used, just like the SQL drivers.
+This driver has proven to be highly efficient for the `apps` table since no strong consistency is needed and there are two indexes that will be used (`AppId` and `AppKey`). For this, a defined schema should be used, just like the SQL drivers.
 
 The following example is written in Javascript, but the schema remains the same:
 
@@ -65,6 +65,10 @@ ddb.putItem(params);
 
 {% hint style="info" %}
 Please take care when formatting the Webhooks field: it is stored as a JSON-encoded string.
+{% endhint %}
+
+{% hint style="info" %}
+AWS has [detailed documentation with many ways to set credentials for the Lambda client](https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/setting-credentials-node.html). soketi uses the same convention so you are free to set your credentials from the `.aws` folder, from environment variables or from the EC2/ECS profile (in case you run the app within EC2 or ECS)
 {% endhint %}
 
 ### Environment Variables
