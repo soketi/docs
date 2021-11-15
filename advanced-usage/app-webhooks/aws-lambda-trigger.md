@@ -30,7 +30,9 @@ If you specify a `lambda_function` instead of the `url`, you can enable the Lamb
 
 ### Setting credentials for the AWS client
 
-Under the hood, AWS SDK is used and it requires authentication. AWS has [detailed documentation with many ways to set credentials for the Lambda client](https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/setting-credentials-node.html). soketi uses the same convention so you are free to set your credentials from the `.aws` folder, from environment variables, from the EC2 profile, or you can set them by yourself from the webhook definition:
+Under the hood, AWS SDK is used and it requires authentication. AWS has [detailed documentation with many ways to set credentials for the Lambda client](https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/setting-credentials-node.html). soketi uses the same convention so you are free to set your credentials from the `.aws` folder, from environment variables, from the EC2 profile, as they will be automatically injected.
+
+For advanced usage, like when you want to register Lambdas from another AWS accounts, you can configure the credentials by yourself from the webhook definition through a `lambda` key:
 
 ```json
 {
@@ -49,7 +51,7 @@ Under the hood, AWS SDK is used and it requires authentication. AWS has [detaile
 ```
 
 {% hint style="warning" %}
-Keep in mind that hard-coding credentials can bring security risks, so in case you deploy your app to EC2 or ECS, for example, you should not specify credentials and give your EC2 instances' roles the permission to invoke your lambdas.
+Keep in mind that hard-coding credentials can bring security risks. In case you deploy soketi within an EC2 instance or an ECS container, you should not specify credentials and, instead, give your EC2 instances or your ECS containers the permission to invoke your lambdas via their service role, as credentials will be automatically injected and recognized by soketi.
 {% endhint %}
 
 ### Example Lambda code
