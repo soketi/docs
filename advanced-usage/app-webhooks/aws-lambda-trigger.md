@@ -24,9 +24,14 @@ If you specify a `lambda_function` instead of the `url`, you can enable the Lamb
 ```json
 {
     "lambda_function": "my-function",
+    "region": "us-esat-1",
     "event_types": ["string", ...]
 }
 ```
+
+{% hint style="info" %}
+You must specify the `region` when defining `lambda_function`.
+{% endhint %}
 
 ### Setting credentials for the AWS client
 
@@ -39,8 +44,8 @@ For advanced usage, like when you want to register Lambdas from another AWS acco
     "lambda_function": "my-function",
     "event_types": ["string", ...],
     "lambda": {
+        "region": "eu-central-1",
         "client_options": {
-            "region": "eu-central-1",
             "credentials": {
                 "accessKeyId": "...",
                 "secretAccessKey": "..."
