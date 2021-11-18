@@ -68,7 +68,7 @@ Please take care when formatting the Webhooks field: it is stored as a JSON-enco
 {% endhint %}
 
 {% hint style="info" %}
-AWS has [detailed documentation with many ways to set credentials for the Lambda client](https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/setting-credentials-node.html). soketi uses the same convention so you are free to set your credentials from the `.aws` folder, from environment variables or from the EC2/ECS profile (in case you run the app within EC2 or ECS)
+AWS has [detailed documentation with many ways to set credentials for the DynamoDB client](https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/setting-credentials-node.html). soketi uses the same convention so you are free to set your credentials from the `.aws` folder, from environment variables or from the EC2/ECS profile (in case you run the app within EC2 or ECS)
 {% endhint %}
 
 ### Environment Variables

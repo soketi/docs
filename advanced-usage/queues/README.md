@@ -4,6 +4,10 @@ Queues can be used to defer some code from running in the current WebSocket serv
 
 When running queues with Redis, soketi will add the specific job details to run in Redis and it will eventually be later picked by one of the workers so that your current response time for your users won't suffer.
 
+{% hint style="info" %}
+To run queues with Redis, you need to configure the [Redis Database connector](../../databases/redis-configuration.md).
+{% endhint %}
+
 ### Environment Variables
 
 | Name           | Default | Possible values | Description                     |

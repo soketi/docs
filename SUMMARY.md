@@ -48,6 +48,7 @@
 * [🔗 HTTP Webhooks](advanced-usage/app-webhooks.md)
   * [📐 AWS Lambda trigger](advanced-usage/app-webhooks/aws-lambda-trigger.md)
 * [🕛 Queues](advanced-usage/queues/README.md)
+  * [🏃 AWS SQS](advanced-usage/queues/aws-sqs.md)
   * [🧠 Horizontal Scaling with Redis](advanced-usage/queues/redis-configuration.md)
 
 ## Network Watcher
