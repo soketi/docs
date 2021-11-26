@@ -10,6 +10,10 @@ You can configure soketi to run with Redis as a primary adapter for the local-pe
 $ ADAPTER_DRIVER=redis soketi start
 ```
 
+{% hint style="info" %}
+Keep in mind: adapters like Redis are used for horizontal scaling only. Configuring and running Redis when running with `local` adapter will have no effect on the app itself since it's not actively used.
+{% endhint %}
+
 ### Environment Variables
 
 | Name                   | Default | Possible values  | Description                                                                              |

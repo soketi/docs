@@ -43,13 +43,13 @@
 ## Advanced Usage
 
 * [↔ Horizontal Scaling](advanced-usage/horizontal-scaling.md)
-* [🛑 Graceful Shutdowns & Traffic Monitoring](advanced-usage/graceful-shutdowns.md)
-* [📈 Scraping Prometheus Metrics](advanced-usage/scraping-prometheus-metrics.md)
+* [🛑 Graceful Shutdowns & Real-time monitoring](advanced-usage/graceful-shutdowns.md)
+* [📈 Prometheus Metrics](advanced-usage/scraping-prometheus-metrics.md)
 * [🔗 HTTP Webhooks](advanced-usage/app-webhooks.md)
   * [📐 AWS Lambda trigger](advanced-usage/app-webhooks/aws-lambda-trigger.md)
 * [🕛 Queues](advanced-usage/queues/README.md)
+  * [🧠 Redis](advanced-usage/queues/redis-configuration.md)
   * [🏃 AWS SQS](advanced-usage/queues/aws-sqs.md)
-  * [🧠 Horizontal Scaling with Redis](advanced-usage/queues/redis-configuration.md)
 
 ## Network Watcher
 

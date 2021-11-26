@@ -4,7 +4,9 @@ You may declare the parameters using environment variables directly passed in th
 
 For example, either by running the command with injected variables at the CLI level or having an .env file with declared variables is either a good way.
 
-Injecting at the CLI level:
+A lot of features can be enabled using environment variables. The specific variable files to use are explained on each documentation section.
+
+You can be injecting them at the CLI level:
 
 ```bash
 DEBUG=1 soketi start
@@ -20,4 +22,3 @@ SOKETI_DEBUG=1
 ```
 soketi start
 ```
-

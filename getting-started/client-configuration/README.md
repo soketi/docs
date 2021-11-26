@@ -19,7 +19,7 @@ client.subscribe('chat-room').bind('message', (message) => {
 });
 ```
 
-## SSL Configuration
+### SSL Configuration
 
 When running the server in SSL mode, you might want to have `forceTLS` set to `true`. This way, the client will connect to the `wss` protocol instead of `ws`:
 
