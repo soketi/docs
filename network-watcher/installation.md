@@ -52,11 +52,11 @@ spec:
     spec:
       containers:
         - name: soketi
-          image: soketi/soketi:latest-14-alpine
+          image: soketi/soketi:0.17-16-alpine
           ports:
             - containerPort: 6001
         - name: network-watcher
-          image: quay.io/soketi/network-watcher:4.2
+          image: quay.io/soketi/network-watcher:6
           env:
             - name: KUBE_CONNECTION
               value: cluster
