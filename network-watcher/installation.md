@@ -28,10 +28,6 @@ spec:
       port: 6001
       targetPort: 6001
       name: ws
-    - protocol: TCP
-      port: 9601
-      targetPort: 9601
-      name: metrics
 ```
 {% endtab %}
 
@@ -61,7 +57,6 @@ spec:
           image: soketi/soketi:0.17-16-alpine
           ports:
             - containerPort: 6001
-            - containerPort: 9601
         - name: network-watcher
           image: quay.io/soketi/network-watcher:6
           env:
