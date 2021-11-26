@@ -3,7 +3,7 @@
 When running with Docker, all you have to do is to find the right image you want to install:
 
 ```bash
-docker run -p 6001:6001 quay.io/soketi/soketi:0.16-16-alpine
+docker run -p 6001:6001 quay.io/soketi/soketi:0.17-16-alpine
 ```
 
 Whenever a release, commit, or master merge is done, the image containing the required code to run the application in Docker is being published to `quay.io/soketi/soketi` and you will be able to use it.
