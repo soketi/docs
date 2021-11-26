@@ -16,11 +16,11 @@ quay.io/soketi/soketi:[git_version]-[node_version]
 
 `[git_version]` represent the version released to the Git repository. This usually is `x.x.x`, unless it's a commit or the master branch. For commit, the value is the SHA commit and for the master branch, the value is `latest`.
 
-`[node_version]`, for now, is only `14-alpine`. This will change in the future to support multiple node versions.
+`[node_version]`, for now, is only `16-alpine`. This will change in the future to support multiple node versions.
 
 The following example versions are correct:
 
-* `1.0.0-14-alpine` (points to `1.0.0`)
-* `1.0-14-alpine` (points to the latest `1.0.x`)
-* `1-14-alpine` (points to the latest `1.x`)
-* `latest-14-alpine` (points to the latest `master` branch)
+* `1.0.0-16-alpine` (points to `1.0.0`)
+* `1.0-16-alpine` (points to the latest `1.0.x`)
+* `1-16-alpine` (points to the latest `1.x`)
+* `latest-16-alpine` (points to the latest `master` branch)
