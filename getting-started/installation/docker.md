@@ -6,6 +6,8 @@ When running with Docker, all you have to do is to find the right image you want
 docker run -p 6001:6001 quay.io/soketi/soketi:0.17-16-alpine
 ```
 
+### Alpine-based Image
+
 Whenever a release, commit, or master merge is done, the image containing the required code to run the application in Docker is being published to `quay.io/soketi/soketi` and you will be able to use it.
 
 The image tags are matching the following rule:
@@ -20,7 +22,19 @@ quay.io/soketi/soketi:[git_version]-[node_version]
 
 The following example versions are correct:
 
-* `1.0.0-16-alpine` (points to `1.0.0`)
-* `1.0-16-alpine` (points to the latest `1.0.x`)
+* `0.17.1-16-alpine` (points to `0.17.1`)
+* `0.17-16-alpine` (points to the latest `0.17.x`)
 * `1-16-alpine` (points to the latest `1.x`)
 * `latest-16-alpine` (points to the latest `master` branch)
+
+### Distroless-based Image
+
+Thanks to [@nsmith5](https://github.com/nsmith5) ([Pull Request](https://github.com/soketi/soketi/pull/178)), starting with `0.18.0`, Distroless-based images are also shipped.
+
+> _The advantage of using a distroless container is that in the case of a remote code execution vulnerability the attacker cannot open a shell because there are no shells installed in the container. This makes an attack quite a bit harder to pull off, but can also make running something like `kubectl exec <your soketi pod> -- /bin/bash` to debug harder as, again, there is no shell in the container._
+
+The tagging is the same as the Alpine-based images, but the tags are suffixed with `-distroless` instead of `-alpine`.
+
+```bash
+docker run -p 6001:6001 quay.io/soketi/soketi:0.18-16-distroless
+```
