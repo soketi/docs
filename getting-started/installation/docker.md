@@ -38,3 +38,7 @@ The tagging is the same as the Alpine-based images, but the tags are suffixed wi
 ```bash
 docker run -p 6001:6001 quay.io/soketi/soketi:0.18-16-distroless
 ```
+
+{% hint style="warning" %}
+It's highly encouraged to use distroless images in production to avoid any security issues with RCE. Keep in mind that debugging is not enabled and it might be harder to debug live containers/pods.
+{% endhint %}
