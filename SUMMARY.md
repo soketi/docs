@@ -3,6 +3,7 @@
 * [📡 About soketi](README.md)
 * [🏆 Benchmarks](benchmarks.md)
 * [🎉 Support](support.md)
+* [🤝 Contributing](getting-started/contributing.md)
 
 ## Getting started
 
@@ -17,28 +18,21 @@
   * [Laravel Echo](getting-started/client-configuration/laravel-echo.md)
 * [💻 Backend Configuration](getting-started/backend-configuration/README.md)
   * [Laravel Broadcasting](getting-started/backend-configuration/laravel-broadcasting.md)
-* [🤝 Contributing](getting-started/contributing.md)
 
 ## App Management
 
 * [🎟 Introduction](app-management/introduction.md)
 * [🧬Array Driver](app-management/array-driver.md)
 * [🛢 SQL Drivers](app-management/sql-drivers/README.md)
-  * [🐘 PostgreSQL](app-management/sql-drivers/postgresql.md)
   * [🐬 MySQL](app-management/sql-drivers/mysql.md)
+  * [🐘 PostgreSQL](app-management/sql-drivers/postgresql.md)
+  * [⛲ Database Pooling](app-management/sql-drivers/database-pooling.md)
 * [👾 DynamoDB](app-management/dynamodb.md)
 
 ## Rate Limiting & Limits
 
 * [⛔ Broadcast Rate Limiting](rate-limiting-and-limits/broadcast-rate-limiting.md)
 * [👥 Events & Channels Limits](rate-limiting-and-limits/events-and-channels-limits.md)
-
-## Databases
-
-* [🐬 MySQL Configuration](databases/mysql-configuration.md)
-* [🐘 PostgreSQL Configuration](databases/postgresql-configuration.md)
-* [🧠 Redis Configuration](databases/redis-configuration.md)
-* [⛲ Database Pooling](databases/database-pooling.md)
 
 ## Advanced Usage
 
@@ -49,10 +43,8 @@
   * [📐 AWS Lambda trigger](advanced-usage/app-webhooks/aws-lambda-trigger.md)
 * [🕛 Queues](advanced-usage/queues/README.md)
   * [🧠 Redis](advanced-usage/queues/redis-configuration.md)
-  * [🏃 AWS SQS](advanced-usage/queues/aws-sqs.md)
 
 ## Network Watcher
 
-* [✨ Getting Started](network-watcher/getting-started.md)
 * [🚀 Installation](network-watcher/installation.md)
 * [💿 Environment Variables](network-watcher/environment-variables.md)

@@ -1,5 +1,5 @@
 # 🤝 Contributing
 
-Contributing is highly appreciated. Please consider the [CONTRIBUTING](https://github.com/soketi/soketi/blob/master/CONTRIBUTING.md) details and you can start by checking the current version plans and tasks for the current or next upcoming version: [https://github.com/soketi/soketi/projects](https://github.com/soketi/soketi/projects)
+All contributions to soketi are highly appreciated. Please consider the [CONTRIBUTING](https://github.com/soketi/soketi/blob/master/CONTRIBUTING.md) for more information on making contributions. In addition, you may review our current development plans and tasks for the current and upcoming versions via [GitHub Projects](https://github.com/soketi/soketi/projects](https://github.com/soketi/soketi/projects).
 
-All contributions are being credited entirely and will look good on your resume.
+We make every effort to give all contributors credit for their contribution in release notes, etc.

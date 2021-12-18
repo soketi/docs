@@ -1,10 +1,8 @@
 # 👾 DynamoDB
 
-soketi supports connecting to a DynamoDB table (either global or regional one) to pull data from it.
+soketi supports connecting to a DynamoDB table (global or regional) to retrieve app data. This driver is highly efficient for this purpose since no strong consistency is needed and there are two indexes that will be used (`AppId` and `AppKey`).
 
-This driver has proven to be highly efficient for the `apps` table since no strong consistency is needed and there are two indexes that will be used (`AppId` and `AppKey`). For this, a defined schema should be used, just like the SQL drivers.
-
-The following example is written in Javascript, but the schema remains the same:
+Of course, soketi requires your DynamoDB table to use a predefined schema so that soketi knows how to retrieve your app data. The following DynamoDB schema is written in Javascript, but may be translated to other formats as needed:
 
 ```javascript
 ddb.createTable({
@@ -42,8 +40,11 @@ ddb.createTable({
 
     // ...
 });
+```
 
-// Inserting would look like this:
+Inserting data into this table would look like the following:
+
+```javascript
 const params = {
     TableName: 'apps',
     Item: {
@@ -64,19 +65,19 @@ ddb.putItem(params);
 ```
 
 {% hint style="info" %}
-Please take care when formatting the Webhooks field: it is stored as a JSON-encoded string.
+Note that the "Webhooks" field is stored as a JSON-encoded string.
 {% endhint %}
 
 {% hint style="info" %}
-AWS has [detailed documentation with many ways to set credentials for the DynamoDB client](https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/setting-credentials-node.html). soketi uses the same convention so you are free to set your credentials from the `.aws` folder, from environment variables or from the EC2/ECS profile (in case you run the app within EC2 or ECS)
+AWS has [detailed documentation with many ways to define credentials for the DynamoDB client](https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/setting-credentials-node.html). soketi uses the same conventions, so you are free to define your AWS credentials in the `.aws` folder, environment variables, or from an EC2 / ECS profile.
 {% endhint %}
 
 ### Environment Variables
 
-The following environment variables are available for the DynamoDB driver:
+The following environment variables are used to control the behavior of the DynamoDB app driver:
 
 | **Name**                        | Default     | Possible values | Description                                                                                           |
 | ------------------------------- | ----------- | --------------- | ----------------------------------------------------------------------------------------------------- |
-| `APP_MANAGER_DYNAMODB_TABLE`    | `apps`      | Any string      | The table name to pull the data from.                                                                 |
-| `APP_MANAGER_DYNAMODB_REGION`   | `us-east-1` | Any AWS region  | The DynamoDB region the table was deployed in. For global tables, pick any region.                    |
-| `APP_MANAGER_DYNAMODB_ENDPOINT` | `''`        | Any URL         | The endpoint to connect to DynamoDB. Optional, used for testing or for local DynamoDB configurations. |
+| `APP_MANAGER_DYNAMODB_TABLE`    | `apps`      | Any string      | The table to pull the app data from.                                                                 |
+| `APP_MANAGER_DYNAMODB_REGION`   | `us-east-1` | Any AWS region  | The DynamoDB region the table was deployed to. For global tables, you may choose any region.                    |
+| `APP_MANAGER_DYNAMODB_ENDPOINT` | `''`        | Any URL         | The endpoint used to connect to DynamoDB. May be used for testing or for local DynamoDB configurations. |

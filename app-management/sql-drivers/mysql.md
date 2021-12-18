@@ -1,8 +1,20 @@
 # 🐬 MySQL
 
-For the MySQL driver, you need to configure the [MySQL Database](../../databases/mysql-configuration.md).
+When using the MySQL app driver, first you should configure your MySQL connection credentials as [environment variables](../getting-started/environment-variables.md):
 
-The table format with the mandatory fields is the following:
+| Name                | Default     | Possible values | Description                                 |
+| ------------------- | ----------- | --------------- | ------------------------------------------- |
+| `DB_MYSQL_HOST`     | `127.0.0.1` | Any string      | The MySQL host.     |
+| `DB_MYSQL_PORT`     | `3306`      | Any integer     | The MySQL port.     |
+| `DB_MYSQL_USERNAME` | `root`      | Any string      | The MySQL username. |
+| `DB_MYSQL_PASSWORD` | `password`  | Any string      | The MySQL password. |
+| `DB_MYSQL_DATABASE` | `main`      | Any string      | The MySQL database. |
+
+{% hint style="success" %}
+This database supports [database connection pooling](database-pooling.md).
+{% endhint %}
+
+Once you have configured your MySQL database credentials, you should create a table with the following structure:
 
 ```
 CREATE TABLE IF NOT EXISTS `apps` (
@@ -22,10 +34,10 @@ CREATE TABLE IF NOT EXISTS `apps` (
 
 ### Environment Variables
 
-The following environment variables are available for the MySQL driver:
+The following environment variables are used to define the behavior of the MySQL app driver:
 
 | Name                        | Default | Possible values | Description                                                                                                        |
 | --------------------------- | ------- | --------------- | ------------------------------------------------------------------------------------------------------------------ |
-| `APP_MANAGER_MYSQL_TABLE`   | `apps`  | Any string      | The table name to pull the data from.                                                                              |
-| `APP_MANAGER_MYSQL_VERSION` | `8.0`   | Any string      | The MySQL version so that the Knex connector knows how to connect.                                                 |
-| `APP_MANAGER_MYSQL_USE_V2`  | `false` | `true`, `false` | **Only for soketi 0.14+.** If you're using MySQL 8.0+ and have authentication issues, fix issues by enabling this. |
+| `APP_MANAGER_MYSQL_TABLE`   | `apps`  | Any string      | The table to pull the app data from.                                                                              |
+| `APP_MANAGER_MYSQL_VERSION` | `8.0`   | Any string      | The MySQL version (utilized by the underlying Knex database abstraction layer).                                                 |
+| `APP_MANAGER_MYSQL_USE_V2`  | `false` | `true`, `false` | **soketi 0.14+.** If you're using MySQL 8.0+ and experience authentication issues, you may enable this option. |

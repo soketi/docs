@@ -1,8 +1,8 @@
 # 🔗 App Webhooks
 
-Before diving into the webhooks documentation, consider reading [Pusher's documentation about webhooks](https://pusher.com/docs/channels/server_api/webhooks) to understand how this process works.
+Before diving into the webhooks documentation, consider reading [Pusher's documentation regarding webhooks](https://pusher.com/docs/channels/server_api/webhooks) to understand the basics of webhooks when using the Pusher protocol.
 
-Each retrieved app contains a `webhooks` array which will contain elements formatted like this:
+Each [app](../app-management/introduction.md) definition contains a `webhooks` array which will contain data structures formatted like the following:
 
 ```javascript
 {
@@ -11,8 +11,8 @@ Each retrieved app contains a `webhooks` array which will contain elements forma
 }
 ```
 
-* `url` - The URL where the data will be sent to
-* `event_types` - an array of strings with the events that will trigger the webhook
+* `url` - The URL where the data will be sent.
+* `event_types` - An array of strings with the events that will trigger the webhook.
 
 The value for `event_types` can be one of the following:
 

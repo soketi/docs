@@ -1,20 +1,22 @@
 # CLI Installation
 
-Install is done via the NPM CLI:
+soketi may be easily installed via the NPM CLI:
 
 ```bash
 npm install -g @soketi/soketi
 ```
 
-To start the sample server, run:
+After installation, a soketi server using the default configuration may be started using the `start` command:
 
 ```
 soketi start
 ```
 
+By default, this will start a soketi server at `127.0.0.1:6001` with an application ID of `app-id`, application key of `app-key`, and application secret of `app-secret`.
+
 ### Supervisor
 
-To keep the CLI server alive, you might want to use [supervisor](http://supervisord.org), a daemon that can run processes in the background. You can find tons of [tutorials that help you install supervisor,](https://www.digitalocean.com/community/tutorials/how-to-install-and-manage-supervisor-on-ubuntu-and-debian-vps) so we'll focus just on the configuration.
+To keep the soketi server alive permanently, you should consider [installing](https://www.digitalocean.com/community/tutorials/how-to-install-and-manage-supervisor-on-ubuntu-and-debian-vps) a process manager such as [supervisor](http://supervisord.org), a daemon that can run and restart processes in the background. After installing Supervisor, you may use the following example configuration as a good starting point for launching a soketi server:
 
 ```ini
 [program:soketi]
@@ -33,8 +35,8 @@ stopsignal=sigint
 minfds=10240
 ```
 
-As you can see, we run a single process, that will auto-restart on failure and will log to `/var/log/soketi-supervisor.log`.
+As you can see in the configuration above, a single soketi server will be started, and this server will auto-restart on failure. Logs will be written to `/var/log/soketi-supervisor.log`.
 
-It's really important to note that `stopwaitsecs` and `stopsignal` should be set like that. Of course, you can increase `stopwaitsecs` to a bigger value, so that when the server is closing, it will give a grace period of `60` seconds to close all sockets.
+It's important to note that the `stopwaitsecs` and `stopsignal` configuration options should be set as in the example above. If necessary, you can increase `stopwaitsecs` to a larger value. This is the number of seconds Supervisor will allow soketi to gracefully close all connections when the server is stopping or restarting.
 
-In Linux, everything is a file. Even active sockets. To track them, soketi is creating file descriptor for each connection. In some cases, you might run into a soft limit, set by your OS, that will keep the file descriptors limit to 1024 or so. In supervisor, you can set `minfds` to a higher value, to let the OS handle more connections.
+In Linux environments, everything is a file, including active sockets. To track socket connections, soketi is creating file descriptor for each connection. In some cases, you may run into a soft limit on file descriptors set by your operating system. In this situation, you can set the Supervisor `minfds` configuration option to a higher value to allow the operating system to handle more connections.

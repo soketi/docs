@@ -1,6 +1,6 @@
 # 🎨 Client Configuration
 
-Pusher clients are fully compatible with the WebSocket protocol implemented in this project. You just have to point the client to the server address:
+Pusher clients are fully compatible with the WebSocket protocol implemented by soketi, which means you can easily take advantage of amazing features like private channels, presence channels, and client events. You simply need to point the Pusher compatible client to the soketi server address:
 
 ```javascript
 const PusherJS = require('pusher-js');
@@ -21,7 +21,7 @@ client.subscribe('chat-room').bind('message', (message) => {
 
 ### SSL Configuration
 
-When running the server in SSL mode, you might want to have `forceTLS` set to `true`. This way, the client will connect to the `wss` protocol instead of `ws`:
+When running the server in SSL mode, you may consider setting the `forceTLS` client option to `true`. When this option is set to `true`, the client will connect to the `wss` protocol instead of `ws`:
 
 ```javascript
 const PusherJS = require('pusher-js');

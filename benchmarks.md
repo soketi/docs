@@ -2,13 +2,13 @@
 
 ![](.gitbook/assets/medium\_90ms\_1536.png)
 
-soketi is really fast!
+In summary: soketi is really fast!
 
-In the scenario, there are 250 users that sit idle and receive 1 msg/s while 250 are actively connecting and disconnecting after 5 seconds.
+In the benchmarking scenario above, there are 250 users that sit idle and receive 1 message per second while 250 users are actively connecting and disconnecting after 5 seconds.
 
-The benchmark was done using an AWS `t3.small` instance (T3 Unlimited disabled to avoid bursting) @ 2 vCPU 2 GB and Gigabit network, in the `Europe Frankfurt` region. The ping between client location and server location was on average \~ 40ms.
+The benchmark was performed on an AWS `t3.small` instance (T3 Unlimited disabled to avoid bursting) @ 2 vCPU 2 GB and Gigabit network in the `Europe Frankfurt` region. The ping between client location and server location averaged \~ 40ms.
 
-The network overhead is taken into account by subtracting the ping twice, since the client trips once to the server to broadcast the message and trips one again back from the server to the client.
+The network overhead was taken into account by subtracting the ping twice, since the client trips once to the server to broadcast the message and makes another trip back again from the server to the client.
 
 To calculate the internal time the server needs to process and distribute the received message, you can use the following formula:
 
@@ -22,25 +22,25 @@ In this scenario, the processing time (excluding networking overhead) it takes f
 INTERNAL_TIME = 119 - (40 * 2) = 119 - 80 = 39 ms
 ```
 
-So for a  2 vCPU 2 GB instance, it takes the server `39ms` to distribute the messages for 250 concurrent users, in addition to a connecting-disconnecting ramp-up amount of between 100 and 250 users, and soketi really handles all of that.
+So, for a  2 vCPU 2 GB instance, it takes the server `39ms` to distribute the messages for 250 concurrent users, in addition to a connecting-disconnecting ramp-up amount of between 100 and 250 users. As you can see, soketi easily handles this load scenario.
 
 ### Performance Caveats
 
 You may also want to consider additional overhead when deploying soketi:
 
-* networking overhead, like in this benchmark or when horizontally scaling with Redis
-* SSL/TLS overhead, that is caused by SSL natively
-* the benchmarks didn't take into account the queues, if applicable, and these represent additional computing power needed to fulfill webhooks
-* the benchmarks didn't take into account the HTTP requests for other non-broadcasting calls, since the benchmarks used only the HTTP API to publish 1 msg/s
+* Networking overhead, like the overhead included in this benchmark or when horizontally scaling with Redis.
+* SSL/TLS overhead, which is inherent to SSL/TLS.
+* These benchmarks do not utilize queues. When queues are used to process messages, additional computing power is needed to fulfill webhooks.
+* These benchmarks do not account for HTTP requests for other non-broadcasting calls, since these benchmarks only used the HTTP API to publish messages.
 
-When going to deploy in production for critical workload, consider the following:
+When deploying soketi to production in very demanding applications, consider the following suggestions:
 
-#### Horizontally Scale soketi
+#### Horizontally scale soketi
 
-soketi natively [scales horizontally with Redis Pub/Sub](advanced-usage/horizontal-scaling.md). This can add overhead for the internal Redis round-trips, but since you can horizontally scale, you are free to allocate resources dynamically.
+soketi natively [scales horizontally using Redis Pub/Sub](advanced-usage/horizontal-scaling.md). This can add overhead for the internal Redis communication; however, since you can horizontally scale your soketi servers, total scalability is increased.
 
-By deploying soketi instances closer to Redis Read Replicas within a global Redis mesh, you can ensure low latency.
+In addition, by deploying soketi instances closer to Redis read replicas within a global Redis mesh, you can ensure low latency.
 
 #### Deploy closer to your users
 
-Most of the time, the biggest overhead is the latency itself. Consider deploying closer to your users for sub-100ms latency and develop a proper app mesh to ensure good horizontal scaling with Redis at the global scale.
+In most applications, the biggest contributor to soketi overhead is network latency. Consider deploying closer to your users for sub-100ms latency and develop a proper application mesh to ensure good horizontal scaling with Redis at global scale.

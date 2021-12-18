@@ -1,10 +1,10 @@
 # 🎟 Introduction
 
-Apps are the core authentication module for soketi, as you already are familiar with Pusher apps. The concepts are the same.
+"Apps" are soketi's core authentication concept. If you are already familiar with Pusher apps, soketi "apps" serve exactly the same purpose. Namely, each "app" receives an app ID, key, and secret it may use to authenticate with the soketi server.
 
-Apps can be defined at the configuration level or can be pulled from a third-party API, such as MySQL or PostgreSQL for better management of who can access the WebSockets server and who can publish the events.
+Apps may even be stored in MySQL or PostgreSQL for easier management of deployments with multiple apps with unique permission settings.
 
-In this document, you will have a small insight about how you can configure your own apps, as well as how to leverage the official ecosystem apps to get started easily. The current implemented ways of App Management are pretty rigid, but in the near future we will be making them be much more flexible, such as letting the schema be customized.
+Within the following documentation pages, we will discuss how to configure apps for each of the support app storage drivers. The driver that soketi uses for app management and retrieval may be defined using the following [environment variable](../getting-started/environment-variables.md):
 
 ### Environment Variables
 
