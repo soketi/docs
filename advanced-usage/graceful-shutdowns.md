@@ -1,7 +1,7 @@
 # 🛑 Graceful Shutdowns & Real-time monitoring
 
-If you run soketi standalone in a cluster, at scale, you might run into capacity issues: RAM usage might be near the limit and even if you decide to horizontally scale the pods, new connections might still come to pods that are near-limit and will eventually run into OOM at some point.
+If you run soketi standalone in a cluster at scale, you may run into capacity issues. For example, RAM usage might be near the limit supported by your server and even if you decide to horizontally scale the servers, new connections might still come to servers that are near their memory limit.
 
-For Kubernetes, running [Network Watcher 5.0+](../network-watcher/getting-started.md) inside the same pod will solve the issues by continuously checking the current pod using the "usage endpoint" (so a Prometheus Server is not needed), labeling the pods that get over a specified threshold.
+When deploying soketi using Kubernetes, running [Network Watcher 5.0+](../network-watcher/installation.md) inside the same pod will solve these issues by continuously monitoring the current pod using soketi's "usage endpoint" (so a Prometheus Server is not needed) and labeling the pods that reach a specified usage threshold.
 
-soketi is also embedded with a graceful shutdown operator. This means that upon closing the server, it closes all the active connections and tells them to reconnect again. When using Network Watcher, this is done automatically within the assigned pods in Kubernetes at the service and pod level. More details can be found on the [Network Watcher documentation](../network-watcher/getting-started.md).
+soketi is also embedded with a graceful shutdown operator. This means that upon closing the server, it closes all the active connections and tells them to reconnect again. When using Network Watcher, this is done automatically within the assigned pods in Kubernetes at the service and pod level. More details can be found within the [Network Watcher documentation](../network-watcher/installation.md).

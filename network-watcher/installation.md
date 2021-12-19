@@ -1,16 +1,28 @@
 # 🚀 Installation
 
-Network Watcher is available as a Docker container. It can be either installed manually by adding a container in your pods that also run soketi, or you can use the [soketi/soketi Helm Chart](https://github.com/soketi/charts/tree/master/charts/soketi) which comes out of the box with an already-set Network Watcher container you can easily turn on or off.
+{% hint style="info" %}
+The Network Watcher is only used when deploying soketi via Kubernetes.
+{% endhint %}
 
-Whenever a new Github version is released, a Docker image with the same tag is being pushed to the [soketi/network-watcher](https://hub.docker.com/r/soketi/network-watcher) registry. You may check there the available tags.
+If you run soketi standalone in a cluster at scale, you may run into capacity issues. For example, RAM usage might be near the limit supported by your server and even if you decide to horizontally scale the servers, new connections might still come to servers that are near their memory limit.
+
+Running the soketi Network Watcher inside the same pod will solve these issues by continuously monitoring the soketi Server Usage API, labeling the pods that get over a specified threshold with `ws.soketi.app/accepts-new-connections: "no"`, so that the services watching for the pods will ignore them.
+
+The Network Watcher source code is available on GitHub ([soketi/network-watcher](https://github.com/soketi/network-watcher)).
+
+### Docker Container
+
+The Network Watcher is available as a Docker container. It can either be installed manually by adding a container in your pods that also run soketi, or you can use the [soketi/soketi Helm Chart](https://github.com/soketi/charts/tree/master/charts/soketi), which includes an already-set Network Watcher container you can easily turn on and off.
+
+When a new Network Watcher release is created on GitHub, a Docker image with the same tag is automatically pushed to the [soketi/network-watcher](https://hub.docker.com/r/soketi/network-watcher) registry where you may view the available tags.
 
 ### Helm Chart
 
-To deploy using Helm, consider reading the documentation on [the soketi chart repository](https://github.com/soketi/charts/tree/master/charts/soketi).
+To deploy using Helm, please consult the documentation [the soketi Helm chart GitHub repository](https://github.com/soketi/charts/tree/master/charts/soketi).
 
 ### Kubernetes YAML
 
-The following example states how you should basically set the Network Watcher container in your pods that run soketi.
+The following configuration example demonstrates how you may configure the Network Watcher container in your pods that run soketi.
 
 {% tabs %}
 {% tab title="Service" %}

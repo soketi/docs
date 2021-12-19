@@ -1,11 +1,11 @@
 # 📈 Prometheus Metrics
 
-soketi has a Prometheus exporter built-in with a list of metrics that can help you have a better overview of the cluster & connections.  All you need to do is enable the feature in soketi and set up your own Prometheus server and make it scrap the HTTP REST API of each node that soketi runs on.
+soketi has a Prometheus exporter built-in with a list of metrics that can help you have a better overview of the cluster and connections. To get started, enable the feature in soketi via the `METRICS_ENABLED` environment variable and set up your own Prometheus server to scrape the HTTP REST API of each node that soketi runs on.
 
-soketi exposes **publicly** the WebSockets & HTTP REST API servers on port `6001`. Starting with version 0.17.0, the metrics are served on port `9601`, that is not exposed by default to the internet so that the sensitive metrics will not require the complexity of an authentication system, so you can also scrape the metrics from your private network, or from the same server instance the server runs on.
+soketi **publicly** exposes the WebSockets & HTTP REST API servers on port `6001`. Starting with version 0.17.0, soketi metrics are served on port `9601`, which is not publicly exposed to the Internet by default so that the sensitive metrics will not require the complexity of an authentication system. Therefore, you may easily scrape the metrics from your private network or from the same server instance the soketi server runs on.
 
 {% hint style="warning" %}
-Keep in mind that when configuring your firewalls, you should let users access port `6001` from the internet, but not port `9601`.
+When configuring your firewalls, keep in mind that you should let users access port `6001` from the Internet (so that messages can be broadcast), but not port `9601`.
 {% endhint %}
 
 ### Enabling Metrics
@@ -20,7 +20,7 @@ METRICS_ENABLED=1 soketi start
 curl http://127.0.0.1:9601/metrics
 ```
 
-This is just a trimmed output. The exposed metrics are for both soketi connections and apps, as well as the Node.js built-in Prometheus metrics regarding the running processes, memory and CPU usage that can be quite useful for autoscaling or monitoring the running instance.
+A small sample of metrics output can be found below. The exposed metrics are for both soketi connections and apps, as well as the Node.js built-in Prometheus metrics regarding the running processes, memory, and CPU usage that can be useful for autoscaling or monitoring the running instance.
 
 ```
 # HELP soketi_6001_connected The number of currently connected sockets.
@@ -38,12 +38,12 @@ This is just a trimmed output. The exposed metrics are for both soketi connectio
 ...
 ```
 
-### Environment Variables
+### Prometheus Metrics Environment Variables
 
 | Name                        | Default      | Possible values | Description                                                                                                                      |
 | --------------------------- | ------------ | --------------- | -------------------------------------------------------------------------------------------------------------------------------- |
-| `METRICS_ENABLED`           | `false`      | `true`, `false` | Whether to enable the metrics or not. For Prometheus, enabling it will expose a `/metrics` endpoint.                             |
-| `METRICS_SERVER_PORT`       | `9601`       | Any number      | Changing this will expose the server to a different port. For security, you may not want to whitelist it in the server firewall. |
-| `METRICS_DRIVER`            | `prometheus` | `prometheus`    | The driver used to scrap the metrics. For now, only `prometheus` is available. Soon, Pushgateway will be available.              |
+| `METRICS_ENABLED`           | `false`      | `true`, `false` | Whether to enable metrics. For Prometheus, enabling this option will expose a `/metrics` endpoint.                             |
+| `METRICS_SERVER_PORT`       | `9601`       | Any number      | The metrics server port. For security, this port should not be exposed to the Internet. |
+| `METRICS_DRIVER`            | `prometheus` | `prometheus`    | The driver used to scrape metrics. For now, only `prometheus` is supported.
 | `METRICS_PROMETHEUS_PREFIX` | `soketi_`    | Any string      | The prefix to add to the metrics in Prometheus to differentiate from other metrics in Prometheus.                                |
 

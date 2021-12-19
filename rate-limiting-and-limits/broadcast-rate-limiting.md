@@ -1,18 +1,14 @@
 # ⛔ Broadcast Rate Limiting
 
-Rate limiting helps you throttle the number of requests for client events, backend events or HTTP REST API calls for the read endpoints (like `/channels`) at the app level. This will help you have enough control over bad-intentioned users.
+Rate limiting helps you throttle client events, backend events, or HTTP REST API calls for read endpoints (like `/channels`) at the [app](../app-management/introduction.md) level.
 
-{% hint style="info" %}
-Setting the rate limiter driver depends on the architecture the server is deployed in. For local, single-instance servers, the default local driver is alright, but for multi-node, a third-party solution like Redis is needed.
-{% endhint %}
+Choosing a rate limiter driver depends on the architecture the server is deployed in. For local, single-instance servers, the default local driver is sufficient. For multi-node deployments, a Redis server is typically required. If you choose to use Redis to store rate limiting data, please consult our documentation on [connecting to Redis](../getting-started/redis-configuration.md).
 
-{% hint style="info" %}
-Settings for the limits are available at the app level. [Read the documentation about App Management](../app-management/introduction.md).
-{% endhint %}
+### Environment Variables
 
 | Name                  | Default | Possible values  | Description                              |
 | --------------------- | ------- | ---------------- | ---------------------------------------- |
-| `RATE_LIMITER_DRIVER` | `local` | `local`, `redis` | The driver used for rate limit counting. |
+| `RATE_LIMITER_DRIVER` | `local` | `local`, `redis` | The driver used for rate limiting. |
 
-* `local` - Rate limiting is stored within the memory and is lost upon process exit.
-* `redis` - Rate limiting is centralized in Redis using the key-value store. Recommended when having a multi-node configuration.
+* `local` - Rate limiting data is stored in-memory and is lost upon server exit.
+* `redis` - Rate limiting data is centralized in Redis. This driver is recommended when deploying multi-node soketi configurations.

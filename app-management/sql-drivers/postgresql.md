@@ -1,8 +1,20 @@
 # 🐘 PostgreSQL
 
-For the PostgreSQL driver, you need to configure the [PostgreSQL Database](../../databases/postgresql-configuration.md).
+When using the PostgreSQL app driver, first configure your PostgreSQL connection credentials using [environment variables](../getting-started/environment-variables.md):
 
-The table format with the mandatory fields is the following:
+| Name                   | Default     | Possible values | Description                                         |
+| ---------------------- | ----------- | --------------- | --------------------------------------------------- |
+| `DB_POSTGRES_HOST`     | `127.0.0.1` | Any string      | The PostgreSQL host.     |
+| `DB_POSTGRES_PORT`     | `3306`      | Any integer     | The PostgreSQL port.     |
+| `DB_POSTGRES_USERNAME` | `root`      | Any string      | The PostgreSQL username. |
+| `DB_POSTGRES_PASSWORD` | `password`  | Any string      | The PostgreSQL password. |
+| `DB_POSTGRES_DATABASE` | `main`      | Any string      | The PostgreSQL database. |
+
+{% hint style="success" %}
+This database supports [database connection pooling](database-pooling.md).
+{% endhint %}
+
+Once you have configured your PostgreSQL database credentials, you should create a table with the following structure:
 
 ```
 CREATE TABLE IF NOT EXISTS apps (
@@ -21,9 +33,9 @@ CREATE TABLE IF NOT EXISTS apps (
 
 ### Environment Variables
 
-The following environment variables are available for the PostgreSQL driver:
+The following environment variables are used to define the behavior of the PostgreSQL app driver:
 
 | Name                           | Default | Possible values | Description                                                             |
 | ------------------------------ | ------- | --------------- | ----------------------------------------------------------------------- |
-| `APP_MANAGER_POSTGRES_TABLE`   | `apps`  | Any string      | The table name to pull the data from.                                   |
-| `APP_MANAGER_POSTGRES_VERSION` | `13.3`  | Any string      | The PostgreSQL version so that the Knex connector knows how to connect. |
+| `APP_MANAGER_POSTGRES_TABLE`   | `apps`  | Any string      | The table to pull the app data from.                                   |
+| `APP_MANAGER_POSTGRES_VERSION` | `13.3`  | Any string      | The PostgreSQL version (utilized by the underlying Knex database abstraction layer). |

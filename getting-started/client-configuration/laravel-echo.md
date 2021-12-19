@@ -1,13 +1,13 @@
 # Laravel Echo
 
-Laravel Echo is backward-compatible with the PusherJS library, meaning that it resembles most of the example configuration in the previous section:
+Laravel Echo is compatible with the PusherJS library. Therefore, its configuration resembles the typical configuration of a PusherJS client such as the example configuration in the previous section of documentation:
 
 ```javascript
 import Echo from 'laravel-echo';
 
 window.Pusher = require('pusher-js');
 
-let echoServer = new Echo({
+let laravelEcho = new Echo({
     broadcaster: 'pusher',
     key: process.env.MIX_PUSHER_APP_KEY,
     wsHost: process.env.MIX_PUSHER_HOST,
@@ -18,13 +18,13 @@ let echoServer = new Echo({
     enabledTransports: ['ws', 'wss'],
 });
 
-echoServer.private(`orders.${orderId}`)
+laravelEcho.private(`orders.${orderId}`)
     .listen('OrderShipmentStatusUpdated', (e) => {
         console.log(e.order);
     });
 ```
 
-The `MIX_*` variables are declared in your .env file:
+The `MIX_*` environment variables are typically declared in your Laravel application's `.env` file:
 
 ```
 PUSHER_APP_KEY=app-key

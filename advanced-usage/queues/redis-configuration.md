@@ -1,14 +1,14 @@
 # 🧠 Horizontal Scaling with Redis
 
-In case you are not familiar with methods and architecture on how to set soketi to be horizontal scaling ready, consider [reading the documentation about Horizontal Scaling](../horizontal-scaling.md).
+Before reading about queuing webhook processing using Redis, you may wish to [read the documentation regarding horizontal scaling](../horizontal-scaling.md).
 
-For queuing, in case you decide to horizontally scale the server, it's highly recommended to use a third-party driver like Redis. Redis will ensure that once the webhook is triggered, it will surely be processed because the message to send the webhook will remain in-memory, and even if the server gets down, the webhook will be sent.
+When combining queuing and horizontal scalability, it's highly recommended that you use a third-party driver like Redis. Redis helps ensure that once a webhook is triggered it will be completely processed because the message to send the webhook will remain in-memory within Redis. Therefore, even if the soketi server goes down, the webhook will still be sent.
 
-Each webhook message is being processed by a Worker. Each Worker can spawn multiple listeners, depending on the usage. In soketi's case, each worker represents one of the listed events in [App Webhooks](../app-webhooks.md), for example. This way, soketi makes sure that webhooks are not being clogged by all of the events at once. **This is a subject of change in the future and perhaps queues for each app might be needed to ensure high-performance message processing.**
+Each webhook message is processed by a worker. In addition, each worker can spawn multiple queue listeners. In soketi's case, each worker represents one of the listed events within the [app webhooks documentation](../app-webhooks.md). This way, soketi ensures that webhooks are being processed quickly and efficiently. **This behavior may be subject to change in the future. For example, queues for each app might eventually be needed to ensure high-performance message processing in all situations.**
 
 ### Environment Variables
 
 | Name                      | Default | Possible values | Description                                               |
 | ------------------------- | ------- | --------------- | --------------------------------------------------------- |
-| `QUEUE_REDIS_CONCURRENCY` | `1`     | Any integer     | The number of parallel processed messages for each event. |
+| `QUEUE_REDIS_CONCURRENCY` | `1`     | Any integer     | The number of webhook messages that can be processed in parallel for each event. |
 

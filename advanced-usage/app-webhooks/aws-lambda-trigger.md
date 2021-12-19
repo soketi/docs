@@ -1,16 +1,14 @@
 # 📐 AWS Lambda trigger
 
 {% hint style="info" %}
-This feature is available starting with version 0.15
+This feature is available starting with soketi version 0.15
 {% endhint %}
 
-soketi allows you to configure Lambda triggers instead of setting up your own HTTP server. This comes in handy when you want to process the backend, but you want to reduce the complexity of creating and maintaining a backend to catch webhooks.
+soketi allows you to configure Lambda triggers instead of setting up your own HTTP server to handle webhooks.
 
 ### Configure Lambda triggers
 
-To configure an app to send Lambda, you may specify the Lambda function details for the SDK in your app's `webhooks` field.&#x20;
-
-In the HTTP app webhooks, you could have configured them like this:
+To configure an app to send webhook information to Lambda, you may specify the Lambda function details in your app's `webhooks` field. Instead of the typical HTTP webhook handler which looks like the following:
 
 ```json
 {
@@ -19,25 +17,25 @@ In the HTTP app webhooks, you could have configured them like this:
 }
 ```
 
-If you specify a `lambda_function` instead of the `url`, you can enable the Lambda invocation:
+You may specify a `lambda_function` instead of a `url`:
 
 ```json
 {
-    "lambda_function": "my-function",
-    "region": "us-esat-1",
+    "lambda_function": "my-function-arn",
+    "region": "us-east-1",
     "event_types": ["string", ...]
 }
 ```
 
 {% hint style="info" %}
-You must specify the `region` when defining `lambda_function`.
+You must specify the `region` when defining a `lambda_function`.
 {% endhint %}
 
 ### Setting credentials for the AWS client
 
-Under the hood, AWS SDK is used and it requires authentication. AWS has [detailed documentation with many ways to set credentials for the Lambda client](https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/setting-credentials-node.html). soketi uses the same convention so you are free to set your credentials from the `.aws` folder, from environment variables, from the EC2 profile, as they will be automatically injected.
+Under the hood, the AWS SDK is used to invoke Lambda functions and it requires authentication. AWS has [detailed documentation with many ways to set credentials for the Lambda client](https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/setting-credentials-node.html). soketi uses the same convention, so you are free to set your credentials within the `.aws` folder, using environment variables, or using an EC2 profile.
 
-For advanced usage, like when you want to register Lambdas from another AWS accounts, you can configure the credentials by yourself from the webhook definition through a `lambda` key:
+If you would like to specify the AWS account credentials directly in your webhook configuration, you may add a "lambda" key to the webhook configuration with additional configuration options:
 
 ```json
 {
@@ -56,12 +54,12 @@ For advanced usage, like when you want to register Lambdas from another AWS acco
 ```
 
 {% hint style="warning" %}
-Keep in mind that hard-coding credentials can bring security risks. In case you deploy soketi within an EC2 instance or an ECS container, you should not specify credentials and, instead, give your EC2 instances or your ECS containers the permission to invoke your lambdas via their service role, as credentials will be automatically injected and recognized by soketi.
+Keep in mind that hard-coding AWS credentials into your webhook configuration can increase security risks. If you deploy soketi within an EC2 instance or an ECS container, you should not specify credentials within the webhook definition and instead give your EC2 instances or your ECS containers the permission to invoke your Lambda via their service role, as the credentials will be automatically injected and recognized by soketi.
 {% endhint %}
 
 ### Example Lambda code
 
-Below you will find an example Lambda code that can be used to catch incoming events:
+Below you will find an example Lambda function implementation that can be used to handle incoming events:
 
 ```javascript
 exports.handler = async ({ payload, headers }) => {
@@ -87,12 +85,10 @@ exports.handler = async ({ payload, headers }) => {
 };
 ```
 
-As you can see, it's really easy to implement Lambda and catch webhooks.
-
 {% hint style="danger" %}
-Please note that you should always check if the HMAC of the payload matches the one received via `headers`. If it does not match, it's possible that the data has been tampered with and you should never process the message.
+Note that you should always check if the HMAC of the payload matches the one received via the `headers`. If it does not match, it's possible that the data has been tampered with and you should discard the message.
 {% endhint %}
 
 {% hint style="info" %}
-The secret can be injected in the [Environment Variables](https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html) section from your Lambda function.
+The soketi secret in the example above can be injected into the Lambda using the [Environment Variables](https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html) section of your Lambda function's management dashboard.
 {% endhint %}

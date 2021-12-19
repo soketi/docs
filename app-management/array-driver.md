@@ -1,12 +1,10 @@
 # 🧬Array Driver
 
-The default driver is called `array`. This is a static array in-memory that is kept while the uWS Server process is running. Whenever a connection is made or an event is broadcasted, the app credentials will be checked using this method.
+The default app driver used by soketi is the `array` driver. This is a static, in-memory array of app credentials that is kept in memory while the underlying uWS Server process is running. Whenever a connection is made or an event is broadcast, the app credentials will be verified against these in-memory credentials.
 
-Out-of-the-box, a simple application is set for quick setup. You can however change the app before launching your app in production.
+By default, default values are defined for the app ID, key, and secret for ease of installation and development. However, you should change these credentials before launching your application in production.
 
-In case you opt-in for another `APP_MANAGER_DRIVER`, these are the variables you can change in order to change the app settings.
-
-For the rate limits and max connections options, setting limits to `-1` will disable the rate limits and/or max allowed connections.
+For rate limits and max connections options, setting the variable value to `-1` will disable the rate limits and / or max allowed connections.
 
 ### Environment Variables
 
@@ -17,15 +15,15 @@ For the rate limits and max connections options, setting limits to `-1` will dis
 | `DEFAULT_APP_SECRET`                     | `app-secret` | Any string                                                 | The default app secret for the array driver.                                                                                                                                                  |
 | `DEFAULT_APP_MAX_CONNS`                  | `-1`         | Any integer                                                | The default app's limit of concurrent connections.                                                                                                                                            |
 | `DEFAULT_APP_ENABLE_CLIENT_MESSAGES`     | `false`      | `true`, `false`                                            | Whether client messages should be enabled for the app.                                                                                                                                        |
-| `DEFAULT_APP_ENABLED`                    | `true`       | `true`, `false`                                            | Whether the app is activated. It can be used to disable an app.                                                                                                                               |
-| `DEFAULT_APP_MAX_BACKEND_EVENTS_PER_SEC` | `-1`         | Any integer                                                | The default app's limit of `/events` endpoint events broadcasted per second. You can [configure rate limiting database store](../rate-limiting-and-limits/broadcast-rate-limiting.md)         |
-| `DEFAULT_APP_MAX_CLIENT_EVENTS_PER_SEC`  | `-1`         | Any integer                                                | The default app's limit of client events broadcasted per second, by a single socket. You can [configure rate limiting database store](../rate-limiting-and-limits/broadcast-rate-limiting.md) |
+| `DEFAULT_APP_ENABLED`                    | `true`       | `true`, `false`                                            | Whether the app is activated. This option can be used to disable an app.                                                                                                                               |
+| `DEFAULT_APP_MAX_BACKEND_EVENTS_PER_SEC` | `-1`         | Any integer                                                | The default app's limit of `/events` endpoint events broadcast per second. You can [configure rate limiting database store](../rate-limiting-and-limits/broadcast-rate-limiting.md)         |
+| `DEFAULT_APP_MAX_CLIENT_EVENTS_PER_SEC`  | `-1`         | Any integer                                                | The default app's limit of client events broadcast per second by a single socket. You can [configure rate limiting database store](../rate-limiting-and-limits/broadcast-rate-limiting.md) |
 | `DEFAULT_APP_MAX_READ_REQ_PER_SEC`       | `-1`         | Any integer                                                | The default app's limit of read endpoint calls per second. You can [configure rate limiting database store](../rate-limiting-and-limits/broadcast-rate-limiting.md)                           |
-| `DEFAULT_APP_WEBHOOKS`                   | `[]`         | `[{"url": "string", "event_types": ["string", ...]}, ...]` | The webhooks list for the app. Please look below                                                                                                                                              |
+| `DEFAULT_APP_WEBHOOKS`                   | `[]`         | `[{"url": "string", "event_types": ["string", ...]}, ...]` | The webhooks list for the app. See below                                                                                                                                              |
 
 ### Webhooks formatting
 
-For Webhooks, the available `event_types` values that can be set are explained in the webhooks section: [App Webhooks](../advanced-usage/app-webhooks.md).
+For Webhooks, the available `event_types` values that can be defined are explained in the [webhooks documentation](../advanced-usage/app-webhooks.md):
 
 * `client_event`
 * `channel_occupied`

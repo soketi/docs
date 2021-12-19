@@ -1,6 +1,6 @@
 # Laravel Sail (Docker)
 
-For Laravel Sail, you might use the [Docker](docker.md) containers and add a new service in your `docker-compose.yaml` file:
+For Laravel Sail, you may utilize soketi's [Docker](docker.md) images by adding a new service in your `docker-compose.yaml` file:
 
 ```yaml
 # For more information: https://laravel.com/docs/sail
@@ -24,7 +24,7 @@ networks:
         driver: bridge
 ```
 
-All left to do is to configure the environment variables and to [configure the broadcasting driver](../backend-configuration/laravel-broadcasting.md):
+After adding the server definition to your application's `docker-compose.yml` file, you should configure your broadcasting environment variables as well as [the broadcasting driver](../backend-configuration/laravel-broadcasting.md):
 
 ```
 PUSHER_HOST=soketi

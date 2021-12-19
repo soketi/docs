@@ -1,14 +1,12 @@
 # Laravel Broadcasting
 
-For [Laravel Broadcasting](https://laravel.com/docs/8.x/broadcasting) it's even easier, just replace the `pusher` configuration from `config/broadcasting.php` with the following code.
-
-The variables will be injected from the [frontend configuration](../client-configuration/laravel-echo.md).
+When using [Laravel's event broadcasting](https://laravel.com/docs/8.x/broadcasting) feature within your application, soketi is even easier to configure. First, replace the default `pusher` configuration in your application's `config/broadcasting.php` file with the following configuration:
 
 ```php
 'connections' => [
     
     // ...
-    
+
     'pusher' => [
         'driver' => 'pusher',
         'key' => env('PUSHER_APP_KEY', 'app-key'),
@@ -27,33 +25,4 @@ The variables will be injected from the [frontend configuration](../client-confi
 
 ### Self-signed Certificates
 
-For Pusher package `5.0.3` and beyond, you can use `curl_options` to bypass CA verification in case you're using self-signed certificates:
-
-```php
-'connections' => [
-    
-    // ...
-    
-    'pusher' => [
-        'driver' => 'pusher',
-        'key' => env('PUSHER_APP_KEY', 'app-key'),
-        'secret' => env('PUSHER_APP_SECRET', 'app-secret'),
-        'app_id' => env('PUSHER_APP_ID', 'app-id'),
-        'options' => [
-            'host' => env('PUSHER_HOST', '127.0.0.1'),
-            'port' => env('PUSHER_PORT', 6001),
-            'scheme' => env('PUSHER_SCHEME', 'http'),
-            'encrypted' => true,
-            'useTLS' => env('PUSHER_SCHEME') === 'https',
-        ],
-        'curl_options' => [
-            CURLOPT_SSL_VERIFYHOST => env('PUSHER_VERIFY_CERT', 1),
-            CURLOPT_SSL_VERIFYPEER => env('PUSHER_VERIFY_CERT', 1),
-        ],
-    ],
-],
-```
-
-{% hint style="warning" %}
-Due to implementation upgrades for the Pusher package, the Pusher package version `6.0` and above does not support `curl_options` anymore, and self-signed SSL certificates are forced validation. To be able to bypass SSL Verification, use the Pusher package version `5.0.3` until further notice.
-{% endhint %}
+Due to implementation changes in the Pusher PHP SDK, releases of the SDK since the `6.0` release do not support `curl_options`; therefore, self-signed SSL certificates will fail certificate validation since certificate verification cannot be disabled. To bypass SSL Verification, you must use Pusher PHP SDK version `5.0.3`.
