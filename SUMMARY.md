@@ -18,6 +18,8 @@
   * [Laravel Echo](getting-started/client-configuration/laravel-echo.md)
 * [💻 Backend Configuration](getting-started/backend-configuration/README.md)
   * [Laravel Broadcasting](getting-started/backend-configuration/laravel-broadcasting.md)
+  * [Nginx Configuration](getting-started/backend-configuration/nginx-configuration.md)
+* [🧠 Redis Configuration](getting-started/redis-configuration.md)
 
 ## App Management
 
