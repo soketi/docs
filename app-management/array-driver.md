@@ -1,4 +1,4 @@
-# 🧬Array Driver
+# 🧬 Array Driver
 
 The default app driver used by soketi is the `array` driver. This is a static, in-memory array of app credentials that is kept in memory while the underlying uWS Server process is running. Whenever a connection is made or an event is broadcast, the app credentials will be verified against these in-memory credentials.
 
