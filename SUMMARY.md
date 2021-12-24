@@ -24,7 +24,7 @@
 ## App Management
 
 * [🎟 Introduction](app-management/introduction.md)
-* [🧬Array Driver](app-management/array-driver.md)
+* [🧬 Array Driver](app-management/array-driver.md)
 * [🛢 SQL Drivers](app-management/sql-drivers/README.md)
   * [🐬 MySQL](app-management/sql-drivers/mysql.md)
   * [🐘 PostgreSQL](app-management/sql-drivers/postgresql.md)
