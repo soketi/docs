@@ -40,3 +40,13 @@ As you can see in the configuration above, a single soketi server will be starte
 It's important to note that the `stopwaitsecs` and `stopsignal` configuration options should be set as in the example above. If necessary, you can increase `stopwaitsecs` to a larger value. This is the number of seconds Supervisor will allow soketi to gracefully close all connections when the server is stopping or restarting.
 
 In Linux environments, everything is a file, including active sockets. To track socket connections, soketi is creating file descriptor for each connection. In some cases, you may run into a soft limit on file descriptors set by your operating system. In this situation, you can set the Supervisor `minfds` configuration option to a higher value to allow the operating system to handle more connections.
+
+### Scaling across threads with PM2
+
+Node.js is meant to be ran on one CPU at a given time. This means that multi-threading isn't actually multi-threading in its common sense. To fix this problem, you may use the PM2-ready binary that is shipped with any soketi installation:
+
+```bash
+soketi-pm2 start
+```
+
+The only remaining caveat is that the processes are like they are horizontally scaled. You may want to configure [horizontal scaling](../../advanced-usage/horizontal-scaling.md#cluster-adapter) with the cluster adapter, unless you are also scaling across multiple different instances, in which Redis is the recommended adapter.

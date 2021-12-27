@@ -39,6 +39,7 @@
 ## Advanced Usage
 
 * [↔ Horizontal Scaling](advanced-usage/horizontal-scaling.md)
+  * [🗃 Cluster Configuration](advanced-usage/horizontal-scaling/clustering.md)
 * [🛑 Graceful Shutdowns & Real-time monitoring](advanced-usage/graceful-shutdowns.md)
 * [📈 Prometheus Metrics](advanced-usage/scraping-prometheus-metrics.md)
 * [🔗 HTTP Webhooks](advanced-usage/app-webhooks.md)
