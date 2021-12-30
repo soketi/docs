@@ -4,14 +4,14 @@ If you choose to use the `redis` driver for horizontal scalability, rate limitin
 
 ### Environment Variables
 
-| Name                | Default     | Possible values | Description                                                    |
-| ------------------- | ----------- | --------------- | -------------------------------------------------------------- |
-| `DB_REDIS_HOST`     | `127.0.0.1` | Any string      | The Redis host.                        |
-| `DB_REDIS_PORT`     | `6379`      | Any integer     | The Redis port.                        |
-| `DB_REDIS_DB`       | `0`         | Any integer     | The Redis database.                    |
-| `DB_REDIS_USERNAME` | `null`      | Any string      | The Redis username. |
-| `DB_REDIS_PASSWORD` | `null`      | Any string      | The Redis password. |
-| `DB_REDIS_PREFIX`   | `soketi`    | Any string      | The Redis key prefix that should be utilized.          |
+| Name                  | Default     | Possible values | Description                                   |
+| --------------------- | ----------- | --------------- | --------------------------------------------- |
+| `DB_REDIS_HOST`       | `127.0.0.1` | Any string      | The Redis host.                               |
+| `DB_REDIS_PORT`       | `6379`      | Any integer     | The Redis port.                               |
+| `DB_REDIS_DB`         | `0`         | Any integer     | The Redis database.                           |
+| `DB_REDIS_USERNAME`   | `null`      | Any string      | The Redis username.                           |
+| `DB_REDIS_PASSWORD`   | `null`      | Any string      | The Redis password.                           |
+| `DB_REDIS_KEY_PREFIX` | `null`      | Any string      | The Redis key prefix that should be utilized. |
 
 ### Redis Sentinel
 
