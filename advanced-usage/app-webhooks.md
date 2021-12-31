@@ -52,3 +52,18 @@ client.subscribe('beta-chat-room-app');
 {% hint style="info" %}
 All passed filters are combined with `AND` logic. To filter them by another logical gate like `OR`, consider filtering the most by passing the `filters` object and consider modifying your webhook server's code to filter them further.
 {% endhint %}
+
+### Webhook Headers
+
+Starting with soketi `0.24`, you can pass additional headers that will be sent within the webhook request:
+
+```json
+{
+    "url": "string",
+    "event_types": ["channel_occupied"],
+    "headers": {
+        "X-Custom-Header": "Custom Header",
+        "X-Version": "Custom Header"
+    }
+}
+```
