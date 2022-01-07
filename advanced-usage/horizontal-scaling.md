@@ -33,7 +33,7 @@ Make sure to choose the same port and hostname if you want the nodes to communic
 
 ### Which drivers to choose?
 
-In case you don't know how your architecture will be, consider the following table and pick your use case in order to know what to configure.
+In case you don't know how your architecture should be, consult the following table and pick your use case:
 
 | Use case                                                 | Recommended Adapter / Other adapters          | Recommended Rate-Limiting Driver |
 | -------------------------------------------------------- | --------------------------------------------- | -------------------------------- |
