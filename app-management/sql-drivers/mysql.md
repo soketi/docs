@@ -1,6 +1,6 @@
 # 🐬 MySQL
 
-When using the MySQL app driver, first you should configure your MySQL connection credentials as [environment variables](../getting-started/environment-variables.md):
+When using the MySQL app driver, first you should configure your MySQL connection credentials as [environment variables](../getting-started/configuring-server.md):
 
 | Name                | Default     | Possible values | Description                                 |
 | ------------------- | ----------- | --------------- | ------------------------------------------- |

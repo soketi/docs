@@ -4,7 +4,7 @@
 
 Apps may even be stored in MySQL or PostgreSQL for easier management of deployments with multiple apps with unique permission settings.
 
-Within the following documentation pages, we will discuss how to configure apps for each of the supported app storage drivers. The driver that soketi uses for app management and retrieval may be defined using the following [environment variable](../getting-started/environment-variables.md):
+Within the following documentation pages, we will discuss how to configure apps for each of the supported app storage drivers. The driver that soketi uses for app management and retrieval may be defined using the following [environment variable](../getting-started/configuring-server.md):
 
 ### Environment Variables
 

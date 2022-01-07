@@ -12,7 +12,7 @@
   * [Docker](getting-started/installation/docker.md)
   * [Helm Charts](getting-started/installation/helm-charts.md)
   * [Laravel Sail (Docker)](getting-started/installation/laravel-sail-docker.md)
-* [💿 Environment Variables](getting-started/environment-variables.md)
+* [💿 Configuring the server](getting-started/configuring-server.md)
 * [🔐 SSL Configuration](getting-started/ssl-configuration.md)
 * [🎨 Client Configuration](getting-started/client-configuration/README.md)
   * [Laravel Echo](getting-started/client-configuration/laravel-echo.md)

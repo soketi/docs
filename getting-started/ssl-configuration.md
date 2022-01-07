@@ -1,6 +1,6 @@
 # 🔐 SSL Configuration
 
-SSL support is included with soketi by default. If one of the following [environment variables](environment-variables.md) is set, the server will start using SSL instead of plain HTTP.
+SSL support is included with soketi by default. If one of the following [environment variables](configuring-server.md) is set, the server will start using SSL instead of plain HTTP.
 
 ### Environment Variables
 
