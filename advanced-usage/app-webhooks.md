@@ -4,7 +4,7 @@ Before diving into the webhooks documentation, consider reading [Pusher's docume
 
 Each [app](../app-management/introduction.md) definition contains a `webhooks` array which will contain data structures formatted like the following:
 
-```javascript
+```json
 {
     "url": "string",
     "event_types": ["string", ...]
@@ -22,3 +22,48 @@ The value for `event_types` can be one of the following:
 * `member_added`
 * `member_removed`
 
+### Filtering Webhooks
+
+Enabling webhooks will send notifications for the selected `event_types`, but for all channels. In some situations, you may want to receive webhooks for specific channels, to simply reduce the network usage.
+
+Starting with soketi `0.23`, you can filter those channels you want to receive based on their name.
+
+```json
+{
+    "url": "string",
+    "event_types": ["channel_occupied"],
+    "filters": {
+        "channel_name_starts_with": "beta-",
+        "channel_name_ends_with": "-app"
+    }
+}
+```
+
+```js
+// Won't trigger the webhook
+client.subscribe('chat-room');
+client.subscribe('beta-chat-room');
+client.subscribe('chat-room-app');
+
+// Will trigger the webhook
+client.subscribe('beta-chat-room-app');
+```
+
+{% hint style="info" %}
+All passed filters are combined with `AND` logic. To filter them by another logical gate like `OR`, consider filtering the most by passing the `filters` object and consider modifying your webhook server's code to filter them further.
+{% endhint %}
+
+### Webhook Headers
+
+Starting with soketi `0.24`, you can pass additional headers that will be sent within the webhook request:
+
+```json
+{
+    "url": "string",
+    "event_types": ["channel_occupied"],
+    "headers": {
+        "X-Custom-Header": "Custom Header",
+        "X-Version": "Custom Header"
+    }
+}
+```
