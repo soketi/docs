@@ -6,9 +6,10 @@ Choosing a rate limiter driver depends on the architecture the server is deploye
 
 ### Environment Variables
 
-| Name                  | Default | Possible values  | Description                              |
-| --------------------- | ------- | ---------------- | ---------------------------------------- |
-| `RATE_LIMITER_DRIVER` | `local` | `local`, `redis` | The driver used for rate limiting. |
+| Name                  | Default | Possible values             | Description                              |
+| --------------------- | ------- | --------------------------- | ---------------------------------------- |
+| `RATE_LIMITER_DRIVER` | `local` | `local`, `redis`, `cluster` | The driver used for rate limiting.       |
 
 * `local` - Rate limiting data is stored in-memory and is lost upon server exit.
 * `redis` - Rate limiting data is centralized in Redis. This driver is recommended when deploying multi-node soketi configurations.
+* `cluster` - Rate limiting data is centralized within the master instance, that is elected. This driver is recommended when deploying multi-threaded soketi configurations (i.e. PM2)
