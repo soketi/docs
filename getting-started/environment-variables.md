@@ -39,4 +39,8 @@ Starting with soketi `0.24`, you can define a JSON-formatted file which can cont
 }
 ```
 
+```bash
+soketi start --config=/path/to/config.json
+```
+
 The full list of available options can be found in the [`Options` interface](https://github.com/soketi/soketi/blob/master/src/options.ts).
