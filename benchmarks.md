@@ -35,7 +35,7 @@ You may also want to consider additional overhead when deploying soketi:
 
 When deploying soketi to production in very demanding applications, consider the following suggestions:
 
-#### Horizontally scale soketi
+#### Scale horizontally
 
 soketi natively [scales horizontally using Redis Pub/Sub](advanced-usage/horizontal-scaling.md). This can add overhead for the internal Redis communication; however, since you can horizontally scale your soketi servers, total scalability is increased.
 

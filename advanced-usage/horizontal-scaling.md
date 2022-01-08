@@ -21,7 +21,7 @@ Adapters like Redis are used for horizontal scaling only. Configuring and runnin
 
 ### Cluster adapter
 
-The cluster adapter is really useful when you want a decentralized, peer-to-peer method to communicate between nodes or processes. 
+The cluster adapter is really useful when you want a decentralized, peer-to-peer method to communicate between nodes or processes.
 
 No matter how many soketi processes you open with the Cluster driver, you will have built-in scalability without additional servers. It's highly recommended to use the cluster adapter when you deploy soketi behind the same private network with PM2 to acquire multithreading.
 
@@ -30,6 +30,8 @@ The only downside to the cluster adapter is that you can only scale processes or
 {% hint style="info" %}
 Make sure to choose the same port and hostname if you want the nodes to communicate between each other properly. Deploying multi-tenant architectures should use different ports or hostnames.
 {% endhint %}
+
+[Learn how to configure the Cluster adapter ➡](horizontal-scaling/clustering.md)
 
 ### Which drivers to choose?
 
