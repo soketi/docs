@@ -41,7 +41,9 @@
 ## Advanced Usage
 
 * [↔ Horizontal Scaling](advanced-usage/horizontal-scaling.md)
-  * [🗃 Cluster Configuration](advanced-usage/horizontal-scaling/clustering.md)
+  * [🧠 Redis Configuration](advanced-usage/horizontal-scaling/redis-configuration.md)
+  * [🗃 Private Network Configuration](advanced-usage/horizontal-scaling/clustering.md)
+  * [😑 Ok, what to choose?](advanced-usage/horizontal-scaling/ok-what-to-choose.md)
 * [🛑 Graceful Shutdowns & Real-time monitoring](advanced-usage/graceful-shutdowns.md)
 * [📈 Prometheus Metrics](advanced-usage/scraping-prometheus-metrics.md)
 * [🔗 HTTP Webhooks](advanced-usage/app-webhooks.md)
