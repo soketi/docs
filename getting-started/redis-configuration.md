@@ -1,6 +1,8 @@
 # 🧠 Redis Configuration
 
-If you choose to use the `redis` driver for horizontal scalability, rate limiting data storage, or queue support, you will need to configure additional environment variables to instruct soketi how to connect to Redis. If you are not using Redis for rate limiting or queues, these environment variables are not required.
+If you choose to use the Redis driver for horizontal scalability, rate-limiting data storage, or queue support, you will need to configure additional environment variables to instruct soketi on how to connect to Redis.
+
+If you are not using Redis for rate limiting or queues, these environment variables are not required.
 
 ### Environment Variables
 

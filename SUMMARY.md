@@ -1,6 +1,6 @@
 # Table of contents
 
-* [📡 About soketi](README.md)
+* [📡 soketi](README.md)
 * [🏆 Benchmarks](benchmarks.md)
 * [🎉 Support](support.md)
 * [🤝 Contributing](getting-started/contributing.md)
@@ -15,8 +15,10 @@
 * [💿 Configuring the server](getting-started/environment-variables.md)
 * [🔐 SSL Configuration](getting-started/ssl-configuration.md)
 * [🎨 Client Configuration](getting-started/client-configuration/README.md)
+  * [Pusher SDK](getting-started/client-configuration/pusher-sdk.md)
   * [Laravel Echo](getting-started/client-configuration/laravel-echo.md)
 * [💻 Backend Configuration](getting-started/backend-configuration/README.md)
+  * [Pusher SDK](getting-started/backend-configuration/pusher-sdk.md)
   * [Laravel Broadcasting](getting-started/backend-configuration/laravel-broadcasting.md)
   * [Nginx Configuration](getting-started/backend-configuration/nginx-configuration.md)
 * [🧠 Redis Configuration](getting-started/redis-configuration.md)

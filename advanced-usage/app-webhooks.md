@@ -1,6 +1,6 @@
-# 🔗 App Webhooks
+# 🔗 HTTP Webhooks
 
-Before diving into the webhooks documentation, consider reading [Pusher's documentation regarding webhooks](https://pusher.com/docs/channels/server_api/webhooks) to understand the basics of webhooks when using the Pusher protocol.
+Before diving into the webhooks documentation, consider reading [Pusher's documentation regarding webhooks](https://pusher.com/docs/channels/server\_api/webhooks) to understand the basics of webhooks when using the Pusher protocol.
 
 Each [app](../app-management/introduction.md) definition contains a `webhooks` array which will contain data structures formatted like the following:
 
@@ -22,7 +22,7 @@ The value for `event_types` can be one of the following:
 * `member_added`
 * `member_removed`
 
-The generic look of the webhooks payload is the same as [Pusher's](https://pusher.com/docs/channels/server_api/webhooks/).
+The generic look of a webhook's payload is the same as [Pusher's](https://pusher.com/docs/channels/server\_api/webhooks/):
 
 ```js
 {
@@ -52,6 +52,10 @@ Each event from `events` looks like this:
 
 ### Filtering Webhooks
 
+{% hint style="danger" %}
+Filtering does not work with [webhook batching](app-webhooks.md#webhook-batching).
+{% endhint %}
+
 Enabling webhooks will send notifications for the selected `event_types`, but for all channels. In some situations, you may want to receive webhooks for specific channels, to simply reduce the network usage.
 
 Starting with soketi `0.23`, you can filter those channels you want to receive based on their name.
@@ -78,7 +82,7 @@ client.subscribe('beta-chat-room-app');
 ```
 
 {% hint style="info" %}
-All passed filters are combined with `AND` logic. To filter them by another logical gate like `OR`, consider filtering the most by passing the `filters` object and consider modifying your webhook server's code to filter them further.
+All passed filters are combined with `AND` logic. To filter them by another logical gate like `OR`, consider filtering most of the events by passing the `filters` object and consider modifying your webhook server's code to filter them further.
 {% endhint %}
 
 ### Webhook Headers
@@ -118,6 +122,7 @@ If you have a lot of webhooks going on, consider increasing this value according
 # Setting the duration to 1000ms = 1s
 WEBHOOKS_BATCHING=1 WEBHOOKS_BATCHING_DURATION=1000 soketi start
 ```
+
 {% hint style="warning" %}
 Make sure that your [graceful shutdown](graceful-shutdowns.md#graceful-shutdown-time) period is higher than the batch durations. If you set the batching higher than the graceful shutdown allowance, you may never receive the events that were still built up before being flushed out of the memory with the server shutdown.
 {% endhint %}

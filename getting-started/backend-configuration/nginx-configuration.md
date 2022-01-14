@@ -1,6 +1,8 @@
 # Nginx Configuration
 
-Serving soketi behind a web server such as Nginx can allow you to access the soketi server via a specific host name, such as `socket.example.com`. If you wish, you may also choose to allow Nginx to negotiate your SSL connections instead of providing your SSL certificate information to soketi. An example Nginx configuration is provided below; however, small adjustments may be required or desired for your specific server environment:
+Serving soketi behind a web server such as Nginx can allow you to access the soketi server via a specific hostname, such as `socket.example.com`. If you wish, you may also choose to allow Nginx to negotiate your SSL connections instead of providing your SSL certificate information to soketi.
+
+An example Nginx configuration is provided below; however, small adjustments may be required or desired for your specific server environment:
 
 ```nginx
 server {
