@@ -26,7 +26,7 @@ So, for a 2 vCPU 2 GB instance, it takes the server `39ms` to distribute the mes
 
 ### ARM Performance
 
-Within the same scenario, but with AWS's Graviton instances (`t4g` ), the performance delivered was 10% greater using the Docker ARM builds.
+Within the same scenario, but with AWS's Graviton instances (`t4g` ), the performance delivered was 30% greater using the Docker ARM builds.
 
 ![](.gitbook/assets/carbon.png)
 
