@@ -22,7 +22,13 @@ In this scenario, the processing time (excluding networking overhead) it takes f
 INTERNAL_TIME = 119 - (40 * 2) = 119 - 80 = 39 ms
 ```
 
-So, for a  2 vCPU 2 GB instance, it takes the server `39ms` to distribute the messages for 250 concurrent users, in addition to a connecting-disconnecting ramp-up amount of between 100 and 250 users. As you can see, soketi easily handles this load scenario.
+So, for a 2 vCPU 2 GB instance, it takes the server `39ms` to distribute the messages for 250 concurrent users, in addition to a connecting-disconnecting ramp-up amount of between 100 and 250 users. As you can see, soketi easily handles this load scenario.
+
+### ARM Performance
+
+Within the same scenario, but with AWS's Graviton instances (`t4g` ), the performance delivered was 10% greater using the Docker ARM builds.
+
+![](.gitbook/assets/carbon.png)
 
 ### Performance Caveats
 

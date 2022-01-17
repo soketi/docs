@@ -1,5 +1,9 @@
 # Docker
 
+{% hint style="info" %}
+Starting with 0.27, you can now also deploy soketi on ARM-based devices using Docker.
+{% endhint %}
+
 soketi is also available via pre-built Docker images. To get started, you may simply run one of our available images:
 
 ```bash
