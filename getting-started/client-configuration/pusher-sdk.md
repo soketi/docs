@@ -28,7 +28,10 @@ const PusherJS = require('pusher-js');
 
 let client = new PusherJS('app-key', {
     ...
+    wssHost: '127.0.0.1',
+    wssPort: 6001,
     forceTLS: true,
+    enabledTransports: ['wss'],
     ...
 });
 ```

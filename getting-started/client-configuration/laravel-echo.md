@@ -38,3 +38,7 @@ MIX_PUSHER_APP_KEY="${PUSHER_APP_KEY}"
 MIX_PUSHER_HOST="${PUSHER_HOST}"
 MIX_PUSHER_PORT="${PUSHER_PORT}"
 ```
+
+{% hint style="info" %}
+For SSL configuration, see the [Pusher SDK example for SSL](pusher-sdk.md#ssl-configuration).
+{% endhint %}
