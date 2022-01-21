@@ -35,3 +35,21 @@ let client = new PusherJS('app-key', {
     ...
 });
 ```
+
+### Encrypted Private Channels
+
+[Pusher Encrypted Private Channels](https://pusher.com/docs/channels/using\_channels/encrypted-channels/) are also supported, meaning that for private channels, you can encrypt your data symmetrically at both your client and backend applications, soketi NOT knowing at all what the actual data is set, acting just like a deliverer.
+
+```javascript
+const PusherJS = require('pusher-js');
+
+let client = new PusherJS('app-key', {
+    ...
+    encryptionMasterKeyBase64: "YOUR_MASTER_KEY", // generate this with, e.g. 'openssl rand -base64 32'
+    ...
+});
+
+client.subscribe('private-encrypted-top-secret-room').bind('message', (message) => {
+    // The message is unknown to soketi
+});
+```

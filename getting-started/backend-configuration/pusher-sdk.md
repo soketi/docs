@@ -19,3 +19,16 @@ $pusher = new Pusher('app-key', 'app-secret', 'app-id', [
 {% hint style="info" %}
 To configure the client for [SSL](../ssl-configuration.md), you should set the `scheme` option to `http` and the `useTLS` option to `true`
 {% endhint %}
+
+### Encrypted Private Channels
+
+[Pusher Encrypted Private Channels](https://pusher.com/docs/channels/using\_channels/encrypted-channels/) are also supported, meaning that for private channels, you can encrypt your data symmetrically at both your client and backend applications, soketi NOT knowing at all what the actual data is set, acting just like a deliverer.
+
+```php
+use Pusher\Pusher;
+
+$pusher = new Pusher('app-key', 'app-secret', 'app-id', [
+    // ...
+    'encryptionMasterKeyBase64' => '...',  // generate this with, e.g. 'openssl r
+]);
+```
