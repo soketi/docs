@@ -29,6 +29,6 @@ use Pusher\Pusher;
 
 $pusher = new Pusher('app-key', 'app-secret', 'app-id', [
     // ...
-    'encryptionMasterKeyBase64' => '...',  // generate this with, e.g. 'openssl r
+    'encryptionMasterKeyBase64' => '...',  // // generate this with, e.g. 'openssl rand -base64 32'
 ]);
 ```
