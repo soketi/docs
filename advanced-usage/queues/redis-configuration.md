@@ -1,4 +1,4 @@
-# 🧠 Horizontal Scaling with Redis
+# 🧠 Redis
 
 Before reading about queuing webhook processing using Redis, you may wish to [read the documentation regarding horizontal scaling](../horizontal-scaling.md).
 
@@ -6,9 +6,16 @@ When combining queuing and horizontal scalability, it's highly recommended that 
 
 Each webhook message is processed by a worker. In addition, each worker can spawn multiple queue listeners. In soketi's case, each worker represents one of the listed events within the [app webhooks documentation](../app-webhooks.md). This way, soketi ensures that webhooks are being processed quickly and efficiently. **This behavior may be subject to change in the future. For example, queues for each app might eventually be needed to ensure high-performance message processing in all situations.**
 
+{% hint style="info" %}
+To decouple the queue processors from the active WS/HTTP server, consider [setting `MODE=worker`](../horizontal-scaling/running-modes.md#mode-worker) and run a separate fleet for your workers.
+{% endhint %}
+
+{% hint style="success" %}
+In case you want to scale your queue workers with Prometheus, the best solution is to use **** [bull\_exporter](https://github.com/UpHabit/bull\_exporter)
+{% endhint %}
+
 ### Environment Variables
 
-| Name                      | Default | Possible values | Description                                               |
-| ------------------------- | ------- | --------------- | --------------------------------------------------------- |
+| Name                      | Default | Possible values | Description                                                                      |
+| ------------------------- | ------- | --------------- | -------------------------------------------------------------------------------- |
 | `QUEUE_REDIS_CONCURRENCY` | `1`     | Any integer     | The number of webhook messages that can be processed in parallel for each event. |
-
