@@ -76,8 +76,26 @@ AWS has [detailed documentation with many ways to define credentials for the Dyn
 
 The following environment variables are used to control the behavior of the DynamoDB app driver:
 
-| **Name**                        | Default     | Possible values | Description                                                                                           |
-| ------------------------------- | ----------- | --------------- | ----------------------------------------------------------------------------------------------------- |
-| `APP_MANAGER_DYNAMODB_TABLE`    | `apps`      | Any string      | The table to pull the app data from.                                                                 |
-| `APP_MANAGER_DYNAMODB_REGION`   | `us-east-1` | Any AWS region  | The DynamoDB region the table was deployed to. For global tables, you may choose any region.                    |
+| **Name**                        | Default     | Possible values | Description                                                                                             |
+| ------------------------------- | ----------- | --------------- | ------------------------------------------------------------------------------------------------------- |
+| `APP_MANAGER_DYNAMODB_TABLE`    | `apps`      | Any string      | The table to pull the app data from.                                                                    |
+| `APP_MANAGER_DYNAMODB_REGION`   | `us-east-1` | Any AWS region  | The DynamoDB region the table was deployed to. For global tables, you may choose any region.            |
 | `APP_MANAGER_DYNAMODB_ENDPOINT` | `''`        | Any URL         | The endpoint used to connect to DynamoDB. May be used for testing or for local DynamoDB configurations. |
+
+### Limits on an app-by-app basis
+
+This feature is truly optional. Your items in DynamoDB can have the following new fields:
+
+```javascript
+MaxPresenceMembersPerChannel: { N: '-1' },
+MaxPresenceMemberSizeInKb: { N: '-1' },
+MaxChannelNameLength: { N: '-1' },
+MaxEventChannelsAtOnce: { N: '-1' },
+MaxEventNameLength: { N: '-1' },
+MaxEventPayloadInKb: { N: '-1' },
+MaxEventBatchSize: { N: '-1' },
+```
+
+Not setting any of the above fields will ignore the setting, and will fallback to the limits associated [with the server-level declared defaults](../rate-limiting-and-limits/events-and-channels-limits.md).
+
+Existing apps running on `<0.29.0` will still work even if you don't have these fields added after the migration to `0.29.0`. You should add these fields to keep your database up-to-date or to have the choice to, later on, imply limits to your apps.

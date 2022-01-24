@@ -20,3 +20,28 @@ For rate limits and max connections options, setting the variable value to `-1` 
 | `DEFAULT_APP_MAX_CLIENT_EVENTS_PER_SEC`  | `-1`         | Any integer                                                | The default app's limit of client events broadcast per second by a single socket. You can [configure rate limiting database store](../rate-limiting-and-limits/broadcast-rate-limiting.md) |
 | `DEFAULT_APP_MAX_READ_REQ_PER_SEC`       | `-1`         | Any integer                                                | The default app's limit of read endpoint calls per second. You can [configure rate limiting database store](../rate-limiting-and-limits/broadcast-rate-limiting.md)                        |
 | `DEFAULT_APP_WEBHOOKS`                   | `[]`         | `[{"url": "string", "event_types": ["string", ...]}, ...]` | The webhooks list for the app. See below                                                                                                                                                   |
+
+### App-level Limits
+
+The `array` driver does not support setting limits at the app-level variables using environment variables. However, you can use [configuration files](../getting-started/environment-variables.md#file-configuration) to set limits for your apps:
+
+```json
+{
+    "appManager.array.apps": [
+        {
+            "id": "...",
+            ...
+            "maxPresenceMembersPerChannel": 100,
+            "maxPresenceMemberSizeInKb": 2,
+            "maxChannelNameLength": 200,
+            "maxEventChannelsAtOnce": 10,
+            "maxEventNameLength": 100,
+            "maxEventPayloadInKb": 4,
+            "maxEventBatchSize": 10
+    ]
+}
+```
+
+{% hint style="info" %}
+Keep in mind, the fields are optional and you can omit them in case you want to keep the default ones defined with the [events & channels limits environment variables](../rate-limiting-and-limits/events-and-channels-limits.md).
+{% endhint %}

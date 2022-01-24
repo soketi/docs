@@ -41,6 +41,7 @@
 ## Advanced Usage
 
 * [↔ Horizontal Scaling](advanced-usage/horizontal-scaling.md)
+  * [🤖 Running Modes](advanced-usage/horizontal-scaling/running-modes.md)
   * [🧠 Redis Configuration](advanced-usage/horizontal-scaling/redis-configuration.md)
   * [🗃 Private Network Configuration](advanced-usage/horizontal-scaling/clustering.md)
   * [😑 Ok, what to choose?](advanced-usage/horizontal-scaling/ok-what-to-choose.md)
