@@ -50,6 +50,7 @@
 * [🔗 HTTP Webhooks](advanced-usage/app-webhooks.md)
   * [📐 AWS Lambda trigger](advanced-usage/app-webhooks/aws-lambda-trigger.md)
 * [🕛 Queues](advanced-usage/queues/README.md)
+  * [⛓ AWS SQS FIFO](advanced-usage/queues/aws-sqs-fifo.md)
   * [🧠 Redis](advanced-usage/queues/redis-configuration.md)
 
 ## Network Watcher

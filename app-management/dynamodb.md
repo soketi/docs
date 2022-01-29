@@ -72,6 +72,13 @@ Note that the "Webhooks" field is stored as a JSON-encoded string.
 AWS has [detailed documentation with many ways to define credentials for the DynamoDB client](https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/setting-credentials-node.html). soketi uses the same conventions, so you are free to define your AWS credentials in the `.aws` folder, environment variables, or from an EC2 / ECS profile.
 {% endhint %}
 
+### IAM Permissions
+
+The IAM Policy needed to work with the DynamoDB driver must contain the following permissions:
+
+* `dynamodb:GetItem` (for `AppId` retrieval)
+* `dynamodb:Query` (for `AppKey` retrieval)
+
 ### Environment Variables
 
 The following environment variables are used to control the behavior of the DynamoDB app driver:

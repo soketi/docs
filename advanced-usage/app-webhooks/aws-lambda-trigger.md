@@ -57,6 +57,12 @@ If you would like to specify the AWS account credentials directly in your webhoo
 Keep in mind that hard-coding AWS credentials into your webhook configuration can increase security risks. If you deploy soketi within an EC2 instance or an ECS container, you should not specify credentials within the webhook definition and instead give your EC2 instances or your ECS containers the permission to invoke your Lambda via their service role, as the credentials will be automatically injected and recognized by soketi.
 {% endhint %}
 
+### IAM Policy Permissions
+
+To be able to invoke the Lambda, the IAM User or Instance Role should have the following permissions:
+
+* `lambda:InvokeFunction`
+
 ### Example Lambda code
 
 Below you will find an example Lambda function implementation that can be used to handle incoming events:
