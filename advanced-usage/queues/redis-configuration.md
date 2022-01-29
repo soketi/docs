@@ -1,5 +1,9 @@
 # 🧠 Redis
 
+{% hint style="warning" %}
+Redis Cluster mode is not supported for Redis Queues.
+{% endhint %}
+
 Before reading about queuing webhook processing using Redis, you may wish to [read the documentation regarding horizontal scaling](../horizontal-scaling.md).
 
 When combining queuing and horizontal scalability, it's highly recommended that you use a third-party driver like [Redis](../getting-started/redis-configuration.md). Redis helps ensure that once a webhook is triggered it will be completely processed because the message to send the webhook will remain in-memory within Redis. Therefore, even if the soketi server goes down, the webhook will still be sent.
@@ -16,6 +20,7 @@ In case you want to scale your queue workers with Prometheus, the best solution 
 
 ### Environment Variables
 
-| Name                      | Default | Possible values | Description                                                                      |
-| ------------------------- | ------- | --------------- | -------------------------------------------------------------------------------- |
-| `QUEUE_REDIS_CONCURRENCY` | `1`     | Any integer     | The number of webhook messages that can be processed in parallel for each event. |
+| Name                       | Default | Possible values | Description                                                                                                                                                                       |
+| -------------------------- | ------- | --------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `QUEUE_REDIS_CONCURRENCY`  | `1`     | Any integer     | The number of webhook messages that can be processed in parallel for each event.                                                                                                  |
+| `QUEUE_REDIS_CLUSTER_MODE` | `false` | `false`, `true` | Whether the client should be initialized for Redis Cluster. [You have to specify the `DB_REDIS_CLUSTER_NODES` value.](../../getting-started/redis-configuration.md#redis-cluster) |
