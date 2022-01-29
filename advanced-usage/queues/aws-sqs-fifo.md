@@ -6,7 +6,7 @@ Starting with soketi 0.30, you may now use AWS's SQS FIFO queues to process webh
 
 The driver works strictly with the High-Throughput FIFO Queue mode. Below you will find an example command line to create a FIFO Queue for soketi using the AWS CLI.
 
-The recommended values can be adjusted according to your needs, su `MessageRetentionPeriod` but these are optimal for this soketi's use case.
+The recommended values can be adjusted according to your needs, such as `MessageRetentionPeriod`, but these are optimal for this soketi's use case.
 
 ```bash
 aws sqs create-queue --queue-name test.fifo \
