@@ -1,9 +1,5 @@
 # 🧠 Redis
 
-{% hint style="warning" %}
-Redis Cluster mode is not supported for Redis Queues.
-{% endhint %}
-
 Before reading about queuing webhook processing using Redis, you may wish to [read the documentation regarding horizontal scaling](../horizontal-scaling.md).
 
 When combining queuing and horizontal scalability, it's highly recommended that you use a third-party driver like [Redis](../getting-started/redis-configuration.md). Redis helps ensure that once a webhook is triggered it will be completely processed because the message to send the webhook will remain in-memory within Redis. Therefore, even if the soketi server goes down, the webhook will still be sent.
@@ -16,6 +12,10 @@ To decouple the queue processors from the active WS/HTTP server, consider [setti
 
 {% hint style="success" %}
 In case you want to scale your queue workers with Prometheus, the best solution is to use **** [bull\_exporter](https://github.com/UpHabit/bull\_exporter)
+{% endhint %}
+
+{% hint style="warning" %}
+Redis Cluster mode may be broken in some cases. [Read more about BullMQ Redis Cluster configurations](https://docs.bullmq.io/bull/patterns/redis-cluster).
 {% endhint %}
 
 ### Environment Variables

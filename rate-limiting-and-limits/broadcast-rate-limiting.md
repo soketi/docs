@@ -6,10 +6,9 @@ Choosing a rate limiter driver depends on the architecture the server is deploye
 
 ### Environment Variables
 
-| Name                              | Default | Possible values             | Description                                                                                                                                                                                                 |
-| --------------------------------- | ------- | --------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `RATE_LIMITER_DRIVER`             | `local` | `local`, `redis`, `cluster` | The driver used for rate limiting.                                                                                                                                                                          |
-| `RATE_LIMITER_REDIS_CLUSTER_MODE` | `false` | `false`, `true`             | Only for the `redis` driver. Whether the client should be initialized for Redis Cluster. [You have to specify the `DB_REDIS_CLUSTER_NODES` value.](../getting-started/redis-configuration.md#redis-cluster) |
+| Name                  | Default | Possible values             | Description                              |
+| --------------------- | ------- | --------------------------- | ---------------------------------------- |
+| `RATE_LIMITER_DRIVER` | `local` | `local`, `redis`, `cluster` | The driver used for rate limiting.       |
 
 * `local` - Rate limiting data is stored in-memory and is lost upon server exit.
 * `redis` - Rate limiting data is centralized in Redis. This driver is recommended when deploying multi-node soketi configurations.

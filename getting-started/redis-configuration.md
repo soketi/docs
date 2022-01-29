@@ -28,15 +28,3 @@ Please be aware that utilizing the Sentinel options will override some of the ot
 | `DB_REDIS_SENTINELS`         | `null`     | Any string      | A JSON-encoded array of objects with `host` and `port` of Sentinels to connect to.                           |
 | `DB_REDIS_SENTINEL_PASSWORD` | `null`     | Any string      | The (optional) password that is used to authenticate with the Sentinels.                                     |
 | `DB_REDIS_INSTANCE_NAME`     | `mymaster` | Any string      | The name of the Redis instance to which a connection should be established through the configured Sentinels. |
-
-### Redis Cluster
-
-The following additional options are available when connecting to Redis Cluster configurations.
-
-{% hint style="info" %}
-Please be aware that utilizing the Cluster options will override some of the other options like `DB_REDIS_HOST` and `DB_REDIS_PORT`, but not `DB_REDIS_DB` or `DB_REDIS_PASSWORD`. More details can be found in the [`ioredis` documentation for Redis Cluster](https://github.com/luin/ioredis#cluster).
-{% endhint %}
-
-| Name                     | Default | Possible values | Description                                                                    |
-| ------------------------ | ------- | --------------- | ------------------------------------------------------------------------------ |
-| `DB_REDIS_CLUSTER_NODES` | `[]`    | Any string      | A JSON-encoded array of objects with `host` and `port` of Nodes to connect to. |
