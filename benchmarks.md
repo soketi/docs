@@ -1,12 +1,12 @@
 # 🏆 Benchmarks
 
-![](.gitbook/assets/medium\_90ms\_1536.png)
+![](.gitbook/assets/benchmarks.png)
 
 In summary: soketi is really fast!
 
-In the benchmarking scenario above, there are 250 users that sit idle and receive 1 message per second while 250 users are actively connecting and disconnecting after 5 seconds.
+In the benchmarking scenario above, there are 500 users that sit idle and receive 1 message per second while 500 users are actively connecting and disconnecting after 5 seconds.
 
-The benchmark was performed on an AWS `t3.small` instance (T3 Unlimited disabled to avoid bursting) @ 2 vCPU 2 GB and Gigabit network in the `Europe Frankfurt` region. The ping between client location and server location averaged \~ 40ms.
+The benchmark was performed on an AWS `t3.small` instance (T3 Unlimited disabled to avoid bursting) @ 2 vCPU 2 GB and Gigabit network in the `Europe Frankfurt` region. The ping between client location and server location averaged \~ 42ms.
 
 The network overhead was taken into account by subtracting the ping twice, since the client trips once to the server to broadcast the message and makes another trip back again from the server to the client.
 
@@ -16,19 +16,17 @@ To calculate the internal time the server needs to process and distribute the re
 INTERNAL_TIME = CALCULATED_DELAY - (NETWORK_PING * 2)
 ```
 
-In this scenario, the processing time (excluding networking overhead) it takes for soketi to process a message in this scenario is:
+In this scenario, the processing time (excluding networking overhead) it takes for soketi to process a message:
 
 ```
-INTERNAL_TIME = 119 - (40 * 2) = 119 - 80 = 39 ms
+INTERNAL_TIME = 90 - (42 * 2) = 90 - 84 = 6 ms
 ```
 
-So, for a 2 vCPU 2 GB instance, it takes the server `39ms` to distribute the messages for 250 concurrent users, in addition to a connecting-disconnecting ramp-up amount of between 100 and 250 users. As you can see, soketi easily handles this load scenario.
+So, for a 2 vCPU 2 GB instance, it takes the server `6ms` to distribute the messages for 500 concurrent users, in addition to a connecting-disconnecting ramp-up amount of between 100 and 500 users. As you can see, soketi easily handles this load scenario.
 
 ### ARM Performance
 
 Within the same scenario, but with AWS's Graviton instances (`t4g` ), the performance delivered was 30% greater using the Docker ARM builds.
-
-![](.gitbook/assets/carbon.png)
 
 ### Performance Caveats
 
