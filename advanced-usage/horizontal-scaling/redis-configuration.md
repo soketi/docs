@@ -14,10 +14,12 @@ Adapters like Redis are used for horizontal scaling only. Configuring and runnin
 
 ### Environment Variables
 
-| Name                         | Default | Possible values             | Description                                                                                                                                                                       |
-| ---------------------------- | ------- | --------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `ADAPTER_DRIVER`             | `local` | `redis`, `local`, `cluster` | The adapter driver to use to store and retrieve each app and channel's persistent data.                                                                                           |
-| `ADAPTER_REDIS_PREFIX`       | `''`    | Any string                  | The Redis adapter's Pub / Sub channels prefix.                                                                                                                                    |
-| `ADAPTER_REDIS_CLUSTER_MODE` | `false` | `true`, `false`             | Whether the client should be initialized for Redis Cluster. [You have to specify the `DB_REDIS_CLUSTER_NODES` value.](../../getting-started/redis-configuration.md#redis-cluster) |
+{% hint style="info" %}
+These are the Redis variables to configure the adapter for Redis. For the rest of them, like host, port, and clustering support, read [Redis Configuration.](../../getting-started/redis-configuration.md#environment-variables)
+{% endhint %}
 
-###
+| Name                         | Default | Possible values                     | Description                                                                                                                                                                       |
+| ---------------------------- | ------- | ----------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `ADAPTER_DRIVER`             | `local` | `redis`, `nats`, `local`, `cluster` | The adapter driver to use to store and retrieve each app and channel's persistent data.                                                                                           |
+| `ADAPTER_REDIS_PREFIX`       | `''`    | Any string                          | The Redis adapter's Pub / Sub channels prefix.                                                                                                                                    |
+| `ADAPTER_REDIS_CLUSTER_MODE` | `false` | `true`, `false`                     | Whether the client should be initialized for Redis Cluster. [You have to specify the `DB_REDIS_CLUSTER_NODES` value.](../../getting-started/redis-configuration.md#redis-cluster) |

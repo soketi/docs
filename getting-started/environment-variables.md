@@ -21,6 +21,10 @@ soketi start
 
 Many soketi features can be controlled using environment variables, and each of these variables are discussed in the relevant sections of this documentation.
 
+{% hint style="success" %}
+To get started creating your own app credentials, visit the [Array Driver app manager.](../app-management/array-driver.md)
+{% endhint %}
+
 ### File configuration
 
 Starting with soketi `0.24`, you can define a JSON-formatted file which can contain dot-formatted values for your configuration:

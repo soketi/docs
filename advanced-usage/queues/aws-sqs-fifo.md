@@ -40,9 +40,12 @@ Since the webhooks are used for now for sending HTTP requests or Lambda invocati
 
 ### Environment Variables
 
-| Name                       | Default   | Possible values           | Description                                                                                                           |
-| -------------------------- | --------- | ------------------------- | --------------------------------------------------------------------------------------------------------------------- |
-| `QUEUE_SQS_REGION`         | us-east-1 | Any string                | The region in which the SQS queue is deployed.                                                                        |
-| `QUEUE_SQS_CLIENT_OPTIONS` | `''`      | Any JSON-formatted string | A JSON-formatted string with additional options to pass to the `new SQS()` function.                                  |
-| `QUEUE_SQS_URL`            | `''`      | Any string                | The URL of the queue. It has to be ending in `.fifo` (ex: `https://sqs.eu-central-1.amazonaws.com/xxxx/myqueue.fifo`) |
-| `QUEUE_SQS_ENDPOINT`       | `''`      | Any string                | Optional string to test SQS locally or manually define the endpoint for the SQS API.                                  |
+| Name                             | Default   | Possible values           | Description                                                                                                                                              |
+| -------------------------------- | --------- | ------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `QUEUE_SQS_REGION`               | us-east-1 | Any string                | The region in which the SQS queue is deployed.                                                                                                           |
+| `QUEUE_SQS_CLIENT_OPTIONS`       | `''`      | Any JSON-formatted string | A JSON-formatted string with additional options to pass to the `new SQS()` function.                                                                     |
+| `QUEUE_SQS_URL`                  | `''`      | Any string                | The URL of the queue. It has to be ending in `.fifo` (ex: `https://sqs.eu-central-1.amazonaws.com/xxxx/myqueue.fifo`)                                    |
+| `QUEUE_SQS_ENDPOINT`             | `''`      | Any string                | Optional string to test SQS locally or manually define the endpoint for the SQS API.                                                                     |
+| `QUEUE_SQS_PROCESS_BATCH`        | `false`   | `true`, `false`           | Whether to process SQS in batches. This will make fewer requests to SQS, but will take longer to receive items from the queue.                           |
+| `QUEUE_SQS_BATCH_SIZE`           | `1`       | Any number                | If batching is enabled, how many messages (at most) to receive for each batch. Consider setting to at least `1` and maximum of `10` (hard limit f SQS).  |
+| `QUEUE_SQS_POLLING_WAIT_TIME_MS` | `0`       | Any number (milliseconds) | The time to take between polls. Higher will delay some jobs, but reduces requests number.                                                                |

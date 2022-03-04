@@ -16,7 +16,15 @@ The only downside to the cluster adapter is that you can only scale processes or
 Keep in mind you should also set the [Rate Limiting driver](broken-reference) to `cluster` to ensure the rate limiting is even across all your workers.
 {% endhint %}
 
+{% hint style="danger" %}
+To deploy to Kubernetes, you should have a CNI that supports Multicast, Unicast or Broadcast, otherwise the Cluster adapter won't work. The best one would be [Weave](https://github.com/weaveworks/weave).
+{% endhint %}
+
 ### Environment Variables
+
+{% hint style="info" %}
+These environment variables are working only when the `ADAPTER_DRIVER` variable is set to `cluster`.
+{% endhint %}
 
 | Name                     | Default   | Possible values | Description                                                                           |
 | ------------------------ | --------- | --------------- | ------------------------------------------------------------------------------------- |
@@ -35,3 +43,4 @@ Make sure to choose the same port and hostname if you want the nodes to communic
 IPC is enabled automatically for running servers, and this is used in various cases, like storing [rate-limiting buckets](../../rate-limiting-and-limits/broadcast-rate-limiting.md) or [scaling horizontally in the same private network](../horizontal-scaling.md#cluster-adapter).
 
 Beside scaling horizontally, that can be done by configuring the [Redis adapter](../horizontal-scaling.md), each running instance of soketi is able to communicate with other nodes that run in the same private network via the IPC protocol in Node.js.
+
