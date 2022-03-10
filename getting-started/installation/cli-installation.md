@@ -1,5 +1,15 @@
 # CLI Installation
 
+Soketi is based on [uWebSocket.js](https://github.com/uNetworking/uWebSockets.js), a Node.js-based WebSocket server, transpiled from C language. Before installing the CLI version, make sure you have the required dependencies to build soketi: Python 3.x, GIT, the gcc compiler and the dependencies for build.
+
+The following example works for Ubuntu. For other distributions, consider using the equivalents.
+
+```bash
+apt install -y git python3 gcc build-essential
+```
+
+### Installing with NPM
+
 soketi may be easily installed via the NPM CLI:
 
 ```bash
