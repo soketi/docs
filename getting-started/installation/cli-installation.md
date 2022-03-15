@@ -9,7 +9,7 @@ apt install -y git python3 gcc build-essential
 ```
 
 {% hint style="danger" %}
-Due to uWebSocket.js limitations, Soketi does not work on CentOS 7. [See the issue](https://github.com/uNetworking/uWebSockets.js/issues/500).
+Due to uWebSocket.js limitations, Soketi does not work on CentOS 7, but it works on CentOS 8. [Check the Github issue](https://github.com/uNetworking/uWebSockets.js/issues/500).
 {% endhint %}
 
 ### Installing with NPM
