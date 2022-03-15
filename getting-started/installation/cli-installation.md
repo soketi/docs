@@ -8,14 +8,14 @@ The following example works for Ubuntu. For other distributions, consider using 
 apt install -y git python3 gcc build-essential
 ```
 
+{% hint style="danger" %}
+Due to uWebSocket.js limitations, Soketi does not work on CentOS 7. [See the issue](https://github.com/uNetworking/uWebSockets.js/issues/500).
+{% endhint %}
+
 ### Installing with NPM
 
 {% hint style="info" %}
-Node.js LTS (14.x, 16.x, so on...) is required due to uWebSockets.js build limitations..
-{% endhint %}
-
-{% hint style="danger" %}
-
+Node.js LTS (14.x, 16.x, so on) is required due to uWebSockets.js build limitations.
 {% endhint %}
 
 soketi may be easily installed via the NPM CLI:
