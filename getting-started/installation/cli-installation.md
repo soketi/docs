@@ -10,6 +10,14 @@ apt install -y git python3 gcc build-essential
 
 ### Installing with NPM
 
+{% hint style="info" %}
+Node.js LTS (14.x, 16.x, so on...) is required due to uWebSockets.js build limitations..
+{% endhint %}
+
+{% hint style="danger" %}
+
+{% endhint %}
+
 soketi may be easily installed via the NPM CLI:
 
 ```bash
