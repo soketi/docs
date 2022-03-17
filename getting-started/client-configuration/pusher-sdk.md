@@ -19,6 +19,10 @@ client.subscribe('chat-room').bind('message', (message) => {
 });
 ```
 
+{% hint style="danger" %}
+Make sure that `enabledTransports` is set to `['ws', 'wss']`. If not set, in case of connection failure, the client will try other transports such as XHR polling, which soketi doesn't support.
+{% endhint %}
+
 ### SSL Configuration
 
 When running the server in SSL mode, you may consider setting the `forceTLS` client option to `true`. When this option is set to `true`, the client will connect to the `wss` protocol instead of `ws`:

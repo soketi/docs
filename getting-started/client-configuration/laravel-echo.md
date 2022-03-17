@@ -25,6 +25,10 @@ laravelEcho.private(`orders.${orderId}`)
     });
 ```
 
+{% hint style="danger" %}
+Make sure that `enabledTransports` is set to `['ws', 'wss']`. If not set, in case of connection failure, the client will try other transports such as XHR polling, which soketi doesn't support.
+{% endhint %}
+
 The `MIX_*` environment variables are typically declared in your Laravel application's `.env` file:
 
 ```
