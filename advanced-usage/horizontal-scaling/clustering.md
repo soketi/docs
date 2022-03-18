@@ -26,13 +26,16 @@ To deploy to Kubernetes, you should have a CNI that supports Multicast, Unicast 
 These environment variables are working only when the `ADAPTER_DRIVER` variable is set to `cluster`.
 {% endhint %}
 
-| Name                     | Default   | Possible values | Description                                                                           |
-| ------------------------ | --------- | --------------- | ------------------------------------------------------------------------------------- |
-| `CLUSTER_CHECK_INTERVAL` | `500`     | Any number      | The amount of time (in ms) between checks to see if new instances joined the network. |
-| `CLUSTER_HOST`           | `0.0.0.0` | Any string      | The hostname to bind to the network.                                                  |
-| `CLUSTER_MASTER_TIMEOUT` | `2000`    | Any number      | The amount of time (in ms) between checks to see if the master instance is alive.     |
-| `CLUSTER_NODE_TIMEOUT`   | `2000`    | Any number      | The amount of time (in ms) between checks to see if the instances are alive.          |
-| `CLUSTER_PORT`           | `11002`   | Any number      | The port to communicate with other instances.                                         |
+| Name                        | Default           | Possible values              | Description                                                                                                          |
+| --------------------------- | ----------------- | ---------------------------- | -------------------------------------------------------------------------------------------------------------------- |
+| `CLUSTER_CHECK_INTERVAL`    | `500`             | Any number                   | The amount of time (in ms) between checks to see if new instances joined the network.                                |
+| `CLUSTER_HOST`              | `0.0.0.0`         | Any string                   | The hostname to bind to the network.                                                                                 |
+| `CLUSTER_MASTER_TIMEOUT`    | `2000`            | Any number                   | The amount of time (in ms) between checks to see if the master instance is alive.                                    |
+| `CLUSTER_NODE_TIMEOUT`      | `2000`            | Any number                   | The amount of time (in ms) between checks to see if the instances are alive.                                         |
+| `CLUSTER_PORT`              | `11002`           | Any number                   | The port to communicate with other instances.                                                                        |
+| `CLUSTER_BROADCAST_ADDRESS` | `255.255.255.255` | Any IP                       | The address in the private network for the broadcast protocol. Broadcast is enabled by default as the UDP protocol.  |
+| `CLUSTER_MULTICAST_ADDRESS` | `null`            | Any IP                       | The address in the private network for multicasting. Setting this disables broadcasing.                              |
+| `CLUSTER_UNICAST_ADDRESSES` | `null`            | JSON-formatted array of IPs. | The list of addresses in the private network for unicasting. Setting this disables multicasting and broadcasting.    |
 
 {% hint style="info" %}
 Make sure to choose the same port and hostname if you want the nodes to communicate between each other properly. Deploying multi-tenant architectures should use different ports or hostnames.
