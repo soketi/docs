@@ -31,15 +31,21 @@ Starting with soketi `0.24`, you can define a JSON-formatted file which can cont
 
 ```json
 {
-    "appManager.array.apps.0.id": "some-id",
-    "appManager.array.apps.0.key": "some-key",
-    "appManager.array.apps.0.secret": "some-secret",
-    "appManager.array.apps.0.webhooks": [{
-        "url": "https://...",
-        "event_types": ["channel_occupied"],
-    }],
     "debug": true,
-    "port": 6002
+    "port": 6002,
+    "appManager.array.apps": [
+        {
+            "id": "some-id",
+            "key": "some-key",
+            "secret": "some-secret",
+            "webhooks": [
+                {
+                    "url": "https://...",
+                    "event_types": ["channel_occupied"]
+                }
+            ]
+        }
+    ]
 }
 ```
 
