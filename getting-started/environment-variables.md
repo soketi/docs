@@ -36,7 +36,7 @@ Starting with soketi `0.24`, you can define a JSON-formatted file which can cont
     "appManager.array.apps.0.secret": "some-secret",
     "appManager.array.apps.0.webhooks": [{
         "url": "https://...",
-        "event_types": ["channel_occupied"],
+        "event_types": ["channel_occupied"]
     }],
     "debug": true,
     "port": 6002
