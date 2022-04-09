@@ -29,8 +29,15 @@ The `array` driver does not support setting limits at the app-level variables us
 {
     "appManager.array.apps": [
         {
-            "id": "...",
-            ...
+            "id": "app-id",
+            "key": "app-key",
+            "secret": "app-secret",
+            "enabled": true,
+            "enableClientMessages": true,
+            "webhooks": [],
+            "maxBackendEventsPerSecond": -1,
+            "maxClientEventsPerSecond": -1,
+            "maxReadRequestsPerSecond": -1,
             "maxPresenceMembersPerChannel": 100,
             "maxPresenceMemberSizeInKb": 2,
             "maxChannelNameLength": 200,
@@ -38,6 +45,7 @@ The `array` driver does not support setting limits at the app-level variables us
             "maxEventNameLength": 100,
             "maxEventPayloadInKb": 4,
             "maxEventBatchSize": 10
+        }
     ]
 }
 ```
