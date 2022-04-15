@@ -2,6 +2,8 @@
 
 Soketi released as 1.x stable with various new breaking changes.
 
+The update time is minimal, at most 30 mins, depending on the overall complexity of your Soketi implementation.
+
 ## Major Impact
 
 ### Environment variables namings
@@ -38,3 +40,5 @@ SOKETI_DEBUG=1 SOKETI_ADAPTER_DRIVER=mysql soketi start
 ### Added cached channels
 
 Pusher announced [cached channels](https://pusher.com/docs/channels/using\_channels/cache-channels/), a way to retrieve the last sent message to a channel upon connection. Is really useful to stay in sync with previously lost state upon reconnection.
+
+To stay up-to-date with Pusher and offer the best open-source experience, we've decided to show it off as a breaking change.
