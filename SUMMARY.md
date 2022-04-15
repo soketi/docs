@@ -7,6 +7,7 @@
 
 ## Getting started
 
+* [⬆ Upgrading from 0.x](getting-started/upgrading-from-0.x.md)
 * [🚀 Installation](getting-started/installation/README.md)
   * [CLI Installation](getting-started/installation/cli-installation.md)
   * [Docker](getting-started/installation/docker.md)
