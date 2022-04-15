@@ -20,7 +20,7 @@ If you are not using Redis for rate limiting or queues, these environment variab
 The following additional options are available when connecting to Redis through one or more Sentinels.
 
 {% hint style="info" %}
-Please be aware that utilizing the Sentinel options will override some of the other options like `DB_REDIS_HOST` and `DB_REDIS_PORT`, but not `DB_REDIS_DB` or `DB_REDIS_PASSWORD`. More details can be found in the [`ioredis` documentation for Redis Sentinel](https://github.com/luin/ioredis#sentinel).
+Please be aware that utilizing the Sentinel options will override some of the other options like `SOKETI_DB_REDIS_HOST` and `SOKETI_DB_REDIS_PORT`, but not `SOKETI_DB_REDIS_DB` or `SOKETI_DB_REDIS_PASSWORD`. More details can be found in the [`ioredis` documentation for Redis Sentinel](https://github.com/luin/ioredis#sentinel).
 {% endhint %}
 
 | Name                                | Default    | Possible values | Description                                                                                                  |
@@ -34,7 +34,7 @@ Please be aware that utilizing the Sentinel options will override some of the ot
 The following additional options are available when connecting to Redis Cluster configurations.
 
 {% hint style="info" %}
-Please be aware that utilizing the Cluster options will override some of the other options like `DB_REDIS_HOST` and `DB_REDIS_PORT`, but not `DB_REDIS_DB` or `DB_REDIS_PASSWORD`. More details can be found in the [`ioredis` documentation for Redis Cluster](https://github.com/luin/ioredis#cluster).
+Please be aware that utilizing the Cluster options will override some of the other options like `SOKETI_DB_REDIS_HOST` and `SOKETI_DB_REDIS_PORT`, but not `SOKETI_DB_REDIS_DB` or `SOKETI_DB_REDIS_PASSWORD`. More details can be found in the [`ioredis` documentation for Redis Cluster](https://github.com/luin/ioredis#cluster).
 {% endhint %}
 
 | Name                            | Default | Possible values | Description                                                                    |
