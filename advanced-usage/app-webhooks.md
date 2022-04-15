@@ -52,10 +52,6 @@ Each event from `events` looks like this:
 
 ### Filtering Webhooks
 
-{% hint style="danger" %}
-Filtering does not work with [webhook batching](app-webhooks.md#webhook-batching).
-{% endhint %}
-
 Enabling webhooks will send notifications for the selected `event_types`, but for all channels. In some situations, you may want to receive webhooks for specific channels, to simply reduce the network usage.
 
 Starting with soketi `0.23`, you can filter those channels you want to receive based on their name.
