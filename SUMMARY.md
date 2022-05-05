@@ -54,6 +54,7 @@
 * [🕛 Queues](advanced-usage/queues/README.md)
   * [⛓ AWS SQS FIFO](advanced-usage/queues/aws-sqs-fifo.md)
   * [🧠 Redis](advanced-usage/queues/redis-configuration.md)
+* [📝 Caching](advanced-usage/caching.md)
 
 ## Network Watcher
 

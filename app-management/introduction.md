@@ -8,12 +8,17 @@ Within the following documentation pages, we will discuss how to configure apps 
 
 ### Environment Variables
 
-| Name                               | Default | Possible values                          | Description                                                   |
-| ---------------------------------- | ------- | ---------------------------------------- | ------------------------------------------------------------- |
-| `SOKETI_APP_MANAGER_DRIVER`        | `array` | `array`, `dynamodb`, `mysql`, `postgres` | The driver used to retrieve the app.                          |
-| `SOKETI_APP_MANAGER_CACHE_ENABLED` | `false` | `true`, `false`                          | Enable temporary caching of apps in the memory.               |
-| `SOKETI_APP_MANAGER_CACHE_TTL`     | `-1`    | `-1` or any integer                      | The TTL of cache-stored apps, in seconds. `-1` for unlimited. |
+| Name                        | Default | Possible values                          | Description                          |
+| --------------------------- | ------- | ---------------------------------------- | ------------------------------------ |
+| `SOKETI_APP_MANAGER_DRIVER` | `array` | `array`, `dynamodb`, `mysql`, `postgres` | The driver used to retrieve the app. |
 
 ### Caching app retrievals
 
 Soketi can cache the apps that are retrieved for authentication. The apps retrieved in the cache cannot be purged until the TTL causes it to get evicted and replaced with the fresh value from the database. The caching is on a per-app basis.
+
+Please also see the caching sectio.
+
+| Name                               | Default | Possible values     | Description                                                   |
+| ---------------------------------- | ------- | ------------------- | ------------------------------------------------------------- |
+| `SOKETI_APP_MANAGER_CACHE_ENABLED` | `false` | `true`, `false`     | Enable temporary caching of apps in the memory.               |
+| `SOKETI_APP_MANAGER_CACHE_TTL`     | `-1`    | `-1` or any integer | The TTL of cache-stored apps, in seconds. `-1` for unlimited. |
