@@ -16,7 +16,9 @@ Within the following documentation pages, we will discuss how to configure apps 
 
 Soketi can cache the apps that are retrieved for authentication. The apps retrieved in the cache cannot be purged until the TTL causes it to get evicted and replaced with the fresh value from the database. The caching is on a per-app basis.
 
-Please also see the caching sectio.
+{% hint style="info" %}
+Please also see the [caching section](../advanced-usage/caching.md) for additional configuration.
+{% endhint %}
 
 | Name                               | Default | Possible values     | Description                                                   |
 | ---------------------------------- | ------- | ------------------- | ------------------------------------------------------------- |
