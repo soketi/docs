@@ -6,6 +6,16 @@ The update time is minimal, at most 30 mins, depending on the overall complexity
 
 ## Major Impact
 
+### Corking requests
+
+Starting with 1.x, the [requests are now corked](https://github.com/soketi/soketi/pull/219).
+
+HTTP requests can be received in small chunks before the response is actually finished, at the network level. These chunks/packets contain details about the headers, for example, and other metadata. This can be computationally hard, both CPU and network, to compress and send multiple times.
+
+By corking, the data chunks are gathered entirely, compressed, and sent back.
+
+Preliminary, internal tests revealed network performance slightly better than before. If you see issues in response times,&#x20;
+
 ### Environment variables namings
 
 Since early releases, environment variables were standard:
