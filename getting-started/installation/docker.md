@@ -7,10 +7,22 @@ Starting with 0.27, you can now also deploy soketi on ARM-based devices using Do
 soketi is also available via pre-built Docker images. To get started, you may simply run one of our available images:
 
 ```bash
-docker run -p 6001:6001 -p 9601:9601 quay.io/soketi/soketi:0.17-16-alpine
+docker run -p 6001:6001 -p 9601:9601 quay.io/soketi/soketi:0.34-16-alpine
+```
+
+### Debian-based Images
+
+Starting with 0.34, you can deploy soketi using a Debian image:
+
+```bash
+docker run -p 6001:6001 quay.io/soketi/soketi:0.34-16-debian
 ```
 
 ### Alpine-based Images
+
+{% hint style="danger" %}
+Since Alpine does not support BoringSSL, Soketi cannot serve [native SSL ](../ssl-configuration.md)through Alpine images. [Learn why](https://github.com/soketi/soketi/issues/449) and use instead the Debian-based images. You can still use your proxy SSL in front of soketi.
+{% endhint %}
 
 Whenever a release, commit, or master merge is performed on the soketi GitHub repository, an image containing the required code to run the application in Docker is published to `quay.io/soketi/soketi`.
 
@@ -26,12 +38,16 @@ Currently, the only supported `[node_version]` is `16-alpine`. This will be augm
 
 The following example versions are valid:
 
-* `0.17.1-16-alpine` (points to `0.17.1`)
-* `0.17-16-alpine` (points to the latest `0.17.x`)
-* `1-16-alpine` (points to the latest `1.x`)
-* `latest-16-alpine` (points to the latest `master` branch)
+* `0.34.1-16-alpine` (points to `0.34.1`)
+* `0.34-16-alpine` (points to the latest `0.34.x`)
+* `0-16-alpine` (points to the latest `0.x`)
+* `latest-16-alpine` (points to the latest `0.x` branch)
 
 ### Distroless-based Image
+
+{% hint style="danger" %}
+Since Distroless does not support BoringSSL, Soketi cannot serve [native SSL ](../ssl-configuration.md)through Alpine images. [Learn why](https://github.com/soketi/soketi/issues/449) and use instead the Debian-based images. You can still use your proxy SSL in front of soketi.
+{% endhint %}
 
 Thanks to a [pull request](https://github.com/soketi/soketi/pull/178) by community member [@nsmith5](https://github.com/nsmith5), distroless-based images are available starting with the `0.18.0` version.
 
@@ -40,7 +56,7 @@ Thanks to a [pull request](https://github.com/soketi/soketi/pull/178) by communi
 Distroless image tagging follows the same convention as the Alpine-based images, but the tags are suffixed with `-distroless` instead of `-alpine`.
 
 ```bash
-docker run -p 6001:6001 quay.io/soketi/soketi:0.18-16-distroless
+docker run -p 6001:6001 quay.io/soketi/soketi:0.34-16-distroless
 ```
 
 {% hint style="warning" %}
