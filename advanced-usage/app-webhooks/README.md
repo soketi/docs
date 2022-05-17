@@ -58,7 +58,7 @@ Enabling webhooks will send notifications for the selected `event_types`, but fo
 {
     "url": "string",
     "event_types": ["channel_occupied"],
-    "filters": {
+    "filter": {
         "channel_name_starts_with": "beta-",
         "channel_name_ends_with": "-app"
     }
