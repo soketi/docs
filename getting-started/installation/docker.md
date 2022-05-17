@@ -51,6 +51,6 @@ Distroless image tagging follows the same convention as the Alpine-based images,
 docker run -p 6001:6001 quay.io/soketi/soketi:0.34-16-distroless
 ```
 
-{% hint style="warning" %}
+{% hint style="success" %}
 We recommend using the distroless images in production to avoid any security issues involving remote code execution. However, keep in mind that debugging is not enabled and it might be harder to debug live containers / pods.
 {% endhint %}

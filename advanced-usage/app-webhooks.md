@@ -60,7 +60,7 @@ Starting with soketi `0.23`, you can filter those channels you want to receive b
 {
     "url": "string",
     "event_types": ["channel_occupied"],
-    "filters": {
+    "filter": {
         "channel_name_starts_with": "beta-",
         "channel_name_ends_with": "-app"
     }
