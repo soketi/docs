@@ -58,6 +58,7 @@ const params = {
         MaxClientEventsPerSecond: { N: '-1' },
         MaxReadRequestsPerSecond: { N: '-1' },
         Webhooks: { S: '[]' },
+        EnableUserAuthentication: { B: 'false' },
     },
 };
 

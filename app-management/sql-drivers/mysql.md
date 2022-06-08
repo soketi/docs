@@ -35,6 +35,7 @@ CREATE TABLE IF NOT EXISTS `apps` (
     `max_event_name_length` tinyint(1) NULL,
     `max_event_payload_in_kb` tinyint(1) NULL,
     `max_event_batch_size` tinyint(1) NULL,
+    `enable_user_authentication` tinyint(1) NOT NULL,
     PRIMARY KEY (`id`)
 );
 ```

@@ -1,10 +1,17 @@
-# User Authentication
+# ⚛ User Authentication
 
 Pusher allows you to [authenticate the users attempting to connect to the websockets](https://pusher.com/docs/channels/server\_api/authenticating-users/) before deciding if the server should keep the connection or not. In this sense, Soketi allows you to authenticate the users of your app too. It also takes care of [authorized connections](https://pusher.com/docs/channels/using\_channels/authorized-connections/) automatically.
 
 All apps have this feature disabled by default, and you can decide for each app if this should be enabled or not.
 
 [Read more about the app management where you can enable the user authentication.](../app-management/introduction.md)
+
+By default, when the app has user authentication enabled, Soketi disconnects unauthenticated or unauthorized connections in 30 seconds. However, you can change this duration using the following environment variable:
+
+```bash
+# 5 seconds timeout
+USER_AUTHENTICATION_TIMEOUT=5000 soketi start
+```
 
 #### Send message to specific user ID
 

@@ -55,7 +55,7 @@
   * [⛓ AWS SQS FIFO](advanced-usage/queues/aws-sqs-fifo.md)
   * [🧠 Redis](advanced-usage/queues/redis-configuration.md)
 * [📝 Caching](advanced-usage/caching.md)
-* [User Authentication](advanced-usage/user-authentication.md)
+* [⚛ User Authentication](advanced-usage/user-authentication.md)
 
 ## Network Watcher
 

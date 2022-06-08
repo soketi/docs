@@ -34,7 +34,8 @@ CREATE TABLE IF NOT EXISTS apps (
     max_event_name_length integer DEFAULT NULL,
     max_event_payload_in_kb integer DEFAULT NULL,
     max_event_batch_size integer DEFAULT NULL,
-    webhooks json
+    webhooks json,
+    enable_user_authentication smallint NOT NULL
 );
 ```
 
