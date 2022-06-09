@@ -4,6 +4,7 @@
 * [🏆 Benchmarks](benchmarks.md)
 * [🎉 Support](support.md)
 * [🤝 Contributing](contributing.md)
+* [📼 Video Courses](video-courses.md)
 
 ## Getting started
 

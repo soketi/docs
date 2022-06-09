@@ -1,6 +1,6 @@
 # 🧙♂ 🧙♂ NATS Configuration
 
-Alternative to Redis, you may use [NATS ](https://nats.io)to communicate between node instances of soketi.
+Alternative to Redis, you may use [NATS ](https://nats.io/)to communicate between node instances of soketi.
 
 {% hint style="info" %}
 These environment variables work only when `SOKETI_ADAPTER_DRIVER` is set to `nats`.

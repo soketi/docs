@@ -1,6 +1,6 @@
 # 📈 Prometheus Metrics
 
-soketi has a [Prometheus](https://prometheus.io) exporter built-in with a list of metrics that can help you have a better overview of the cluster and connections. To get started, enable the feature in soketi via the `METRICS_ENABLED` environment variable and set up your own Prometheus server to scrape the HTTP REST API of each node that soketi runs on.
+soketi has a [Prometheus](https://prometheus.io/) exporter built-in with a list of metrics that can help you have a better overview of the cluster and connections. To get started, enable the feature in soketi via the `METRICS_ENABLED` environment variable and set up your own Prometheus server to scrape the HTTP REST API of each node that soketi runs on.
 
 soketi **publicly** exposes the WebSockets & HTTP REST API servers on port `6001`.
 
