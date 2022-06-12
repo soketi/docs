@@ -4,7 +4,9 @@
 
 In summary: soketi is really fast!
 
-In the benchmarking scenario above, there are 500 users that sit idle and receive 1 message per second while 500 users are actively connecting and disconnecting after 5 seconds.
+In the benchmarking scenario above, there are 500 users that sit idle and receive 1 message per second while 500 users are actively connecting and disconnecting after 5 seconds, **and achieved only 6 milliseconds of internal latency.**
+
+### **AWS' t3 (no burst) Setup**
 
 The benchmark was performed on an AWS `t3.small` instance (T3 Unlimited disabled to avoid bursting) @ 2 vCPU 2 GB and Gigabit network in the `Europe Frankfurt` region. The ping between client location and server location averaged \~ 42ms.
 
@@ -22,11 +24,11 @@ In this scenario, the processing time (excluding networking overhead) it takes f
 INTERNAL_TIME = 90 - (42 * 2) = 90 - 84 = 6 ms
 ```
 
-So, for a 2 vCPU 2 GB instance, it takes the server `6ms` to distribute the messages for 500 concurrent users, in addition to a connecting-disconnecting ramp-up amount of between 100 and 500 users. As you can see, soketi easily handles this load scenario.
+For a 2 vCPU 2 GB instance, it takes the server `6ms` to distribute the messages for 500 concurrent users, in addition to a connecting-disconnecting ramp-up amount of between 100 and 500 users. As you can see, soketi easily handles this load scenario.
 
 ### ARM Performance
 
-Within the same scenario, but with AWS's Graviton instances (`t4g` ), the performance delivered was 30% greater using the Docker ARM builds.
+Within the same scenario, but with AWS's Graviton instances (`t4g`), the performance delivered **was 30% greater using the Docker ARM builds.**
 
 ### Performance Caveats
 

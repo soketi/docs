@@ -27,6 +27,11 @@ When using [Laravel's event broadcasting](https://laravel.com/docs/8.x/broadcast
 To configure the client for [SSL](../ssl-configuration.md), you should set the `scheme` option to `http` and the `useTLS` option to `true`
 {% endhint %}
 
+### Next up
+
+* [\[optional\] Setup NGINX proxy for SSL or Forge-deployed servers](nginx-configuration.md)
+* [Configure Laravel Echo](../client-configuration/laravel-echo.md)
+
 ### Self-signed Certificates
 
 Due to implementation changes in the Pusher PHP SDK, releases of the SDK since the `6.0` release do not support `curl_options`; therefore, self-signed SSL certificates will fail certificate validation since certificate verification cannot be disabled. To bypass SSL Verification, you must use Pusher PHP SDK version `5.0.3`.

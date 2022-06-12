@@ -46,3 +46,8 @@ MIX_PUSHER_PORT="${PUSHER_PORT}"
 {% hint style="info" %}
 For SSL configuration, see the [Pusher SDK example for SSL](pusher-sdk.md#ssl-configuration).
 {% endhint %}
+
+### Next up
+
+* [Configure the broadcasting driver](../backend-configuration/laravel-broadcasting.md)
+* [\[optional\] Setup NGINX proxy for SSL or Forge-deployed servers](../backend-configuration/nginx-configuration.md)

@@ -4,9 +4,9 @@ description: Soketi is your simple, fast, and resilient open-source WebSockets s
 
 # 📡 soketi
 
-![](<.gitbook/assets/carbon (22).png>)
 
-soketi is your simple, fast, and resilient open-source WebSockets server. 📣
+
+![](<.gitbook/assets/carbon (22).png>)
 
 #### Blazing fast speed :zap:
 

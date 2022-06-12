@@ -3,3 +3,9 @@
 All contributions to soketi are highly appreciated. Please consider the [CONTRIBUTING](https://github.com/soketi/soketi/blob/master/CONTRIBUTING.md) for more information on making contributions. In addition, you may review our current development plans and tasks for the current and upcoming versions via [GitHub Projects](https://github.com/soketi/soketi/projects).
 
 We make every effort to give all contributors credit for their contribution in release notes, etc.
+
+### Stargazers
+
+We really appreciate how this project turned to be such a great success. It will always remain open-source, free, and maintained. This is the real-time as it should be.
+
+![](https://starchart.cc/soketi/soketi.svg)

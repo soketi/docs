@@ -6,6 +6,14 @@ soketi is also available via pre-built Docker images. To get started, you may si
 docker run -p 6001:6001 -p 9601:9601 quay.io/soketi/soketi:1.0-16-debian
 ```
 
+### What to do next
+
+* [Explore more Docker options below](docker.md#alpine-based-images)
+* [Learn how to configure the SSL](../ssl-configuration.md)
+* [Learn how to configure the frontend client](../client-configuration/)
+* [Learn how to configure the backend](../backend-configuration/)
+* [Learn how to customize the applications' credentials for better security](../../app-management/introduction.md)
+
 ### Alpine-based Images
 
 {% hint style="danger" %}

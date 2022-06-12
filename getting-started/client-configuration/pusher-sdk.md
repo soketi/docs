@@ -23,6 +23,12 @@ client.subscribe('chat-room').bind('message', (message) => {
 Make sure that `enabledTransports` is set to `['ws', 'wss']`. If not set, in case of connection failure, the client will try other transports such as XHR polling, which soketi doesn't support.
 {% endhint %}
 
+### Next up
+
+* [\[optional\] Configure SSL or encryption in your client SDK](pusher-sdk.md#ssl-configuration)
+* [\[optional\] Setup NGINX proxy for SSL or Forge-deployed servers](../backend-configuration/nginx-configuration.md)
+* [Configure the Pusher's Backend SDK](pusher-sdk.md)
+
 ### SSL Configuration
 
 When running the server in SSL mode, you may consider setting the `forceTLS` client option to `true`. When this option is set to `true`, the client will connect to the `wss` protocol instead of `ws`:

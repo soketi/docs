@@ -32,3 +32,9 @@ PUSHER_APP_ID=app-id
 PUSHER_APP_KEY=app-key
 PUSHER_APP_SECRET=app-secret
 ```
+
+### What to do next
+
+* [Learn how to configure Laravel Echo](../client-configuration/laravel-echo.md)
+* [Learn how to configure the broadcasting driver](../backend-configuration/laravel-broadcasting.md)
+* [Learn how to customize the applications' credentials for better production security](../../app-management/introduction.md)

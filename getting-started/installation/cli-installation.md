@@ -1,16 +1,30 @@
 # CLI Installation
 
-Soketi is based on [uWebSocket.js](https://github.com/uNetworking/uWebSockets.js), a Node.js-based WebSocket server, transpiled from C language. Before installing the CLI version, make sure you have the required dependencies to build soketi: Python 3.x, GIT, the gcc compiler and the dependencies for build.
+### Prerequisites
+
+{% hint style="success" %}
+You can avoid this configurational step by using the[ Docker installation process](docker.md).
+{% endhint %}
+
+Soketi is based on [uWebSocket.js](https://github.com/uNetworking/uWebSockets.js), a Node.js-based WebSocket server, transpiled from C language.&#x20;
+
+Before installing the CLI version, make sure you have the required dependencies to build soketi:&#x20;
+
+* Python 3.x
+* GIT
+* The `gcc` compiler and the dependencies for build
+
+### Installing
+
+{% hint style="warning" %}
+Due to uWebSocket.js limitations, Soketi does not work on CentOS 7, but it works on CentOS 8. [Check the Github issue](https://github.com/uNetworking/uWebSockets.js/issues/500).
+{% endhint %}
 
 The following example works for Ubuntu. For other distributions, consider using the equivalents.
 
 ```bash
 apt install -y git python3 gcc build-essential
 ```
-
-{% hint style="danger" %}
-Due to uWebSocket.js limitations, Soketi does not work on CentOS 7, but it works on CentOS 8. [Check the Github issue](https://github.com/uNetworking/uWebSockets.js/issues/500).
-{% endhint %}
 
 ### Installing with NPM
 
@@ -30,7 +44,21 @@ After installation, a soketi server using the default configuration may be start
 soketi start
 ```
 
-By default, this will start a soketi server at `127.0.0.1:6001` with an application ID of `app-id`, application key of `app-key`, and application secret of `app-secret`.
+By default, this will start a server at `127.0.0.1:6001` with the following application credentials:
+
+* App ID: `app-id`
+* App Key: `app-key`
+* Secret: `app-secret`
+
+The credentials are used to authenticate your frontend and backend applications in order to be able to send messages and receive them in real time.
+
+### What to do next
+
+* [Explore the installation process recommendations below](cli-installation.md#supervisor)
+* [Learn how to configure the SSL](../ssl-configuration.md)
+* [Learn how to configure the frontend client](../client-configuration/)
+* [Learn how to configure the backend](../backend-configuration/)
+* [Learn how to customize the applications' credentials for better security](../../app-management/introduction.md)
 
 ### Supervisor
 
