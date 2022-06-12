@@ -4,6 +4,7 @@
 * [🏆 Benchmarks](benchmarks.md)
 * [🎉 Support](support.md)
 * [🤝 Contributing](getting-started/contributing.md)
+* [😢 Known Limitations](known-limitations.md)
 
 ## Getting started
 
