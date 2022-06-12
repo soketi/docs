@@ -58,6 +58,8 @@
   * [🧠 Redis](advanced-usage/queues/redis-configuration.md)
 * [📝 Caching](advanced-usage/caching.md)
 * [⚛ User Authentication](advanced-usage/user-authentication.md)
+* [🤾 Enhancing Performance](advanced-usage/enhancing-performance/README.md)
+  * [🔀 New traffic redirection](advanced-usage/enhancing-performance/new-traffic-redirection.md)
 
 ## Network Watcher
 
