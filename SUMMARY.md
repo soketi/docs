@@ -5,6 +5,7 @@
 * [🎉 Support](support.md)
 * [🤝 Contributing](contributing.md)
 * [📼 Video Courses](video-courses.md)
+* [😢 Known Limitations](known-limitations.md)
 
 ## Getting started
 
