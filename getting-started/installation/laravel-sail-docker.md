@@ -11,8 +11,8 @@ services:
     soketi:
         image: 'quay.io/soketi/soketi:latest-16-alpine'
         environment:
-            DEBUG: '1'
-            METRICS_SERVER_PORT: '9601'
+            SOKETI_DEBUG: '1'
+            SOKETI_METRICS_SERVER_PORT: '9601'
         ports:
             - '${SOKETI_PORT:-6001}:6001'
             - '${SOKETI_METRICS_SERVER_PORT:-9601}:9601'
