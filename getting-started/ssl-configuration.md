@@ -4,8 +4,9 @@ SSL support is included with soketi by default. If one of the following [environ
 
 ### Environment Variables
 
-| Name              | Default | Possible values | Description                             |
-| ----------------- | ------- | --------------- | --------------------------------------- |
-| `SOKETI_SSL_CERT` | `''`    | File paths      | The path to the SSL certificate file.   |
-| `SOKETI_SSL_KEY`  | `''`    | File paths      | The path to the SSL key file.           |
-| `SOKETI_SSL_PASS` | `''`    | File path       | The passphrase (if any) for the SSL key |
+| Name              | Default | Possible values | Description                                     |
+| ----------------- | ------- | --------------- | ----------------------------------------------- |
+| `SOKETI_SSL_CERT` | `''`    | File paths      | The path to the SSL certificate file.           |
+| `SOKETI_SSL_KEY`  | `''`    | File paths      | The path to the SSL key file.                   |
+| `SOKETI_SSL_PASS` | `''`    | String          | The passphrase (if any) for the SSL key         |
+| `SOKETI_SSL_CA`   | `''`    | File path       | The path to the SSL Certificate Authority file. |
