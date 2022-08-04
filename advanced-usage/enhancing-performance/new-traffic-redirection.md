@@ -1,6 +1,6 @@
 # 🔀 New traffic redirection
 
-Usually, on horizontal scalable models, you should now when to scale up or down. Mostly, in Soketi you should do it based on:
+Usually, on horizontal scalable models, you should know when to scale up or down. Mostly, in Soketi you should do it based on:
 
 * memory - having low memory can be tough for new sockets as it's needed to store new user data on each new connection and actually having memory to store the pointer to the connection
 * CPU - having low remaining CPU can increase the latency of your connections and mesages
