@@ -46,7 +46,7 @@
 * [↔ Horizontal Scaling](advanced-usage/horizontal-scaling/README.md)
   * [🤖 Running Modes](advanced-usage/horizontal-scaling/running-modes.md)
   * [🧠 Redis Configuration](advanced-usage/horizontal-scaling/redis-configuration.md)
-  * [🧙♂ 🧙♂ NATS Configuration](advanced-usage/horizontal-scaling/nats-configuration.md)
+  * [🧙♂ 🧙♂ 🧙♂ NATS Configuration](advanced-usage/horizontal-scaling/nats-configuration.md)
   * [🗃 Private Network Configuration](advanced-usage/horizontal-scaling/clustering.md)
   * [😑 Ok, what to choose?](advanced-usage/horizontal-scaling/ok-what-to-choose.md)
 * [🛑 Graceful Shutdowns & Real-time monitoring](advanced-usage/graceful-shutdowns.md)
