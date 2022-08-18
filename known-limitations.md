@@ -3,10 +3,7 @@
 ### API
 
 * The `/events` endpoint does not support passing channels via query strings
-* The `/events` endpoint does not support the `info` parameter
-* The `/batch_events` endpoint does not support the `info` parameter
-* The `/channels` endpoint does not support `filter_by_prefix` and `info` parameters
-* The `/channels/[channel_name`] endpoint does not support the `info`  parameter
+* No endpoints support the `info` query parameter
 
 ### WebSockets
 
