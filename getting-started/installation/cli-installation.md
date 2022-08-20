@@ -92,7 +92,7 @@ In Linux environments, everything is a file, including active sockets. To track 
 Node.js is meant to be ran on one CPU at a given time. This means that multi-threading isn't actually multi-threading in its common sense. To fix this problem, you may use the PM2-ready binary that is shipped with any soketi installation:
 
 ```bash
-soketi-pm2 start
+pm2 start soketi-pm2 -- start
 ```
 
 The only remaining caveat is that the processes are like they are horizontally scaled. You may want to configure [horizontal scaling](../../advanced-usage/horizontal-scaling/#cluster-adapter) with the cluster adapter, unless you are also scaling across multiple different instances, in which Redis is the recommended adapter.
