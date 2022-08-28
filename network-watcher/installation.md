@@ -45,9 +45,7 @@ spec:
 
 {% tab title="Deployment" %}
 ```yaml
-ap
-
-iVersion: apps/v1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: soketi
