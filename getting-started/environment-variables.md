@@ -2,20 +2,20 @@
 
 ### Environment variables
 
-You may declare soketi server configuration options using environment variables when invoking the soketi server directly on the CLI, or as key-value attributes in an `.env` file that is placed at the location from where the soketi server command is being run:
+You may declare soketi server configuration options using environment variables directly on the CLI when invoking the soketi server:
 
 ```bash
 DEBUG=1 soketi start
 ```
 
-Or, when using an `.env` file:
+Alternatively, you can use key-value attributes from your server environment, or an `.env` file placed at the location from where the soketi server command is being run. When using environment variables outside the CLI, **append `SOKETI_` to their key name** to avoid collisions with other variable names:
 
 ```
 # Within your .env file
 SOKETI_DEBUG=1
 ```
 
-```
+```bash
 soketi start
 ```
 
