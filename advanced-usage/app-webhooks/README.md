@@ -24,7 +24,7 @@ The value for `event_types` can be one of the following:
 
 The generic look of a webhook's payload is the same as [Pusher's](https://pusher.com/docs/channels/server\_api/webhooks/):
 
-```js
+```json
 {
     "time_ms": 1327078148132,
     "events": [
@@ -39,14 +39,14 @@ The generic look of a webhook's payload is the same as [Pusher's](https://pusher
 
 Each event from `events` looks like this:
 
-```js
+```json
 {
   "name": "client_event",
   "channel": "name of the channel the event was published on",
   "event": "name of the event",
   "data": "data associated with the event",
-  // "socket_id": "socket_id of the sending socket", - not applicable yet
-  // "user_id": "user_id associated with the sending socket" - not applicable yet, only for presence channels
+  "socket_id": "socket_id of the sending socket",
+  "user_id": "user_id associated with the sending socket"
 }
 ```
 
@@ -65,7 +65,7 @@ Enabling webhooks will send notifications for the selected `event_types`, but fo
 }
 ```
 
-```js
+```javascript
 // Won't trigger the webhook
 client.subscribe('chat-room');
 client.subscribe('beta-chat-room');
