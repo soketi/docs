@@ -3,7 +3,7 @@
 soketi is also available via pre-built Docker images. To get started, you may simply run one of our available images:
 
 ```bash
-docker run -p 6001:6001 -p 9601:9601 quay.io/soketi/soketi:1.0-16-debian
+docker run -p 6001:6001 -p 9601:9601 quay.io/soketi/soketi:1.4-16-debian
 ```
 
 ### What to do next

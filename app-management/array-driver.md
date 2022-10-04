@@ -20,7 +20,7 @@ For rate limits and max connections options, setting the variable value to `-1` 
 | `SOKETI_DEFAULT_APP_MAX_CLIENT_EVENTS_PER_SEC`  | `-1`         | Any integer                                                | The default app's limit of client events broadcast per second by a single socket. You can [configure rate limiting database store](../rate-limiting-and-limits/broadcast-rate-limiting.md) |
 | `SOKETI_DEFAULT_APP_MAX_READ_REQ_PER_SEC`       | `-1`         | Any integer                                                | The default app's limit of read endpoint calls per second. You can [configure rate limiting database store](../rate-limiting-and-limits/broadcast-rate-limiting.md)                        |
 | `SOKETI_DEFAULT_APP_WEBHOOKS`                   | `[]`         | `[{"url": "string", "event_types": ["string", ...]}, ...]` | The webhooks list for the app. See below                                                                                                                                                   |
-| `DEFAULT_APP_USER_AUTHENTICATION`               | `false`      | `true`, `false`                                            | Enable/disable the [user authentication ](../advanced-usage/user-authentication.md)feature.                                                                                                |
+| `SOKETI_DEFAULT_APP_USER_AUTHENTICATION`               | `false`      | `true`, `false`                                            | Enable/disable the [user authentication ](../advanced-usage/user-authentication.md)feature.                                                                                                |
 
 ### App-level Limits
 
