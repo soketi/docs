@@ -8,7 +8,7 @@ You may declare soketi server configuration options using environment variables 
 DEBUG=1 soketi start
 ```
 
-Alternatively, you can use key-value attributes from your server environment, or an `.env` file placed at the location from where the soketi server command is being run. When using environment variables outside the CLI, **append `SOKETI_` to their key name** to avoid collisions with other variable names:
+Alternatively, you can use key-value attributes from your server environment, or an `.env` file placed at the location from where the soketi server command is being run. When using environment variables outside the CLI, **prepend `SOKETI_` to their key name** to avoid collisions with other variable names:
 
 ```
 # Within your .env file
