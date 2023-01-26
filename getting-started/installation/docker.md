@@ -10,6 +10,39 @@ soketi is also available via pre-built Docker images. To get started, you may si
 docker run -p 6001:6001 -p 9601:9601 quay.io/soketi/soketi:0.34-16-debian
 ```
 
+### Environment Variables
+
+`AppId`, `AppKey`, and `AppSecret` can be set using the following environment variables:
+
+```env
+SOKETI_DEFAULT_APP_ID=YourAppId
+SOKETI_DEFAULT_APP_KEY=YourAppKey
+SOKETI_DEFAULT_SECRET=YourSecret
+```
+
+### Sample `docker-compose.yml` File
+
+```yml
+services:
+  soketi:
+    container_name: "soketi_server"
+    restart: unless-stopped
+    image: "quay.io/soketi/soketi:0.34-16-debian"
+    ports:
+      - "6001:6001"
+      - "9601:9601"
+    environment:
+      DEBUG: 1
+      SOKETI_DEFAULT_APP_ID: app-id
+      SOKETI_DEFAULT_APP_KEY: app-key
+      SOKETI_DEFAULT_APP_SECRET: app-secret
+    networks:
+      - soketi_network
+
+networks:
+  soketi_network:
+    driver: bridge
+```
 ### Alpine-based Images
 
 {% hint style="danger" %}
