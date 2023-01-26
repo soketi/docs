@@ -20,6 +20,7 @@
   * [Laravel Echo](getting-started/client-configuration/laravel-echo.md)
 * [💻 Backend Configuration](getting-started/backend-configuration/README.md)
   * [Pusher SDK](getting-started/backend-configuration/pusher-sdk.md)
+  * [Vultr](getting-started/backend-configuration/vultr.md)
   * [Laravel Broadcasting](getting-started/backend-configuration/laravel-broadcasting.md)
   * [Nginx Configuration](getting-started/backend-configuration/nginx-configuration.md)
 * [🧠 Redis Configuration](getting-started/redis-configuration.md)
