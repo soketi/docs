@@ -13,6 +13,7 @@
   * [Docker](getting-started/installation/docker.md)
   * [Helm Charts](getting-started/installation/helm-charts.md)
   * [Laravel Sail (Docker)](getting-started/installation/laravel-sail-docker.md)
+  * [Deploy on Easypanel](getting-started/installation/easypanel.md)
 * [💿 Configuring the server](getting-started/environment-variables.md)
 * [🔐 SSL Configuration](getting-started/ssl-configuration.md)
 * [🎨 Client Configuration](getting-started/client-configuration/README.md)
