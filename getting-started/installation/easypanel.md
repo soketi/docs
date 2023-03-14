@@ -1,4 +1,4 @@
-## Deploying Soketi on Easypanel
+# Deploying Soketi on Easypanel
 
 [Easypanel](https://easypanel.io) it's a modern server control panel. You can use it to deploy Soketi on your own server.
 
