@@ -10,7 +10,7 @@ By default, when the app has user authentication enabled, Soketi disconnects una
 
 ```bash
 # 5 seconds timeout
-SOKETI_USER_AUTHENTICATION_TIMEOUT=5000 soketi start
+SOKETI_USER_AUTHENTICATION_TIMEOUT=5000
 ```
 
 #### Send message to specific user ID
