@@ -20,6 +20,7 @@
 * [🎨 Client Configuration](getting-started/client-configuration/README.md)
   * [Pusher SDK](getting-started/client-configuration/pusher-sdk.md)
   * [Laravel Echo](getting-started/client-configuration/laravel-echo.md)
+  * [Flutter Pusher](getting-started/client-configuration/flutter-pusher.md)
 * [💻 Backend Configuration](getting-started/backend-configuration/README.md)
   * [Pusher SDK](getting-started/backend-configuration/pusher-sdk.md)
   * [Laravel Broadcasting](getting-started/backend-configuration/laravel-broadcasting.md)
