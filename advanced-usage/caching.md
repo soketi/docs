@@ -7,4 +7,4 @@ Currently, the caching system is used to [cache app retrievals](../app-managemen
 | Name                       | Default  | Possible values   | Description                                                                                                         |
 | -------------------------- | -------- | ----------------- | ------------------------------------------------------------------------------------------------------------------- |
 | `SOKETI_CACHE_DRIVER`      | `memory` | `memory`, `redis` | The caching driver.                                                                                                 |
-| `CACHE_REDIS_CLUSTER_MODE` | `false`  | `false`, `true`   | Enable this if you run Redis in Cluster mode. [Read more](../getting-started/redis-configuration.md#redis-cluster). |
+| `SOKETI_CACHE_REDIS_CLUSTER_MODE` | `false`  | `false`, `true`   | Enable this if you run Redis in Cluster mode. [Read more](../getting-started/redis-configuration.md#redis-cluster). |
