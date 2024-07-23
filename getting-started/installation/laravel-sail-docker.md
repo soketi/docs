@@ -4,7 +4,6 @@ For Laravel Sail, you may utilize soketi's [Docker](docker.md) images by adding 
 
 ```yaml
 # For more information: https://laravel.com/docs/sail
-version: '3'
 services:
     # ...
 
