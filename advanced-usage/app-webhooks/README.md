@@ -1,8 +1,10 @@
 # 🔗 HTTP Webhooks
 
-Before diving into the webhooks documentation, consider reading [Pusher's documentation regarding webhooks](https://pusher.com/docs/channels/server\_api/webhooks) to understand the basics of webhooks when using the Pusher protocol.
+Before diving into the webhooks documentation, you may want to check out [Pusher's documentation on webhooks](https://pusher.com/docs/channels/server_api/webhooks) to understand the basics of webhooks in the Pusher protocol.
 
-Each [app](../../app-management/introduction.md) definition contains a `webhooks` array which will contain data structures formatted like the following:
+## Webhook Configuration
+
+Each [app](../../app-management/introduction.md) definition includes a `webhooks` array with structures formatted as follows:
 
 ```json
 {
@@ -11,48 +13,53 @@ Each [app](../../app-management/introduction.md) definition contains a `webhooks
 }
 ```
 
-* `url` - The URL where the data will be sent.
-* `event_types` - An array of strings with the events that will trigger the webhook.
+### Parameters:
 
-The value for `event_types` can be one of the following:
+| Parameter    | Type     | Description                                      |
+|-------------|---------|--------------------------------------------------|
+| `url`       | String  | The endpoint where the webhook data will be sent. |
+| `event_types` | Array  | A list of events that will trigger the webhook. |
 
-* `client_event`
-* `channel_occupied`
-* `channel_vacated`
-* `member_added`
-* `member_removed`
+#### Supported `event_types`
 
-The generic look of a webhook's payload is the same as [Pusher's](https://pusher.com/docs/channels/server\_api/webhooks/):
+You can specify one or more of the following event types:
+
+- `client_event`
+- `channel_occupied`
+- `channel_vacated`
+- `member_added`
+- `member_removed`
+
+## Webhook Payload Structure
+
+A webhook request payload follows the same structure as [Pusher's webhook format](https://pusher.com/docs/channels/server_api/webhooks/):
 
 ```json
 {
     "time_ms": 1327078148132,
     "events": [
         { "name": "event_name", "some": "data" },
-        { "name": "event_name", "some": "data" },
-        .
-        .
-        .
+        { "name": "event_name", "some": "data" }
     ]
 }
 ```
 
-Each event from `events` looks like this:
+Each event inside `events` contains:
 
 ```json
 {
-  "name": "client_event",
-  "channel": "name of the channel the event was published on",
-  "event": "name of the event",
-  "data": "data associated with the event",
-  "socket_id": "socket_id of the sending socket",
-  "user_id": "user_id associated with the sending socket"
+    "name": "client_event",
+    "channel": "name of the channel the event was published on",
+    "event": "name of the event",
+    "data": "data associated with the event",
+    "socket_id": "socket_id of the sending socket",
+    "user_id": "user_id associated with the sending socket"
 }
 ```
 
-### Filtering Webhooks
+## Filtering Webhooks
 
-Enabling webhooks will send notifications for the selected `event_types`, but for all channels. In some situations, you may want to receive webhooks for specific channels, to simply reduce the network usage.
+By default, Soketi sends webhooks for all channels where the specified event types occur. You can filter webhooks to only trigger for specific channel patterns to reduce unnecessary traffic.
 
 ```json
 {
@@ -65,23 +72,23 @@ Enabling webhooks will send notifications for the selected `event_types`, but fo
 }
 ```
 
+### Example:
+
 ```javascript
-// Won't trigger the webhook
+// These will NOT trigger the webhook
 client.subscribe('chat-room');
 client.subscribe('beta-chat-room');
 client.subscribe('chat-room-app');
 
-// Will trigger the webhook
+// This WILL trigger the webhook
 client.subscribe('beta-chat-room-app');
 ```
 
-{% hint style="info" %}
-All passed filters are combined with `AND` logic. To filter them by another logical gate like `OR`, consider filtering most of the events by passing the `filters` object and consider modifying your webhook server's code to filter them further.
-{% endhint %}
+> **Note:** All filters use `AND` logic. If you need `OR` filtering, apply additional logic in your webhook server.
 
-### Webhook Headers
+## Webhook Headers
 
-[Thanks to @stayallive's PR](https://github.com/soketi/soketi/pull/226), you can pass additional headers that will be sent within the webhook request:
+You can define custom headers for webhook requests.
 
 ```json
 {
@@ -89,30 +96,45 @@ All passed filters are combined with `AND` logic. To filter them by another logi
     "event_types": ["channel_occupied"],
     "headers": {
         "X-Custom-Header": "Custom Header",
-        "X-Version": "Custom Header"
+        "X-Version": "1.0"
     }
 }
 ```
 
-### Webhook Batching
+## Webhook Batching
 
-[Dan Pegg](https://github.com/Daynnnnn) submitted a [Pull Request](https://github.com/soketi/soketi/pull/249) that allows you to send webhooks in batches rather than on one-by-one basis. This can become useful when you don't want to send a request for each event through the webhooks, but rather give some time for more events to build up and fire all of them at once, in a single request.
-
-To enable batching, use the `WEBHOOKS_BATCHING` environment variable:
+By default, each event triggers an individual webhook request. To reduce the number of requests, enable batching using the `WEBHOOKS_BATCHING` environment variable.
 
 ```bash
 SOKETI_WEBHOOKS_BATCHING=1 soketi start
 ```
 
-The build up of events is done in `50` ms by default. On receiving an event, it waits 50 ms before sending the webhook. In those 50 ms, more events can come and build up. Once the 50 ms mark was reached, the events are being sent in one request.
-
-If you have a lot of webhooks going on, consider increasing this value according to your needs. In the submitted [Pull Request](https://github.com/soketi/soketi/pull/249), a use case was the AWS Lambda functions webhook handling, which incurs costs based on how much the function is running and based on how many requests are done. For high-traffic apps that use those webhooks, increasing the batch duration is important, so that requests are sent at a lower rate, but with more events.
+This batches events over a **50 ms** window before sending them together in a single request. You can adjust the batching interval:
 
 ```bash
-# Setting the duration to 1000ms = 1s
+# Set batching duration to 1000ms (1 second)
 SOKETI_WEBHOOKS_BATCHING=1 SOKETI_WEBHOOKS_BATCHING_DURATION=1000 soketi start
 ```
 
-{% hint style="warning" %}
-Make sure that your [graceful shutdown](../graceful-shutdowns.md#graceful-shutdown-time) period is higher than the batch durations. If you set the batching higher than the graceful shutdown allowance, you may never receive the events that were still built up before being flushed out of the memory with the server shutdown.
-{% endhint %}
+> **Warning:** Ensure your [graceful shutdown](../graceful-shutdowns.md#graceful-shutdown-time) duration is longer than the batching period. Otherwise, pending events may be lost during shutdown.
+
+## Testing Webhooks
+
+To inspect and debug webhook requests, use **Beeceptor** or an alternative tool like **Webhook.site**.
+
+### Using Beeceptor
+
+1. Go to [Beeceptor](https://beeceptor.com/) and create an endpoint.
+2. Update your Soketi webhook URL with the Beeceptor endpoint.
+3. Trigger events and inspect the received requests in Beeceptor's dashboard.
+
+### Using Webhook.site
+
+1. Visit [Webhook.site](https://webhook.site/) to get a temporary URL.
+2. Set this as your webhook `url` in Soketi.
+3. Monitor incoming requests in real time.
+
+These tools help you verify the structure and flow of your webhook payloads before integrating them into your application.
+
+---
+
