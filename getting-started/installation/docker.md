@@ -34,7 +34,7 @@ Currently, the only supported `[node_version]` is `16-alpine`. This will be augm
 
 The following example versions are valid:
 
-* `1.0.0-16-alpine` (points to `1.0.0`)
+* `1.6.0-16-alpine` (points to `1.6.0`)
 * `1.0-16-alpine` (points to the latest `1.0`)
 * `1-16-alpine` (points to the latest `1.x`)
 * `latest-16-alpine` (points to the latest `master` branch)
@@ -58,3 +58,23 @@ docker run -p 6001:6001 quay.io/soketi/soketi:1.0-16-distroless
 {% hint style="success" %}
 We recommend using the distroless images in production to avoid any security issues involving remote code execution. However, keep in mind that debugging is not enabled and it might be harder to debug live containers / pods.
 {% endhint %}
+
+### Example for using a config.json to configure Soketi Image
+
+Create a `config.json` along side your `docker-composer.yaml` with a content as descripted in the [documentation about file configurations](../environment-variables.md/#file-configuration).
+
+Your `docker-composer.yaml` might look some thing like this.
+```yaml
+services:
+  soketi:
+    restart: unless-stopped
+    image: quay.io/soketi/soketi:latest-16-alpine
+    ports:
+      - 6001:6001
+      - 9601:9601
+
+    # run the start command with the config file
+    command: ["node", "/app/bin/server.js", "start", "--config=/app/config.json"]
+    volumes:
+      - ./config.json:/app/config.json:ro
+```
