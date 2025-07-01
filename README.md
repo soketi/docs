@@ -1,43 +1,103 @@
+Here’s a **better and cleanly structured example** of a full **order status lifecycle** for a **multi-vendor, delivery-based e-commerce system** (like Daraz), including **deliveryman roles, COD payment collection**, and **mobile UX clarity**.
+
 ---
-description: Soketi is your simple, fast, and resilient open-source WebSockets server. 📣
+
+## ✅ **Recommended Order Status Lifecycle (7 stages)**
+
+| Status             | Who Triggers It          | Description                                               |
+| ------------------ | ------------------------ | --------------------------------------------------------- |
+| `pending`          | System (on order placed) | Order created, waiting for confirmation (by seller/admin) |
+| `confirmed`        | Seller/Admin             | Seller accepted the order, starts processing              |
+| `processing`       | Seller                   | Seller is preparing the items                             |
+| `ready_for_pickup` | Seller                   | Items are ready; waiting for deliveryman                  |
+| `shipped`          | Deliveryman              | Deliveryman picked up items, in transit                   |
+| `delivered`        | Deliveryman              | Delivered to customer                                     |
+| `cancelled`        | Admin/Seller/Customer    | Order was cancelled                                       |
+
+> You can replace `ready_for_pickup` with `pickup` or `ready_to_ship` depending on your terminology.
+
 ---
 
-# 📡 soketi
+## 🚴‍♂️ **Deliveryman Flow (Mobile App)**
 
+| Step                             | Slide Action               | Backend Status Change                         | Additional             |
+| -------------------------------- | -------------------------- | --------------------------------------------- | ---------------------- |
+| 1. View assigned order           | -                          | Show `ready_for_pickup`                       |                        |
+| 2. Slide to **Start Pickup**     | Updates to `shipped`       | `status = shipped`                            | Records pickup time    |
+| 3. Slide to **Confirm Delivery** | Open **cash popup** if COD | `status = delivered`, `payment_status = paid` | Records collected cash |
+| 4. If already paid (digital)     | Just slide → no popup      | `delivered`, payment stays                    |                        |
 
+---
 
-![](<.gitbook/assets/carbon (22).png>)
+## 💰 **Cash Collection Confirmation UI (COD only)**
 
-#### Blazing fast speed :zap:
+**Popup After Slide to Deliver:**
 
-The server is built on top of [uWebSockets.js](https://github.com/uNetworking/uWebSockets.js) - a C application ported to Node.js. uWebSockets.js is demonstrated to perform at levels [_8.5x that of Fastify_](https://alexhultman.medium.com/serving-100k-requests-second-from-a-fanless-raspberry-pi-4-over-ethernet-fdd2c2e05a1e) and at least [_10x that of Socket.IO_](https://medium.com/swlh/100k-secure-websockets-with-raspberry-pi-4-1ba5d2127a23). ([_source_](https://github.com/uNetworking/uWebSockets.js))
+```
+-----------------------------------
+✔ Confirm Cash Collection
 
-#### Cheaper than most competitors 🤑
+Order Amount: ৳1000
+Payment Method: Cash on Delivery
 
-Compared with Pusher, you can achieve much more for less than one-third of the price.
+[Input] Collected Amount: ________
 
-For a $49 plan on Pusher, you get a limited amount of connections (500) and messages (30M).
+[✓] I confirm I have collected full amount
 
-With Soketi, for the price of an instance on Vultr or DigitalOcean ($5-$10), you get virtually unlimited connections, messages, and some more.
+[Cancel]     [Confirm]
+-----------------------------------
+```
 
-Soketi is capable to hold 500 active connections with high traffic on just **1 GB and 1 CPU machines** in the cloud. You can also [get free $100 on Vultr to try out soketi →](https://www.vultr.com/?ref=9032189-8H)
+On confirm:
 
-#### Ease of use :baby:
+* `orders.status = delivered`
+* `orders.payment_status = paid`
+* Save `collected_amount` in DB
 
-Whether you run your infrastructure in containers or monoliths, soketi got your back. There are multiple ways to [install](getting-started/installation/) and [configure](getting-started/environment-variables.md) soketi, from single instances for development, to tens of active instances at scale with hundreds or thousands of active users.
+---
 
-#### Pusher Protocol v7 :satellite:
+## 🧠 Additional Smart Features (Optional but Powerful)
 
-soketi implements the [Pusher Protocol v7](https://pusher.com/docs/channels/library\_auth\_reference/pusher-websockets-protocol#version-7-2017-11). Therefore, any Pusher-maintained or compatible client can connect to it, bringing a plug-and-play experience for existing applications that are already compatible with this protocol.
+| Feature                         | Purpose                                       |
+| ------------------------------- | --------------------------------------------- |
+| Photo Proof / Signature Capture | Add delivery proof                            |
+| Partial Cash Collection Support | Mark `partially_paid` if collected < total    |
+| Delivery Location Tracking      | GPS logging on pickup & delivery              |
+| Real-Time Delivery Chat         | Deliveryman ↔ Customer ↔ Seller communication |
 
-#### App-based access :closed\_lock\_with\_key:
+---
 
-You and your users can access the API and WebSockets through [Pusher-like apps](app-management/introduction.md) which serve keys and secrets to connect or authenticate requests for broadcasting events or checking channels statuses. soketi also comes built-in with support for DynamoDB and SQL-based servers like Postgres.
+## 🗂 Example Data State: (After a delivery)
 
-#### Production-ready! :robot:
+### ✅ If fully paid by COD:
 
-In addition to being a good companion during local development, soketi comes with the resiliency and speed required for demanding production applications.
+```json
+{
+  "status": "delivered",
+  "payment_method": "cod",
+  "payment_status": "paid",
+  "collected_amount": 1000
+}
+```
 
-#### Built-in monitoring :chart\_with\_upwards\_trend:
+### ✅ If refunded later:
 
-soketi just exposes the metrics to you, you just have to scrape them, whether it's a simple HTTP Client to pull the current usage, or you're using Prometheus to monitor all the connections.
+```json
+{
+  "status": "delivered",
+  "payment_status": "refunded"
+}
+```
+
+---
+
+## 📦 Summary
+
+* Use **clear order status** stages with clean transitions
+* **Deliveryman flow** should be **slide-based**, intuitive, and track payment
+* Use **popups** for COD confirmation, integrated with payment logic
+* Avoid vague statuses like just `processing → shipped → delivered`
+
+---
+
+Would you like a visual flowchart or Laravel/Flutter code snippet for implementing this logic?
